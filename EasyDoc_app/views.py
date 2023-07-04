@@ -442,16 +442,18 @@ def enregistrer_dossier(request):
                 if phCIN and phCNSS:
                     dossier_medical = DossierMedical(ipp=ipp, cinAssure=cin_assure, cnss=cnss, phCIN=phCIN, phCNSS=phCNSS)
                     dossier_medical.save()
-                    return redirect('saa')
+                    success_message = "Le dossier médical a été ajouté avec succès."
+                    return render(request, 'saa2.html', {'success_message': success_message})
                 else:
-                    error_message="Veuillez remplir tous les champs obligatoires"
-                    return render(request, 'saa2.html',{'error_message': error_message})
+                    error_message = "Veuillez remplir tous les champs obligatoires."
+                    return render(request, 'saa2.html', {'error_message': error_message})
             else:
                 error_message = "Le numéro IPP doit être unique, c'est-à-dire qu'il ne doit pas être répété."
-                return render(request, 'saa2.html',{'error_message': error_message})
+                return render(request, 'saa2.html', {'error_message': error_message})
         else:
-            error_message = "Ce dossier existe déjà"
-            return render(request, 'saa2.html',{'error_message': error_message})
+            error_message = "Ce dossier existe déjà."
+            return render(request, 'saa2.html', {'error_message': error_message})
+
         
     return render(request, 'saa2.html')
 
@@ -478,71 +480,78 @@ def enregistrer_action(request):
         bon_bio=request.FILES.get('bon_bio')
         facture_bio = request.FILES.get('facture_bio')
 
-        if (DossierMedical.objects.filter(ipp=ipp, cinAssure=cin_assure).exists()) or (not cin_assure=="non trouvé"):
+        if (DossierMedical.objects.filter(ipp=ipp, cinAssure=cin_assure).exists()) or (cin_assure != "non trouvé"):
 
             if action == "Consultation":
                 consultation = Consultation(
                     ipp=ipp,
-                    cin_assurant=cin_assure, 
-                    date=date, 
+                    cin_assurant=cin_assure,
+                    date=date,
                     ordonnance=ordonnance,
                     service=service,
                     action="Consultation"
-                    )
+                )
                 consultation.save()
-                return redirect('saa')
-            
+                success_message = "La consultation a été ajoutée avec succès."
+                return render(request, 'saa.html', {'success_message': success_message})
+
             elif action == "Hospitalisation":
-                if ( date_sortie >= date ):
-                    hospitalisation=Hospitalisation(
-                        ipp=ipp, 
-                        cin_assurant=cin_assure, 
-                        date=date, 
+                if date_sortie >= date:
+                    hospitalisation = Hospitalisation(
+                        ipp=ipp,
+                        cin_assurant=cin_assure,
+                        date=date,
                         ordonnance=ordonnance,
                         service=service1,
                         dateSortie=date_sortie,
                         facture=facture_hosp,
                         billetHospitalisation=billet_hospitalisation,
-                        action=action                    
-                        )
+                        action=action
+                    )
                     hospitalisation.save()
-                    return redirect('saa')
+                    success_message = "L'hospitalisation a été ajoutée avec succès."
+                    return render(request, 'saa.html', {'success_message': success_message})
                 else:
-                    error_message = "La date de sortie doit etre supérieure que la date d'entrée"
-                    return render(request, 'saa.html',{'error_message': error_message})
+                    error_message = "La date de sortie doit être supérieure à la date d'entrée."
+                    return render(request, 'saa.html', {'error_message': error_message})
+
             elif action == "Radiologie":
-                radiologie=Radiologie(
-                    ipp=ipp, 
-                    cin_assurant=cin_assure, 
-                    date=date, 
+                radiologie = Radiologie(
+                    ipp=ipp,
+                    cin_assurant=cin_assure,
+                    date=date,
                     ordonnance=ordonnance,
                     service="Radiologie",
                     facture=facture_radio,
                     bonRadio=bon_radio,
                     action=action
-                    )
+                )
                 radiologie.save()
-                return redirect('saa')
-            
-            elif action =="Biologie" :
-                biologie=Biologie(ipp=ipp, 
-                    cin_assurant=cin_assure, 
-                    date=date, 
+                success_message = "L'examen de radiologie a été ajouté avec succès."
+                return render(request, 'saa.html', {'success_message': success_message})
+
+            elif action == "Biologie":
+                biologie = Biologie(
+                    ipp=ipp,
+                    cin_assurant=cin_assure,
+                    date=date,
                     ordonnance=ordonnance,
                     service="Biologie",
                     facture=facture_bio,
                     bonBio=bon_bio,
                     action=action
-                    )
+                )
                 biologie.save()
-                return redirect('saa')
-            
+                success_message = "L'examen de biologie a été ajouté avec succès."
+                return render(request, 'saa.html', {'success_message': success_message})
+
             else:
-                error_message = "Vérifier les champs"
-                return render(request, 'saa.html',{'error_message': error_message})
+                error_message = "Vérifiez les champs."
+                return render(request, 'saa.html', {'error_message': error_message})
+
         else:
-                error_message = "Vérifier le CIN ou IPP du patient, ou essayer d'ajouter un dossier pour ce patient"
-                return render(request, 'saa.html',{'error_message': error_message})
+            error_message = "Vérifiez le CIN ou l'IPP du patient, ou essayez d'ajouter un dossier pour ce patient."
+            return render(request, 'saa.html', {'error_message': error_message})
     else:
         error_message = "Erreur lors la soumission"
         return render(request, 'saa.html',{'error_message': error_message})
