@@ -629,6 +629,8 @@ def generate_random_password(length=8):
     return password
 
 
+from django.core.mail import send_mail, BadHeaderError
+
 def reset_password(request):
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -644,19 +646,21 @@ def reset_password(request):
         auth.save()
         
         # Envoi de l'e-mail avec le nouveau mot de passe
-        send_mail(
-            'Réinitialisation du mot de passe',
-            f'Votre nouveau mot de passe est : {new_password}',
-            'noreply@example.com',
-            [email],
-            fail_silently=False,
-        )
-        
-        success_message = "Un e-mail contenant le nouveau mot de passe a été envoyé à votre adresse."
-        return render(request, 'login.html', {'success_message': success_message})
+        try:
+            send_mail(
+                'Réinitialisation du mot de passe',
+                f'Bonjour, votre nouveau mot de passe est : {new_password}',
+                'noreply@example.com',
+                [email],
+                fail_silently=False,
+            )
+            error_message = "Un e-mail contenant le nouveau mot de passe a été envoyé à votre adresse."
+            return render(request, 'login.html', {'error_message': error_message})
+        except BadHeaderError:
+            error_message = "Erreur lors de l'envoi de l'e-mail."
+            return render(request, 'login.html', {'error_message': error_message})
     
     return render(request, 'login.html')
-
 
 def signup(request):
     poste = Personne._meta.get_field('poste_role').choices

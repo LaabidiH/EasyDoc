@@ -28,6 +28,23 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+
+
+# Autres paramètres facultatifs
+
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'hopital.provincial.berrechid@gmail.com'
+EMAIL_HOST_PASSWORD = 'zydqmegmjmbrmirl'
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER  # Adresse e-mail par défaut pour les e-mails sortants
+EMAIL_SUBJECT_PREFIX = 'EasyDoc app '  # Préfixe ajouté au sujet de tous les e-mails sortants
+
+
 # Application definition
 
 INSTALLED_APPS = [
