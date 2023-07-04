@@ -442,8 +442,8 @@ def enregistrer_dossier(request):
                 if phCIN and phCNSS:
                     dossier_medical = DossierMedical(ipp=ipp, cinAssure=cin_assure, cnss=cnss, phCIN=phCIN, phCNSS=phCNSS)
                     dossier_medical.save()
-                    success_message = "Le dossier médical a été ajouté avec succès."
-                    return render(request, 'saa2.html', {'success_message': success_message})
+                    error_message = "Le dossier médical a été ajouté avec succès."
+                    return render(request, 'saa2.html', {'error_message': error_message})
                 else:
                     error_message = "Veuillez remplir tous les champs obligatoires."
                     return render(request, 'saa2.html', {'error_message': error_message})
@@ -492,8 +492,8 @@ def enregistrer_action(request):
                     action="Consultation"
                 )
                 consultation.save()
-                success_message = "La consultation a été ajoutée avec succès."
-                return render(request, 'saa.html', {'success_message': success_message})
+                error_message = "La consultation a été ajoutée avec succès."
+                return render(request, 'saa.html', {'error_message': error_message})
 
             elif action == "Hospitalisation":
                 if date_sortie >= date:
@@ -509,8 +509,8 @@ def enregistrer_action(request):
                         action=action
                     )
                     hospitalisation.save()
-                    success_message = "L'hospitalisation a été ajoutée avec succès."
-                    return render(request, 'saa.html', {'success_message': success_message})
+                    error_message = "L'hospitalisation a été ajoutée avec succès."
+                    return render(request, 'saa.html', {'error_message': error_message})
                 else:
                     error_message = "La date de sortie doit être supérieure à la date d'entrée."
                     return render(request, 'saa.html', {'error_message': error_message})
@@ -527,8 +527,8 @@ def enregistrer_action(request):
                     action=action
                 )
                 radiologie.save()
-                success_message = "L'acte de radiologie a été ajouté avec succès."
-                return render(request, 'saa.html', {'success_message': success_message})
+                error_message = "L'acte de radiologie a été ajouté avec succès."
+                return render(request, 'saa.html', {'error_message': error_message})
 
             elif action == "Biologie":
                 biologie = Biologie(
@@ -542,8 +542,8 @@ def enregistrer_action(request):
                     action=action
                 )
                 biologie.save()
-                success_message = "L'acte de biologie a été ajouté avec succès."
-                return render(request, 'saa.html', {'success_message': success_message})
+                error_message = "L'acte de biologie a été ajouté avec succès."
+                return render(request, 'saa.html', {'error_message': error_message})
 
             else:
                 error_message = "Vérifiez les champs."
