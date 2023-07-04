@@ -13,6 +13,9 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import never_cache
 from django.db.models import Value, CharField
 from django.views.decorators.http import require_POST
+import random
+import string
+from django.core.mail import send_mail
 
 
 """
@@ -618,6 +621,41 @@ def validate_email(email):
 def validate_phone(phone):
     phone_regex = r'^(\+212|00212|0)(6|7)[0-9]{8}$'
     return re.match(phone_regex, phone)
+
+
+def generate_random_password(length=8):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    password = ''.join(random.choice(characters) for _ in range(length))
+    return password
+
+
+def reset_password(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        try:
+            auth = Authentification.objects.get(email=email)
+        except Authentification.DoesNotExist:
+            error_message = "Cet e-mail n'est associé à aucun compte."
+            return render(request, 'login.html', {'error_message': error_message})
+        
+        # Génération d'un nouveau mot de passe aléatoire
+        new_password = generate_random_password()
+        auth.password = new_password
+        auth.save()
+        
+        # Envoi de l'e-mail avec le nouveau mot de passe
+        send_mail(
+            'Réinitialisation du mot de passe',
+            f'Votre nouveau mot de passe est : {new_password}',
+            'noreply@example.com',
+            [email],
+            fail_silently=False,
+        )
+        
+        success_message = "Un e-mail contenant le nouveau mot de passe a été envoyé à votre adresse."
+        return render(request, 'login.html', {'success_message': success_message})
+    
+    return render(request, 'login.html')
 
 
 def signup(request):

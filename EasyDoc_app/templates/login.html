@@ -12,9 +12,9 @@
                 <h3 class="card-title"><i class="bi bi-door-open"></i>Connexion</h3>
             </div>
             {% if messages %}
-            <div class="error_message" style="background-color: rgb(223, 42, 10); height: 28px;">
+            <div class="alert alert-danger text-center">
                 {% for message in messages %}
-                <h3 class="card-title" style="margin-top: 3px; margin-left: 8px; font-weight: bold; color: beige;">{{ message }}</h3>
+                {{ message }}
                 {% endfor %}
             </div>
             {% endif %}
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <a href="#" class="forgot-password-link">Mot de passe oublié ?</a>
+                        <a href="#" data-toggle="modal" data-target="#forgotPasswordModal">Mot de passe oublié ?</a>
                     </div>
                 </div>
                 <!-- /.card-body -->
@@ -65,4 +65,40 @@
         <!-- /.card -->
     </div>
 </div>
+
+<!-- Fenêtre modale -->
+<div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="forgotPasswordModalLabel">Mot de passe oublié</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Entrez votre adresse e-mail pour réinitialiser votre mot de passe :</p>
+                <form action="{% url 'reset_password' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Adresse e-mail" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Réinitialiser le mot de passe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+{% block scripts %}
+<script>
+    document.getElementById('forgotPasswordLink').addEventListener('click', function(event) {
+      event.preventDefault(); // Empêche le comportement par défaut du lien
+  
+      // Afficher la fenêtre modale
+      $('#forgotPasswordModal').modal('show');
+    });
+  </script>
 {% endblock %}

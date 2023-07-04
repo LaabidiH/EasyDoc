@@ -41,13 +41,13 @@ urlpatterns = [
     path('liste_dossiers/', views.liste_dossiers, name='liste_dossiers'),
     path('modifier-dossier/<int:dossier_id>/', views.modifier_dossier, name='modifier_dossier'),
     path('modifier_dossier/', views.modifier_dossier, name='modifier_dossier'),
-     path('supprimer-dossier/', views.supprimer_dossier, name='supprimer_dossier'),
+    path('supprimer-dossier/', views.supprimer_dossier, name='supprimer_dossier'),
     path('imprimer-dossier-hospitalisation/<str:ipp>/<str:cin>/<str:date>/', views.imprimer_dossier_hospitalisation, name='imprimer_dossier_hospitalisation'),
     path('imprimer-dossier-biologie/<str:ipp>/<str:cin>/<str:date>/', views.imprimer_dossier_biologie, name='imprimer_dossier_biologie'),
     path('imprimer-dossier-radiologie/<str:ipp>/<str:cin>/<str:date>/', views.imprimer_dossier_radiologie, name='imprimer_dossier_radiologie'),
     path('imprimer-dossier-consultation/<str:ipp>/<str:cin>/<str:date>/', views.imprimer_dossier_consultation, name='imprimer_dossier_consultation'),
 
-
+    path('reset_password/', views.reset_password, name='reset_password'),
 
     # path('home_M/', views.home_M, name="home_M"),
     # path('generate-pdf/', generate_pdf, name='generate_pdf'),
