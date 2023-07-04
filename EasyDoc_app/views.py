@@ -527,7 +527,7 @@ def enregistrer_action(request):
                     action=action
                 )
                 radiologie.save()
-                success_message = "L'examen de radiologie a été ajouté avec succès."
+                success_message = "L'acte de radiologie a été ajouté avec succès."
                 return render(request, 'saa.html', {'success_message': success_message})
 
             elif action == "Biologie":
@@ -542,7 +542,7 @@ def enregistrer_action(request):
                     action=action
                 )
                 biologie.save()
-                success_message = "L'examen de biologie a été ajouté avec succès."
+                success_message = "L'acte de biologie a été ajouté avec succès."
                 return render(request, 'saa.html', {'success_message': success_message})
 
             else:
