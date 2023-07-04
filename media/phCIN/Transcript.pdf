@@ -1,0 +1,4506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="google" content="notranslate">
+
+      <script>
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({"userId":305,"visitorType":"staff"});
+
+    window.gtm_user_custom_event = function (name, options) {
+      if (typeof name === 'undefined') {
+        return;
+      }
+
+      window.dataLayer.push({
+        customEventOptions: typeof options !== 'undefined' ? options : {},
+        event: name,
+      });
+    }
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-N4C8MF2');</script>
+  <!-- End Google Tag Manager -->
+
+
+    <title>HOUDA LAABIDI | ALX Africa Intranet</title>
+
+      <link rel="stylesheet" href="https://use.typekit.net/xgz4ilr.css">
+      <link rel="stylesheet" media="all" href="/assets/application_alx-1f48fe32f8890a5b4043ac403220430a9a865066a8afacdbbae3f3b7acb5e0c7.css" />
+      <script src="https://www.gstatic.com/charts/loader.js"></script>
+      <script src="/assets/application-28fbde0d9d7e01867b82fdb2a88556984777beb449e6fde74a7b722d6c9d640a.js"></script>
+      <link rel="shortcut icon" type="image/x-icon" href="/favicon_alx.ico" />
+      <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="nlys-xDvtv1ZcOtoy-sZbnPuDcvQxvSF0c98WoDbajqGPIzP-UUslZeNB0kvvCx9GbkQyeB3jTLonq21MlLr4g" />
+
+      <link rel="apple-touch-icon" href="/apple-touch-icon_alx.png">
+
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+      <!-- Store user timezone -->
+      <script>
+        Cookies.set('timezone', (new Date()).getTimezoneOffset() / -60.0);
+      </script>
+
+      <!-- intro.js for interactive onboarding -->
+
+      <!-- React -->
+      <script src="/packs/js/application-7120d9b719c5b03168aa.js"></script>
+      <link rel="stylesheet" media="screen" href="/packs/css/application-87456da7.css" />
+  </head>
+
+  <body class="signed_in env_production notranslate"
+        translate="no"
+        class="notranslate"
+        data-theme-suffix="_alx">
+      <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4C8MF2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+
+      <input type="hidden" id="hbtn-slack-url" value="https://alx-students.slack.com">
+      <nav class="navbar navbar-default navbar-fixed-top topbar visible-xs">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-mobile" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="/">
+      <div class="logo"></div>
+</a>  </div>
+
+  <div class="collapse navbar-collapse navigation" id="navbar-mobile">
+    <ul class="nav navbar-nav">
+      
+
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Curriculums"><a href="/curriculums"><div class="icon "><i aria-hidden="true" class="fa fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Projects"><a href="/projects"><div class="icon "><i aria-hidden="true" class="fa fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Concepts"><a href="/concepts"><div class="icon "><i aria-hidden="true" class="fa fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+
+  <hr class="Education">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="API Docs"><a href="/api_docs"><div class="icon "><i aria-hidden="true" class="fa fa-code "></i></div><div class="visible-xs">API Docs</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Master planning"><a href="/planning"><div class="icon "><i aria-hidden="true" class="fa fa-calendar "></i></div><div class="visible-xs">Master planning</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Events"><a href="/events"><div class="icon "><i aria-hidden="true" class="fa fa-calendar-check-o "></i></div><div class="visible-xs">Events</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Surveys"><a href="/surveys"><div class="icon "><i aria-hidden="true" class="fa fa-pie-chart "></i></div><div class="visible-xs">Surveys</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Conference rooms"><a href="/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="Sandboxes"><a href="/user_containers/current"><div class="icon "><i aria-hidden="true" class="fa fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Video on demand"><a href="/dashboards/videos"><div class="icon "><i aria-hidden="true" class="fa fa-film "></i></div><div class="visible-xs">Video on demand</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Cohorts"><a href="/batches"><div class="icon "><i aria-hidden="true" class="fa fa-users "></i></div><div class="visible-xs">Cohorts</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="All students"><a href="/users/students"><div class="icon "><i aria-hidden="true" class="fa fa-address-book "></i></div><div class="visible-xs">All students</div></a></li>
+  
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Exports"><a href="/data_exports"><div class="icon "><i aria-hidden="true" class="fa fa-download "></i></div><div class="visible-xs">Exports</div></a></li>
+
+
+<hr class="visible-xs">
+
+<li>
+    <div
+      data-container="body"
+      data-placement="right"
+      data-toggle="tooltip"
+      title="Slack">
+      <a target="_blank" href="https://alx-students.slack.com">
+        <div class="image slack">
+          <div class="inner"></div>
+        </div>
+        <div class="visible-xs">Slack</div>
+</a>    </div>
+
+  <div
+    data-container="body"
+    data-placement="right"
+    data-toggle="tooltip"
+    title="My Profile">
+    <a href="/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url('https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/000/305/thumb/maarten-square.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230404%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230404T231036Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=ecf29822a400fd595dba65a3f9ddccabc9ad9841263b99507d39dcbc81b81c36')"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      <div class="hidden-xs navigation sidebar">
+  <a class="logo-container" href="/">
+    <div class="logo"></div>
+</a>
+  <ul>
+    
+
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Curriculums"><a href="/curriculums"><div class="icon "><i aria-hidden="true" class="fa fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Projects"><a href="/projects"><div class="icon "><i aria-hidden="true" class="fa fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Concepts"><a href="/concepts"><div class="icon "><i aria-hidden="true" class="fa fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+
+  <hr class="Education">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="API Docs"><a href="/api_docs"><div class="icon "><i aria-hidden="true" class="fa fa-code "></i></div><div class="visible-xs">API Docs</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Master planning"><a href="/planning"><div class="icon "><i aria-hidden="true" class="fa fa-calendar "></i></div><div class="visible-xs">Master planning</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Events"><a href="/events"><div class="icon "><i aria-hidden="true" class="fa fa-calendar-check-o "></i></div><div class="visible-xs">Events</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Surveys"><a href="/surveys"><div class="icon "><i aria-hidden="true" class="fa fa-pie-chart "></i></div><div class="visible-xs">Surveys</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Conference rooms"><a href="/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="Sandboxes"><a href="/user_containers/current"><div class="icon "><i aria-hidden="true" class="fa fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Video on demand"><a href="/dashboards/videos"><div class="icon "><i aria-hidden="true" class="fa fa-film "></i></div><div class="visible-xs">Video on demand</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Cohorts"><a href="/batches"><div class="icon "><i aria-hidden="true" class="fa fa-users "></i></div><div class="visible-xs">Cohorts</div></a></li>
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="All students"><a href="/users/students"><div class="icon "><i aria-hidden="true" class="fa fa-address-book "></i></div><div class="visible-xs">All students</div></a></li>
+  
+  <li data-container="body" data-placement="right" data-toggle="tooltip" title="Exports"><a href="/data_exports"><div class="icon "><i aria-hidden="true" class="fa fa-download "></i></div><div class="visible-xs">Exports</div></a></li>
+
+
+<hr class="visible-xs">
+
+<li>
+    <div
+      data-container="body"
+      data-placement="right"
+      data-toggle="tooltip"
+      title="Slack">
+      <a target="_blank" href="https://alx-students.slack.com">
+        <div class="image slack">
+          <div class="inner"></div>
+        </div>
+        <div class="visible-xs">Slack</div>
+</a>    </div>
+
+  <div
+    data-container="body"
+    data-placement="right"
+    data-toggle="tooltip"
+    title="My Profile">
+    <a href="/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url('https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/000/305/thumb/maarten-square.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230404%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230404T231036Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=ecf29822a400fd595dba65a3f9ddccabc9ad9841263b99507d39dcbc81b81c36')"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+  </ul>
+</div>
+
+
+    <main>
+        <div id="layout-bars">
+          <div id="staff_multi_school_locations" class="row">
+  <div class="col-sm-10">
+    You are currently observing these locations: AFR, ACC, LOS, ADD, JNB, KGL, NBO, ABJ
+  </div>
+
+  <div class="col-sm-2 text-right">
+    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" id="adminSchoolLocationsObservedMenu">
+      Change <span class="caret"></span>
+    </button>
+
+    <ul class="dropdown-menu" aria-labelledby="adminSchoolLocationsObservedMenu">
+      <li class="item">
+        <input type="checkbox" id="allCheckerAdminSL" checked>
+        <label for="allCheckerAdminSL">Check/Uncheck all locations</label>
+      </li>
+
+      <li class="separator"><hr></li>
+
+        <li class="item">
+          <input type="checkbox" id="adminSLItem-1" data-id="1" checked>
+          <label for="adminSLItem-1">
+            [AFR] ALX Africa
+          </label>
+        </li>
+        <li class="item">
+          <input type="checkbox" id="adminSLItem-2" data-id="2" checked>
+          <label for="adminSLItem-2">
+            [ACC] Accra
+          </label>
+        </li>
+        <li class="item">
+          <input type="checkbox" id="adminSLItem-3" data-id="3" checked>
+          <label for="adminSLItem-3">
+            [LOS] Lagos
+          </label>
+        </li>
+        <li class="item">
+          <input type="checkbox" id="adminSLItem-4" data-id="4" checked>
+          <label for="adminSLItem-4">
+            [ADD] Addis Ababa
+          </label>
+        </li>
+        <li class="item">
+          <input type="checkbox" id="adminSLItem-5" data-id="5" checked>
+          <label for="adminSLItem-5">
+            [JNB] Johannesburg
+          </label>
+        </li>
+        <li class="item">
+          <input type="checkbox" id="adminSLItem-6" data-id="6" checked>
+          <label for="adminSLItem-6">
+            [KGL] Kigali
+          </label>
+        </li>
+        <li class="item">
+          <input type="checkbox" id="adminSLItem-7" data-id="7" checked>
+          <label for="adminSLItem-7">
+            [NBO] Nairobi
+          </label>
+        </li>
+        <li class="item">
+          <input type="checkbox" id="adminSLItem-8" data-id="8" checked>
+          <label for="adminSLItem-8">
+            [ABJ] Abidjan
+          </label>
+        </li>
+
+      <li class="action text-center">
+        <button class="btn btn-primary reload">
+          <i aria-hidden="true" class="fa fa-refresh "></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+          
+          
+          
+          
+        </div>
+
+      <article class="">
+          <div class="alert alert-danger sm-gap big-zindex">There was an error generating the transcript. Please check the template to make sure its syntax is valid.</div>
+
+        
+<div class="show">
+  <div class="sm-gap">
+    <div id="profile-summary">
+  <div id="summary-picture">
+    <div data-react-class="common/CircleProfilePicture" data-react-props="{&quot;border&quot;:false,&quot;size&quot;:70,&quot;user&quot;:{&quot;picture_url&quot;:&quot;https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/378/297/thumb/photo_houda_image.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230404%2Fus-east-1%2Fs3%2Faws4_request\u0026X-Amz-Date=20230404T231951Z\u0026X-Amz-Expires=600\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Signature=a824cc04c68f5733464b979e8f9a55d07cdc3f35afdb4387a7d0c3a1a438266e&quot;}}" data-react-cache-id="common/CircleProfilePicture-0"></div>
+  </div>
+
+  <h1 class="d-flex flex-column gap-2 m-0 fs-2" id="summary-name">
+    <span class="fw-600 overflow-hidden">
+      HOUDA LAABIDI
+    </span>
+    <small class="d-inline-flex fw-400 gap-3">
+      <span class="text-primary">Active</span>
+    </small>
+  </h1>
+
+  <div class="d-flex flex-column gap-2" id="summary-meta">
+    <div>
+      <a class="btn btn-default" href="/users/378297/edit"><i aria-hidden="true" class="fa fa-pencil "></i><span>Edit</span></a>
+
+        <a class="btn btn-default" id="versioning_model-link" data-toggle="modal" data-target="#versioning_model-modal" href="#"><i aria-hidden="true" class="fa fa-history "></i><span>See versioning</span></a>
+          <div class="modal fade" id="versioning_model-modal" data-models-class="users" data-model-class="user" data-model-id="378297">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Versions of User - 378297</h4>
+        </div>
+        <div class="modal-body">
+          <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+          <div class="versions"></div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+
+      <a class="btn btn-primary" href="/users/start_viewing_as?viewing_as_id=378297"><i aria-hidden="true" class="fa fa-user-o "></i><span>Impersonate</span></a>
+    </div>
+
+    <div class="text-muted truncate" id="summary-meta-list">
+        <span class="align-items-center d-inline-flex gap-2">
+          <i aria-hidden="true" class="fa fa-users  fa-fw"></i>
+            <a href="/batches/74">AFR-0223 (C#13)</a>
+        </span>
+
+        <span class="align-items-center d-inline-flex gap-2">
+          <i aria-hidden="true" class="fa fa-graduation-cap  fa-fw"></i>
+            <a href="/curriculums/1">Foundations</a>
+        </span>
+
+
+      <span class="align-items-center d-inline-flex gap-2">
+        <i aria-hidden="true" class="fa fa-envelope  fa-fw"></i>
+          <span class="user-select-all">houd.laabidi@gmail.com</span>
+      </span>
+
+      <span class="align-items-center d-inline-flex gap-2">
+        <i aria-hidden="true" class="fa fa-github  fa-fw"></i>
+          <a target="_blank" href="https://github.com/LaabidiH">LaabidiH</a>
+      </span>
+
+        <span class="align-items-center d-inline-flex gap-2">
+          <i aria-hidden="true" class="fa fa-clock-o  fa-fw"></i>
+            <div data-react-class="common/DateTime" data-react-props="{&quot;showDate&quot;:true,&quot;showTime&quot;:true,&quot;value&quot;:&quot;2023-04-04T03:59:55.000Z&quot;}" data-react-cache-id="common/DateTime-0" class="d-inline-block"></div>
+        </span>
+
+        <span class="align-items-center d-inline-flex gap-2">
+          <i aria-hidden="true" class="fa fa-book  fa-fw"></i>
+            <span class="d-inline-flex gap-3">
+                <span>
+                  <strong>:)</strong> 83.3%
+                </span>
+                <span>
+                  <strong>:|</strong> 16.7%
+                </span>
+                <span>
+                  <strong>:(</strong> 0.0%
+                </span>
+            </span>
+        </span>
+    </div>
+  </div>
+</div>
+
+
+    <ul class="nav nav-tabs sm-gap" role="tablist">
+    <li role="presentation" class=""><a href="#permissions" aria-controls="permissions" role="tab" data-toggle="tab">Permissions</a></li>
+      <li role="presentation"><a href="#hr" aria-controls="hr" role="tab" data-toggle="tab">HR</a></li>
+    <li role="presentation"><a href="#reports" aria-controls="reports" role="tab" data-toggle="tab">Reports</a></li>
+
+      <li role="presentation"><a href="#academic_status" aria-controls="academic_status" role="tab" data-toggle="tab">Academic status</a></li>
+
+      <li role="presentation" class="active"><a href="#period_scores" aria-controls="period_scores" role="tab" data-toggle="tab">Period scores</a></li>
+      <li role="presentation"><a href="#scores" aria-controls="scores" role="tab" data-toggle="tab">Scores (not project)</a></li>
+
+      <li role="presentation"><a href="#tutors" aria-controls="tutors" role="tab" data-toggle="tab">Tutors</a></li>
+        <li role="presentation"><a href="#working_status" aria-controls="working_status" role="tab" data-toggle="tab">Working status</a></li>
+
+        <li role="presentation"><a href="#payment_status" aria-controls="payment_status" role="tab" data-toggle="tab">Payment status</a></li>
+    <li role="presentation" class=""><a href="#extra_permissions" aria-controls="extra_permissions" role="tab" data-toggle="tab">Extra permission</a></li>
+    <li role="presentation"><a href="#technical_info" aria-controls="technical_info" role="tab" data-toggle="tab">Technical info</a></li>
+        <li role="presentation"><a href="#captain_logs" aria-controls="captain_logs" role="tab" data-toggle="tab">Captain logs</a></li>
+
+        <li role="presentation"><a href="#corrections" aria-controls="corrections" role="tab" data-toggle="tab">Corrections</a></li>
+      <li role="presentation"><a href="#reviews_made" aria-controls="reviews_made" role="tab" data-tab-name="reviews_made" data-toggle="tab">Reviews Made</a></li>
+      <li role="presentation"><a href="#projects" aria-controls="projects" role="tab" data-toggle="tab">Projects</a></li>
+      <li role="presentation"><a href="#billing" aria-controls="billing" role="tab" data-toggle="tab">Billing</a></li>
+      <li role="presentation"><a href="#user_journey" aria-controls="user_journey" role="tab" data-toggle="tab">User journey</a></li>
+</ul>
+
+<div class="tab-content">
+
+    <div role="tabpanel" class="tab-pane  gap" id="permissions">
+      <p>
+  <strong>School location(s):</strong>
+  ALX Africa
+</p>
+
+<hr>
+
+<p>
+  <strong>Access:</strong>
+  <ul>
+    <li>Active: true</li>
+    <li>Staff: false</li>
+    <li>Tutor: false</li>
+  </ul>
+</p>
+
+<hr>
+
+<p>
+  <strong>Permission groups:</strong>
+  Student
+</p>
+<p>
+  <strong>Permission roles:</strong>
+
+    <div class="my-2">
+      <a class="btn btn-default btn-sm" rel="nofollow" data-method="patch" href="/users/378297/student_tutor">Grant student tutor</a>
+    </div>
+
+  <ul>
+  </ul>
+</p>
+
+<hr>
+
+  <p>
+    <strong>Exclude from teams:</strong>
+    false
+  </p>
+  <p>
+    <strong>Exclude from corrections:</strong>
+    false
+  </p>
+  <p>
+    <strong>Exclude from captain's log:</strong>
+    false
+  </p>
+  <p>
+    <strong>Exclude from peer learning day:</strong>
+    false
+  </p>
+  <p>
+    <strong>Exclude from evaluation quiz:</strong>
+    false
+  </p>
+  <p>
+    <strong>Exclude from NPS quiz:</strong>
+    false
+  </p>
+  <p>
+    <strong>Exclude from Mock Interview:</strong>
+    false
+  </p>
+  <p>
+    <strong>Exclude from School events:</strong>
+    false
+  </p>
+  <p>
+    <strong>Exclude from Github pack:</strong>
+    false
+  </p>
+    <p>
+      <strong>Exclude from Slack:</strong>
+      false
+    </p>
+    <p>
+      <strong>Exclude from Slack sync:</strong>
+      false
+    </p>
+    <p>
+      <strong>Exclude from Slack status sync:</strong>
+      false
+    </p>
+
+  <hr>
+
+  <p>
+    <strong>SAML service slack access:</strong>
+    true
+  </p>
+  <p>
+    <strong>SAML service zendesk access:</strong>
+    false
+  </p>
+  <p>
+    <strong>Zendesk tags:</strong>
+  </p>
+
+  <p>
+    <strong>Slack title:</strong>
+    
+  </p>
+  <p>
+    <strong>Slack status:</strong>
+    
+  </p>
+  <p>
+    <strong>Slack status emoji:</strong>
+    
+  </p>
+
+  <p>
+    <strong>Slack ID:</strong>
+    <code>U04PE2HCMK9</code>
+  </p>
+
+  <hr>
+
+  <h3>Active history</h3>
+
+  <table class="table table-striped sortable">
+    <thead>
+      <tr>
+        <th>Datetime</th>
+        <th>Active</th>
+        <th>Log by</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+          <td>2023-02-14 15:22:26 +0300</td>
+          <td>Active</td>
+          <td>
+              Auto
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+
+
+      <div role="tabpanel" class="tab-pane gap" id="hr">
+        <p>
+  <strong>Email:</strong>
+  houd.laabidi@gmail.com
+</p>
+<p>
+  <strong>Personal email:</strong>
+  houd.laabidi@gmail.com
+</p>
+<hr>
+
+<p>
+  <strong>First name:</strong>
+  HOUDA
+</p>
+<p>
+  <strong>Preferred name:</strong>
+  HOUDA
+</p>
+<p>
+  <strong>Middle names:</strong>
+  
+</p>
+<p>
+  <strong>Last name:</strong>
+  LAABIDI
+</p>
+<hr>
+
+  <p>
+    <strong>Agreements:</strong>
+    <ul>
+        <li>
+          Terms of Service
+            - no approved agreements
+        </li>
+        <li>
+          Terms of Use
+            - no approved agreements
+        </li>
+        <li>
+          Code of Conduct
+            <ul>
+                <li class="">
+                  Effective as of <div data-react-class="common/DateTime" data-react-props="{&quot;showDate&quot;:true,&quot;showTime&quot;:false,&quot;value&quot;:&quot;2022-09-19&quot;}" data-react-cache-id="common/DateTime-0" class="d-inline-block"></div>
+                  approved on <div data-react-class="common/DateTime" data-react-props="{&quot;showDate&quot;:true,&quot;showTime&quot;:true,&quot;value&quot;:&quot;2023-02-15T22:34:51.115Z&quot;}" data-react-cache-id="common/DateTime-0" class="d-inline-block"></div>
+                </li>
+            </ul>
+        </li>
+        <li>
+          Privacy Policy
+            <ul>
+                <li class="">
+                  Effective as of <div data-react-class="common/DateTime" data-react-props="{&quot;showDate&quot;:true,&quot;showTime&quot;:false,&quot;value&quot;:&quot;2023-03-09&quot;}" data-react-cache-id="common/DateTime-0" class="d-inline-block"></div>
+                  approved on <div data-react-class="common/DateTime" data-react-props="{&quot;showDate&quot;:true,&quot;showTime&quot;:true,&quot;value&quot;:&quot;2023-03-09T11:45:21.050Z&quot;}" data-react-cache-id="common/DateTime-0" class="d-inline-block"></div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+  </p>
+  <hr>
+
+<p>
+  <strong>Github username:</strong>
+    <a target="_blank" href="https://github.com/LaabidiH">LaabidiH</a>
+</p>
+<p>
+  <strong>Twitter username:</strong>
+    <a target="_blank" href="https://twitter.com/houdalaabidi_">houdalaabidi_</a>
+</p>
+<p>
+  <strong>Slack username:</strong>
+  houd.laabid_378297
+</p>
+<p>
+  <strong>LinkedIn URL:</strong>
+  https://www.linkedin.com/in/houda-laabidi-64484b260
+</p>
+<hr>
+
+<p>
+  <strong>Gender:</strong>
+  
+</p>
+<p>
+  <strong>Date of birth:</strong>
+  
+</p>
+<p>
+  <strong>Current address:</strong>
+  Hay Elhassani, Berrechid, Berrechid, 26100, Morocco
+</p>
+<p>
+  <strong>Phone number:</strong>
+  +212689600481
+</p>
+<hr>
+
+  <p>
+    <strong>Emergency contact name:</strong>
+    Soumia laabidi
+  </p>
+  <p>
+    <strong>Emergency contact relation:</strong>
+    sister
+  </p>
+  <p>
+    <strong>Emergency contact phone number:</strong>
+    +212670054385
+  </p>
+
+<hr>
+
+<hr>
+
+  <a target="_blank" href="/users/378297/transcript">Show transcript</a> -
+  <a target="_blank" href="/users/378297/transcript?pdf=1">Download PDF transcript</a>
+
+      </div>
+
+    <div role="tabpanel" class="tab-pane gap" id="reports">
+      <div class="align-items-center d-flex gap justify-content-between">
+  <h3>Reports</h3>
+  <a class="btn btn-primary btn-sm" href="/user_reports/new?user_id=378297">Add a report</a>
+</div>
+
+<div><div class="alert alert-info"><span>All clear. Nothing to see here.</span></div></div>
+    </div>
+
+      <div role="tabpanel" class="tab-pane gap" id="academic_status">
+        <h3>Student status</h3>
+
+<p>
+  <strong>Active:</strong> true
+    <a class="btn btn-default btn-sm" href="/users/378297/withdrawal">Dismiss/withdraw</a>
+</p>
+<p>
+  <strong>Cohort:</strong>
+    <a href="/batches/74">AFR-0223</a>
+  
+      <a class="btn btn-default btn-sm" href="/user_transfer_requests/new?user_id=378297">Transfer</a>
+</p>
+<p>
+  <strong>Previous cohort:</strong>
+    None
+</p>
+<p>
+  <strong>School location(s):</strong>
+  ALX Africa
+</p>
+
+
+<div class="align-items-center d-flex gap justify-content-between">
+  <h3>Curriculum statuses</h3>
+  <a class="btn btn-primary btn-sm" href="/user_curriculum_statuses/new?user_id=378297">Add a curriculum status</a>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Created at</th>
+      <th>Curriculum</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2023-02-14 12:22:26 UTC</td>
+      <td><a href="/curriculums/1">#1 Foundations</a></td>
+      <td>In progress</td>
+      <td><a href="/user_curriculum_statuses/840338">Show</a></td>
+      <td><a href="/user_curriculum_statuses/840338/edit">Edit</a></td>
+      <td><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/user_curriculum_statuses/840338">Destroy</a></td>
+    </tr>
+    <tr>
+      <td>2023-02-14 12:22:26 UTC</td>
+      <td><a href="/curriculums/17">#17 Short Specializations</a></td>
+      <td>No access</td>
+      <td><a href="/user_curriculum_statuses/840339">Show</a></td>
+      <td><a href="/user_curriculum_statuses/840339/edit">Edit</a></td>
+      <td><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/user_curriculum_statuses/840339">Destroy</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="align-items-center d-flex gap justify-content-between">
+  <h3>Track accesses</h3>
+  <a class="btn btn-primary btn-sm" href="/user_track_accesses/new?user_id=378297">Add a track access</a>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Created at</th>
+      <th>Track</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<div class="align-items-center d-flex gap justify-content-between">
+  <h3>Track levels</h3>
+  <a class="btn btn-primary btn-sm" href="/user_track_levels/new?user_id=378297">Add a track level</a>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Track</th>
+      <th>Level</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<div class="align-items-center d-flex gap justify-content-between">
+  <h3>Path choices</h3>
+  <a class="btn btn-primary btn-sm" href="/user_path_choices/new?user_id=378297">Add a path choice</a>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>From curriculum</th>
+      <th>To Curriculum</th>
+      <th>Track</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+      </div>
+
+      <div role="tabpanel" class="tab-pane active gap" id="period_scores">
+        <h3>Summary</h3>
+  
+<div class="panel panel-default">
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+        Scores
+        - Foundations
+        <span class="label label-default">In progress</span>
+    </h3>
+    <div class="btn-group font-weight-bold">
+        170.0%
+            <em>(100.0%)</em>
+            <a href="#" data-toggle="modal" data-target="#period_scores_modal_1" class="ml-2">
+                <i aria-hidden="true" class="fa fa-eye "></i>
+            </a>
+    </div>
+
+  </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th title="Month">Month</th>
+                    <th title="Average" class="text-right">Average</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>
+                            <div data-react-class="users/ScorePeriodNameAndDates" data-react-props="{&quot;endsAt&quot;:&quot;2023-04-04T23:59:59.999+03:00&quot;,&quot;expended&quot;:true,&quot;name&quot;:&quot;Month #0&quot;,&quot;startsAt&quot;:&quot;2023-02-20T00:00:00.000+03:00&quot;}" data-react-cache-id="users/ScorePeriodNameAndDates-0" class="d-inline-block"></div>
+                        </td>
+                        <td class="text-right">
+                            170%
+                                <em>(100%)</em>
+                            <i aria-hidden="true" class="fa fa-thumbs-up text-success fa-fw" title="In progress - higher than threshold"></i>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</div>
+
+    <div class="modal fade" id="period_scores_modal_1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Scores details</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                            <tr class="bg-primary">
+                                <td>
+                                    <div data-react-class="users/ScorePeriodNameAndDates" data-react-props="{&quot;endsAt&quot;:&quot;2023-04-04T23:59:59.999+03:00&quot;,&quot;name&quot;:&quot;Month #0&quot;,&quot;startsAt&quot;:&quot;2023-02-20T00:00:00.000+03:00&quot;}" data-react-cache-id="users/ScorePeriodNameAndDates-0" class="d-inline-block"></div>
+                                </td>
+                                <td class="text-right font-weight-bold">
+                                    170%
+                                        <em>(100%)</em>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/1101">0x01. Emacs</a>
+                                    </td>
+                                    <td class="text-right">
+                                        100%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/1100">0x00. Shell, navigation</a>
+                                    </td>
+                                    <td class="text-right">
+                                        100%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/210">[Optional] Vagrant</a>
+                                            <span class="label label-primary">optional</span>
+                                    </td>
+                                    <td class="text-right">
+                                        200%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/1102">0x02. vi</a>
+                                    </td>
+                                    <td class="text-right">
+                                        100%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/1">0x03. Git</a>
+                                    </td>
+                                    <td class="text-right">
+                                        200%
+                                            <em>(100%)</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/647">0x04. Professional Technologies</a>
+                                    </td>
+                                    <td class="text-right">
+                                        100%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/205">0x00. Shell, basics</a>
+                                    </td>
+                                    <td class="text-right">
+                                        200%
+                                            <em>(100%)</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/207">0x01. Shell, permissions</a>
+                                    </td>
+                                    <td class="text-right">
+                                        200%
+                                            <em>(100%)</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/208">0x02. Shell, I/O Redirections and filters</a>
+                                    </td>
+                                    <td class="text-right">
+                                        200%
+                                            <em>(100%)</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/429">Professional Relationships</a>
+                                            <span class="label label-primary">optional</span>
+                                    </td>
+                                    <td class="text-right">
+                                        200%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/209">0x03. Shell, init files, variables and expansions</a>
+                                    </td>
+                                    <td class="text-right">
+                                        200%
+                                            <em>(100%)</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/212">0x00. C - Hello, World</a>
+                                    </td>
+                                    <td class="text-right">
+                                        200%
+                                            <em>(100%)</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/213">0x01. C - Variables, if, else, while</a>
+                                    </td>
+                                    <td class="text-right">
+                                        200%
+                                            <em>(100%)</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/214">0x02. C - Functions, nested loops</a>
+                                    </td>
+                                    <td class="text-right">
+                                        200%
+                                            <em>(100%)</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/539">0x03. C - Debugging</a>
+                                    </td>
+                                    <td class="text-right">
+                                        100%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/215">0x04. C - More functions, more nested loops</a>
+                                    </td>
+                                    <td class="text-right">
+                                        200%
+                                            <em>(100%)</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/216">0x05. C - Pointers, arrays and strings</a>
+                                    </td>
+                                    <td class="text-right">
+                                        200%
+                                            <em>(100%)</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/217">0x06. C - More pointers, arrays and strings</a>
+                                    </td>
+                                    <td class="text-right">
+                                        200%
+                                            <em>(100%)</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/projects/218">0x07. C - Even more pointers, arrays and strings</a>
+                                    </td>
+                                    <td class="text-right">
+                                        200%
+                                            <em>(100%)</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="/evaluation_quiz_corrections/1233593">Evaluation #0</a>
+                                    </td>
+                                    <td class="text-right">
+                                        100%
+                                    </td>
+                                </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  <hr>
+  <a class="btn btn-default" data-confirm="Recomputing scores is not immediate. It will be queued and processed asynchronously. Do you want to continue?" rel="nofollow" data-method="post" href="/users/378297/recompute_scores">Recompute scores</a>
+
+      </div>
+
+      <div role="tabpanel" class="tab-pane gap" id="scores">
+        <h3>Evaluation quizzes</h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Curriculum</th>
+      <th>Evaluation quiz</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Score</th>
+      <th>Duration</th>
+      <th>Skip</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+        <tr>
+          <td>Foundations</td>
+          <td><a href="/evaluation_quizzes/25">The Room Fellowship Assessment</a></td>
+          <td><a href="/batch_evaluation_quiz_items/800">2023-03-06</a></td>
+          <td>Done</td>
+          <td>
+                12
+          </td>
+          <td>
+            1 hour, 27 minutes
+            
+          </td>
+          <td>
+          </td>
+          <td><a href="/evaluation_quiz_corrections/1074217">Show</a></td>
+          <td><a href="/evaluation_quiz_corrections/1074217/edit">Edit</a></td>
+        </tr>
+        <tr>
+          <td>Foundations</td>
+          <td><a href="/evaluation_quizzes/3">General Knowledge</a></td>
+          <td><a href="/batch_evaluation_quiz_items/807">2023-03-07</a></td>
+          <td>Done</td>
+          <td>
+                36
+          </td>
+          <td>
+            12 minutes
+            (including 2 minutes, 6 seconds not focus)
+          </td>
+          <td>
+          </td>
+          <td><a href="/evaluation_quiz_corrections/1123800">Show</a></td>
+          <td><a href="/evaluation_quiz_corrections/1123800/edit">Edit</a></td>
+        </tr>
+        <tr>
+          <td>Foundations</td>
+          <td><a href="/evaluation_quizzes/1">C quiz</a></td>
+          <td><a href="/batch_evaluation_quiz_items/814">2023-03-09</a></td>
+          <td>Done</td>
+          <td>
+                46
+          </td>
+          <td>
+            14 minutes
+            (including 2 minutes, 6 seconds not focus)
+          </td>
+          <td>
+          </td>
+          <td><a href="/evaluation_quiz_corrections/1173544">Show</a></td>
+          <td><a href="/evaluation_quiz_corrections/1173544/edit">Edit</a></td>
+        </tr>
+        <tr>
+          <td>Foundations</td>
+          <td><a href="/evaluation_quizzes/11">Evaluation #0</a></td>
+          <td><a href="/batch_evaluation_quiz_items/839">2023-03-24</a></td>
+          <td>Done</td>
+          <td>
+                100.0%
+          </td>
+          <td>
+            2 minutes
+            
+          </td>
+          <td>
+              
+              
+              
+          </td>
+          <td><a href="/evaluation_quiz_corrections/1233593">Show</a></td>
+          <td><a href="/evaluation_quiz_corrections/1233593/edit">Edit</a></td>
+        </tr>
+  </tbody>
+</table>
+
+      </div>
+
+      <div role="tabpanel" class="tab-pane gap" id="tutors">
+        <h3>Tutors</h3>
+<a href="/user_tutors/new?user_id=378297">Link to a tutor</a>
+<table class="table table-striped sortable">
+  <thead>
+    <tr>
+      <th>Tutor Name</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+      </div>
+
+
+
+        <div role="tabpanel" class="tab-pane gap" id="working_status">
+          <p>
+  <strong>Resume URL (PDF format, 1 page):</strong>
+  
+</p>
+
+<h3>Working statuses</h3>
+
+<a href="/user_working_statuses/new?user_id=378297">Add a new working status</a>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Dates</th>
+      <th>Employment</th>
+      <th>Work type</th>
+      <th>Academic status</th>
+      <th>Company name</th>
+      <th>Location</th>
+      <th>Title</th>
+        <th>Salary</th>
+      <th style="width:125px">Meta</th>
+      <th style="width:125px">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+        </div>
+
+        <div role="tabpanel" class="tab-pane gap" id="payment_status">
+          <a href="/user_payment_statuses/new?user_id=378297">Add a new payment status</a>
+
+<table class="table table-striped sortable">
+  <thead>
+    <tr>
+
+        <th>Collection agency</th>
+
+        <th>Payment Status</th>
+
+        <th>Payment Start Date</th>
+
+        <th>Payment End Date</th>
+
+        <th style="width:125px">Staff logs</th>
+        <th style="width:125px">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  </tbody>
+</table>
+
+
+        </div>
+
+    <div role="tabpanel" class="tab-pane gap" id="extra_permissions">
+      <h3>Curriculum extra permissions</h3>
+<a href="/curriculum_extra_permissions/new?user_id=378297">Add a new curriculum extra permission</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Curriculum</th>
+      <th>Reason</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<h3 class="gap">Project extra permissions</h3>
+<a href="/project_extra_permissions/new?user_id=378297">Add a new project extra permission</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Reason</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<h3 class="gap">Concept extra permissions</h3>
+<a href="/concept_extra_permissions/new?user_id=378297">Add a new concept extra permission</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Concept</th>
+      <th>Reason</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+    </div>
+
+    <div role="tabpanel" class="tab-pane gap" id="technical_info">
+      <h3>Keys</h3>
+
+<p>
+  <strong>SSH public key:</strong>
+  <pre></pre>
+</p>
+<p>
+  <strong>Project website URL:</strong>
+  
+</p>
+<p>
+  <strong>Datadog API Key:</strong>
+  <code></code>
+</p>
+<p>
+  <strong>Datadog Application Key:</strong>
+  <code></code>
+</p>
+
+  <div class="align-items-center d-flex gap justify-content-between">
+    <h3>Servers</h3>
+    <a class="btn btn-primary btn-sm" href="/servers/new?student_id=378297">Add a server</a>
+  </div>
+
+  <table class="align-middle table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Provider</th>
+        <th>Provider ID</th>
+        <th>Username</th>
+        <th>IP</th>
+        <th>State</th>
+        <th style="width: 100px;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <p><strong>Server quota</strong>
+    <a data-confirm="Are you sure?" href="/users/378297/reset_servers_quota">Reset quota</a></p>
+  <pre></pre>
+
+<h3 class="gap">Sandboxes</h3>
+
+<table class="table table-striped sortable">
+  <thead>
+    <tr>
+      <th>Container Spec</th>
+      <th>Date start</th>
+      <th>Container ID</th>
+      <th style="width: 100px;">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr class="offline">
+        <td>Ubuntu 20.04</td>
+        <td>2023-02-23 20:20:08 UTC</td>
+        <td><code></code></td>
+        <td>
+          <div class="btn-group">
+            <a class="btn btn-sm btn-default" href="/user_containers/341920">Show</a>
+            <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li><a data-confirm="Are you sure?" rel="nofollow" data-method="put" href="/user_containers/341920/wake">Wake</a></li>
+                <li><a href="/user_containers/341920/edit">Edit</a></li>
+                <li><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/user_containers/341920">Destroy</a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+
+    </div>
+
+        <div role="tabpanel" class="tab-pane gap" id="captain_logs">
+          <ul style="padding-left: 0px;">
+    <li class="list-group-item">
+  <div class="align-items-center d-flex gap-4">
+    <span class="fs-3 label label-success"><i aria-hidden="true" class="fa fa-smile-o "></i></span>
+    <span class="align-items-center d-flex fs-3 fw-bold gap-2">
+      <img class="img-rounded" height="30" loading="lazy" width="30" src="https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/378/297/thumb/photo_houda_image.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230404%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230404T231951Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=a824cc04c68f5733464b979e8f9a55d07cdc3f35afdb4387a7d0c3a1a438266e" />
+      <a href="/users/378297">HOUDA LAABIDI</a>
+    </span>
+
+    <a class="btn btn-sm btn-default" rel="noreferrer" target="_blank" href="mailto:houd.laabidi@gmail.com"><i aria-hidden="true" class="fa fa-envelope "></i><span>Email them</span></a>
+  </div>
+
+    <p><em>Due date: 04/02/2023 14:00 EAT</em></p>
+
+  <div class="d-flex flex-column gap-4 sm-gap">
+    <div>
+      <span class="fw-bold">What did you think about the curriculum / projects this week?</span>
+      <p class="clean well gray few-padding fs-small">
+        it wasn&#39;t easy
+      </p>
+    </div>
+    <div>
+      <span class="fw-bold">What did you think about the experience?</span>
+      <p class="clean well gray few-padding fs-small">
+        it&#39;s very important to know th C pointers and functions
+      </p>
+    </div>
+    <div>
+      <span class="fw-bold">How is your space and working environment?</span>
+      <p class="clean well gray few-padding fs-small">
+        it was very good
+      </p>
+    </div>
+    <div>
+      <span class="fw-bold">Is there anything else you'd like to share?</span>
+      <p class="clean well gray few-padding fs-small">
+        -
+      </p>
+    </div>
+
+      <div class="d-flex flex-wrap gap-5">
+        <div class="d-flex flex-column">
+          <strong>Who helped you this week? </strong>
+          <div class="d-flex flex-wrap gap-2">
+              <span class="label label-default">FATIMA EZZAHRA CHOURAK</span>
+          </div>
+        </div>
+        <div class="d-flex flex-column">
+          <strong>Who did you help this week? </strong>
+          <div class="d-flex flex-wrap gap-2">
+              <span class="label label-default">FATIMA EZZAHRA CHOURAK</span>
+          </div>
+        </div>
+  </div>
+</li>
+
+    <li class="list-group-item">
+  <div class="align-items-center d-flex gap-4">
+    <span class="fs-3 label label-success"><i aria-hidden="true" class="fa fa-smile-o "></i></span>
+    <span class="align-items-center d-flex fs-3 fw-bold gap-2">
+      <img class="img-rounded" height="30" loading="lazy" width="30" src="https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/378/297/thumb/photo_houda_image.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230404%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230404T231951Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=a824cc04c68f5733464b979e8f9a55d07cdc3f35afdb4387a7d0c3a1a438266e" />
+      <a href="/users/378297">HOUDA LAABIDI</a>
+    </span>
+
+    <a class="btn btn-sm btn-default" rel="noreferrer" target="_blank" href="mailto:houd.laabidi@gmail.com"><i aria-hidden="true" class="fa fa-envelope "></i><span>Email them</span></a>
+  </div>
+
+    <p><em>Due date: 03/26/2023 14:00 EAT</em></p>
+
+  <div class="d-flex flex-column gap-4 sm-gap">
+    <div>
+      <span class="fw-bold">What did you think about the curriculum / projects this week?</span>
+      <p class="clean well gray few-padding fs-small">
+        very good program where it is based on the basics of programming.
+      </p>
+    </div>
+    <div>
+      <span class="fw-bold">What did you think about the experience?</span>
+      <p class="clean well gray few-padding fs-small">
+        It was a good experience and I benefited a lot from it.
+      </p>
+    </div>
+    <div>
+      <span class="fw-bold">How is your space and working environment?</span>
+      <p class="clean well gray few-padding fs-small">
+        I have friends in the alx SE program with whom I worked
+      </p>
+    </div>
+    <div>
+      <span class="fw-bold">Is there anything else you'd like to share?</span>
+      <p class="clean well gray few-padding fs-small">
+        no, thanks
+      </p>
+    </div>
+
+      <div class="d-flex flex-wrap gap-5">
+        <div class="d-flex flex-column">
+          <strong>Who helped you this week? </strong>
+          <div class="d-flex flex-wrap gap-2">
+              <span class="label label-default">Fathi Hiba</span>
+              <span class="label label-default">FATIMA EZZAHRA CHOURAK</span>
+          </div>
+        </div>
+        <div class="d-flex flex-column">
+          <strong>Who did you help this week? </strong>
+          <div class="d-flex flex-wrap gap-2">
+              <span class="label label-default">Fathi Hiba</span>
+              <span class="label label-default">FATIMA EZZAHRA CHOURAK</span>
+          </div>
+        </div>
+  </div>
+</li>
+
+    <li class="list-group-item">
+  <div class="align-items-center d-flex gap-4">
+    <span class="fs-3 label label-success"><i aria-hidden="true" class="fa fa-smile-o "></i></span>
+    <span class="align-items-center d-flex fs-3 fw-bold gap-2">
+      <img class="img-rounded" height="30" loading="lazy" width="30" src="https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/378/297/thumb/photo_houda_image.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230404%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230404T231951Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=a824cc04c68f5733464b979e8f9a55d07cdc3f35afdb4387a7d0c3a1a438266e" />
+      <a href="/users/378297">HOUDA LAABIDI</a>
+    </span>
+
+    <a class="btn btn-sm btn-default" rel="noreferrer" target="_blank" href="mailto:houd.laabidi@gmail.com"><i aria-hidden="true" class="fa fa-envelope "></i><span>Email them</span></a>
+  </div>
+
+    <p><em>Due date: 03/19/2023 14:00 EAT</em></p>
+
+  <div class="d-flex flex-column gap-4 sm-gap">
+    <div>
+      <span class="fw-bold">What did you think about the curriculum / projects this week?</span>
+      <p class="clean well gray few-padding fs-small">
+        It was difficult, but I did it
+      </p>
+    </div>
+    <div>
+      <span class="fw-bold">What did you think about the experience?</span>
+      <p class="clean well gray few-padding fs-small">
+        It&#39;s very important to have the basics of software engineering 
+      </p>
+    </div>
+    <div>
+      <span class="fw-bold">How is your space and working environment?</span>
+      <p class="clean well gray few-padding fs-small">
+        It was very nice 
+      </p>
+    </div>
+    <div>
+      <span class="fw-bold">Is there anything else you'd like to share?</span>
+      <p class="clean well gray few-padding fs-small">
+        -
+      </p>
+    </div>
+
+  </div>
+</li>
+
+    <li class="list-group-item">
+  <div class="align-items-center d-flex gap-4">
+    <span class="fs-3 label label-success"><i aria-hidden="true" class="fa fa-smile-o "></i></span>
+    <span class="align-items-center d-flex fs-3 fw-bold gap-2">
+      <img class="img-rounded" height="30" loading="lazy" width="30" src="https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/378/297/thumb/photo_houda_image.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230404%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230404T231951Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=a824cc04c68f5733464b979e8f9a55d07cdc3f35afdb4387a7d0c3a1a438266e" />
+      <a href="/users/378297">HOUDA LAABIDI</a>
+    </span>
+
+    <a class="btn btn-sm btn-default" rel="noreferrer" target="_blank" href="mailto:houd.laabidi@gmail.com"><i aria-hidden="true" class="fa fa-envelope "></i><span>Email them</span></a>
+  </div>
+
+    <p><em>Due date: 03/12/2023 14:00 EAT</em></p>
+
+  <div class="d-flex flex-column gap-4 sm-gap">
+    <div>
+      <span class="fw-bold">What did you think about the curriculum / projects this week?</span>
+      <p class="clean well gray few-padding fs-small">
+        They&#39;re so interesting 
+      </p>
+    </div>
+    <div>
+      <span class="fw-bold">What did you think about the experience?</span>
+      <p class="clean well gray few-padding fs-small">
+        I think that it was interesting 
+      </p>
+    </div>
+    <div>
+      <span class="fw-bold">How is your space and working environment?</span>
+      <p class="clean well gray few-padding fs-small">
+        It was hard sometimes but I tried 
+      </p>
+    </div>
+    <div>
+      <span class="fw-bold">Is there anything else you'd like to share?</span>
+      <p class="clean well gray few-padding fs-small">
+        Thank you for your help 
+      </p>
+    </div>
+
+      <div class="d-flex flex-wrap gap-5">
+        <div class="d-flex flex-column">
+          <strong>Who helped you this week? </strong>
+          <div class="d-flex flex-wrap gap-2">
+              <span class="label label-default">Fathi Hiba</span>
+              <span class="label label-default">FATIMA EZZAHRA CHOURAK</span>
+          </div>
+        </div>
+        <div class="d-flex flex-column">
+          <strong>Who did you help this week? </strong>
+          <div class="d-flex flex-wrap gap-2">
+              <span class="label label-default">Fathi Hiba</span>
+              <span class="label label-default">FATIMA EZZAHRA CHOURAK</span>
+          </div>
+        </div>
+  </div>
+</li>
+
+    <li class="list-group-item">
+  <div class="align-items-center d-flex gap-4">
+    <span class="fs-3 label label-success"><i aria-hidden="true" class="fa fa-smile-o "></i></span>
+    <span class="align-items-center d-flex fs-3 fw-bold gap-2">
+      <img class="img-rounded" height="30" loading="lazy" width="30" src="https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/378/297/thumb/photo_houda_image.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230404%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230404T231951Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=a824cc04c68f5733464b979e8f9a55d07cdc3f35afdb4387a7d0c3a1a438266e" />
+      <a href="/users/378297">HOUDA LAABIDI</a>
+    </span>
+
+    <a class="btn btn-sm btn-default" rel="noreferrer" target="_blank" href="mailto:houd.laabidi@gmail.com"><i aria-hidden="true" class="fa fa-envelope "></i><span>Email them</span></a>
+  </div>
+
+    <p><em>Due date: 03/05/2023 14:00 EAT</em></p>
+
+  <div class="d-flex flex-column gap-4 sm-gap">
+    <div>
+      <span class="fw-bold">What did you think about the curriculum / projects this week?</span>
+      <p class="clean well gray few-padding fs-small">
+        I found it hard sometimes, but I benefited a lot and learned new things
+      </p>
+    </div>
+    <div>
+      <span class="fw-bold">What did you think about the experience?</span>
+      <p class="clean well gray few-padding fs-small">
+        Very good
+      </p>
+    </div>
+    <div>
+      <span class="fw-bold">How is your space and working environment?</span>
+      <p class="clean well gray few-padding fs-small">
+        It was good I had no difficulties with them
+      </p>
+    </div>
+    <div>
+      <span class="fw-bold">Is there anything else you'd like to share?</span>
+      <p class="clean well gray few-padding fs-small">
+        I want to say thank you very much for your efforts
+      </p>
+    </div>
+
+      <div class="d-flex flex-wrap gap-5">
+        <div class="d-flex flex-column">
+          <strong>Who helped you this week? </strong>
+          <div class="d-flex flex-wrap gap-2">
+              <span class="label label-default">FATIMA EZZAHRA CHOURAK</span>
+          </div>
+        </div>
+        <div class="d-flex flex-column">
+          <strong>Who did you help this week? </strong>
+          <div class="d-flex flex-wrap gap-2">
+              <span class="label label-default">Awatif YOUSFI</span>
+              <span class="label label-default">Fathi Hiba</span>
+              <span class="label label-default">FATIMA EZZAHRA CHOURAK</span>
+          </div>
+        </div>
+  </div>
+</li>
+
+    <li class="list-group-item">
+  <div class="align-items-center d-flex gap-4">
+    <span class="fs-3 label label-default"><i aria-hidden="true" class="fa fa-meh-o "></i></span>
+    <span class="align-items-center d-flex fs-3 fw-bold gap-2">
+      <img class="img-rounded" height="30" loading="lazy" width="30" src="https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/378/297/thumb/photo_houda_image.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230404%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230404T231951Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=a824cc04c68f5733464b979e8f9a55d07cdc3f35afdb4387a7d0c3a1a438266e" />
+      <a href="/users/378297">HOUDA LAABIDI</a>
+    </span>
+
+    <a class="btn btn-sm btn-default" rel="noreferrer" target="_blank" href="mailto:houd.laabidi@gmail.com"><i aria-hidden="true" class="fa fa-envelope "></i><span>Email them</span></a>
+  </div>
+
+    <p><em>Due date: 02/26/2023 14:00 EAT</em></p>
+
+  <div class="d-flex flex-column gap-4 sm-gap">
+    <div>
+      <span class="fw-bold">What did you think about the curriculum / projects this week?</span>
+      <p class="clean well gray few-padding fs-small">
+        I found the program to be very good because it adapts to all of us
+      </p>
+    </div>
+    <div>
+      <span class="fw-bold">What did you think about the experience?</span>
+      <p class="clean well gray few-padding fs-small">
+        I had some difficulties understanding the trajectory of the program but then I adapted to the program and I think the program is very good to get some grounding
+      </p>
+    </div>
+    <div>
+      <span class="fw-bold">How is your space and working environment?</span>
+      <p class="clean well gray few-padding fs-small">
+        Good, I found my peers quickly, and understood the intranet platform and slack from the first use
+      </p>
+    </div>
+    <div>
+      <span class="fw-bold">Is there anything else you'd like to share?</span>
+      <p class="clean well gray few-padding fs-small">
+        I want thank tou for your efforts 
+      </p>
+    </div>
+
+      <div class="d-flex flex-wrap gap-5">
+        <div class="d-flex flex-column">
+          <strong>Who helped you this week? </strong>
+          <div class="d-flex flex-wrap gap-2">
+              <span class="label label-default">FATIMA EZZAHRA CHOURAK</span>
+          </div>
+        </div>
+        <div class="d-flex flex-column">
+          <strong>Who did you help this week? </strong>
+          <div class="d-flex flex-wrap gap-2">
+              <span class="label label-default">Awatif YOUSFI</span>
+              <span class="label label-default">Fathi Hiba</span>
+              <span class="label label-default">FATIMA EZZAHRA CHOURAK</span>
+          </div>
+        </div>
+  </div>
+</li>
+
+</ul>
+
+        </div>
+
+        <div role="tabpanel" class="tab-pane gap" id="corrections">
+          <h3>QA reviews per project</h3>
+
+<table class="table table-hover table-condensed sm-gap">
+  <tr>
+    <td>Project</td>
+    <td>Auto QA review</td>
+    <td>Manual QA review</td>
+    <td>Percentage</td>
+    <td>Is skipped?</td>
+    <td>Has cheated?</td>
+      <td>Actions</td>
+  </tr>
+
+    <tr data-correction-id="13733816">
+      <td><div style="display: flex;">
+
+    <div style="margin-right:10px; width: 5%">
+      <a title="Project reminders" href="/projects/220"><i aria-hidden="true" class="fa fa-bell-o  fa-2x"></i></a>
+    </div>
+    <div style="width: 95%;">
+
+
+    <code>220</code>
+
+    <a href="/projects/220">0x09. C - Static libraries</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20813"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+
+
+
+
+  </div>
+</div>
+</td>
+      <td>
+          not yet
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="13733816">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="13733816">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/13733816">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="14035725">
+      <td><div style="display: flex;">
+
+    <div style="margin-right:10px; width: 5%">
+      <a title="Project reminders" href="/projects/219"><i aria-hidden="true" class="fa fa-bell-o  fa-2x"></i></a>
+    </div>
+    <div style="width: 95%;">
+
+
+    <code>219</code>
+
+    <a href="/projects/219">0x08. C - Recursion</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/21028"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+
+
+
+
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          not yet
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="14035725">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="14035725">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/14035725">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="13895650">
+      <td><div style="display: flex;">
+
+    <div style="margin-right:10px; width: 5%">
+      <a title="Project reminders" href="/projects/218"><i aria-hidden="true" class="fa fa-bell-o  fa-2x"></i></a>
+    </div>
+    <div style="width: 95%;">
+
+
+    <code>218</code>
+
+    <a href="/projects/218">0x07. C - Even more pointers, arrays and strings</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20934"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">started on <div data-react-class="common/DateTime" data-react-props="{&quot;showDate&quot;:true,&quot;showTime&quot;:true,&quot;value&quot;:&quot;2023-04-03T06:00:00.000+03:00&quot;}" data-react-cache-id="common/DateTime-0" class="d-inline-block"></div>, <strong>deadline for a second chance before <div data-react-class="common/DateTime" data-react-props="{&quot;showDate&quot;:true,&quot;showTime&quot;:true,&quot;value&quot;:&quot;2023-04-05T06:00:00.000+03:00&quot;}" data-react-cache-id="common/DateTime-0" class="d-inline-block"></div> (in about 4 hours)</strong> </span>
+
+
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/13895650">200.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="13895650">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="13895650">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/13895650">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="13762546">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>100044</code>
+
+    <a href="/projects/100044">Your network is your net worth</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20851"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/13762546">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="13762546">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="13762546">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/13762546">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="12983374">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>429</code>
+
+    <a href="/projects/429">Professional Relationships</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20247"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/12983374">200.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="12983374">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="12983374">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/12983374">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="13597299">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>217</code>
+
+    <a href="/projects/217">0x06. C - More pointers, arrays and strings</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20758"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/13597299">200.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="13597299">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="13597299">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/13597299">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="13433080">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>216</code>
+
+    <a href="/projects/216">0x05. C - Pointers, arrays and strings</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20631"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/13433080">200.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="13433080">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="13433080">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/13433080">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="13346509">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>215</code>
+
+    <a href="/projects/215">0x04. C - More functions, more nested loops</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20567"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/13346509">200.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="13346509">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="13346509">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/13346509">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="13262575">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>539</code>
+
+    <a href="/projects/539">0x03. C - Debugging</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20501"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/13262575">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="13262575">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="13262575">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/13262575">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="13234228">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>214</code>
+
+    <a href="/projects/214">0x02. C - Functions, nested loops</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20493"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/13234228">200.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="13234228">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="13234228">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/13234228">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="13129578">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>213</code>
+
+    <a href="/projects/213">0x01. C - Variables, if, else, while</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20382"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/13129578">200.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="13129578">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="13129578">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/13129578">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="12755053">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>212</code>
+
+    <a href="/projects/212">0x00. C - Hello, World</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20148"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/12755053">200.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="12755053">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="12755053">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/12755053">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="12880659">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>209</code>
+
+    <a href="/projects/209">0x03. Shell, init files, variables and expansions</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20198"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/12880659">200.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="12880659">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="12880659">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/12880659">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="12953609">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>208</code>
+
+    <a href="/projects/208">0x02. Shell, I/O Redirections and filters</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20229"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/12953609">200.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="12953609">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="12953609">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/12953609">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="12404617">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>210</code>
+
+    <a href="/projects/210">[Optional] Vagrant</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20035"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Explicit Quiz</strong>
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/12404617">200.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="12404617">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="12404617">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/12404617">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="12785216">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>207</code>
+
+    <a href="/projects/207">0x01. Shell, permissions</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20154"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/12785216">200.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="12785216">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="12785216">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/12785216">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="12574868">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>647</code>
+
+    <a href="/projects/647">0x04. Professional Technologies</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20090"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/12574868">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="12574868">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="12574868">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/12574868">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="12693367">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>205</code>
+
+    <a href="/projects/205">0x00. Shell, basics</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20123"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/12693367">200.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="12693367">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="12693367">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/12693367">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="12550974">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>&nbsp;&nbsp;1</code>
+
+    <a href="/projects/1">0x03. Git</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20089"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/12550974">200.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="12550974">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="12550974">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/12550974">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="12512248">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>1102</code>
+
+    <a href="/projects/1102">0x02. vi</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20076"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/12512248">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="12512248">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="12512248">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/12512248">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="12380735">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>1101</code>
+
+    <a href="/projects/1101">0x01. Emacs</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20034"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/12380735">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="12380735">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="12380735">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/12380735">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="12345998">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>1100</code>
+
+    <a href="/projects/1100">0x00. Shell, navigation</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/20004"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Explicit Quiz</strong>
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/12345998">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="12345998">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="12345998">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/12345998">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="11934838">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>100020</code>
+
+    <a href="/projects/100020">The real buddies</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/19891"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Explicit Quiz</strong>
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/11934838">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="11934838">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="11934838">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/11934838">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="12147328">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>100018</code>
+
+    <a href="/projects/100018">Preserving your mental health &amp; Conquering imposter syndrome</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/19952"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Explicit Quiz</strong>
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/12147328">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="12147328">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="12147328">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/12147328">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="11986425">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>100017</code>
+
+    <a href="/projects/100017">Owning your Learning</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/19911"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Explicit Quiz</strong>
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/11986425">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="11986425">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="11986425">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/11986425">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="11490837">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>1106</code>
+
+    <a href="/projects/1106">0x01. Git</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/19735"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/11490837">200.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="11490837">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="11490837">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/11490837">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="11311376">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>100021</code>
+
+    <a href="/projects/100021">0x03. vi</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/19705"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/11311376">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="11311376">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="11311376">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/11311376">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="11268969">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>1104</code>
+
+    <a href="/projects/1104">0x02. Emacs</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/19703"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/11268969">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="11268969">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="11268969">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/11268969">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="11196024">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>100043</code>
+
+    <a href="/projects/100043">A tweet a day keeps the @julienbarbier42 far away</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/19693"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/11196024">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="11196024">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="11196024">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/11196024">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="10919215">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>1103</code>
+
+    <a href="/projects/1103">0x00. Shell, navigation</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/19626"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Explicit Quiz</strong>
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/10919215">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="10919215">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="10919215">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/10919215">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="11766390">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>100019</code>
+
+    <a href="/projects/100019">Grit Assignment Part 2</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/19828"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Explicit Quiz</strong>
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+      </td>
+      <td>
+          ✓
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/11766390">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="11766390">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="11766390">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/11766390">Show</a>
+            <a class="btn btn-sm btn-default" href="/corrections/11766390/correct">Manual review</a>
+        </td>
+    </tr>
+    <tr data-correction-id="11646091">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>100012</code>
+
+    <a href="/projects/100012">You and your learning community</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/19781"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Explicit Quiz</strong>
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+      </td>
+      <td>
+          ✓
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/11646091">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="11646091">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="11646091">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/11646091">Show</a>
+            <a class="btn btn-sm btn-default" href="/corrections/11646091/correct">Manual review</a>
+        </td>
+    </tr>
+    <tr data-correction-id="11436348">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>100011</code>
+
+    <a href="/projects/100011">Map your mind</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/19728"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Explicit Quiz</strong>
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+      </td>
+      <td>
+          ✓
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/11436348">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="11436348">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="11436348">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/11436348">Show</a>
+            <a class="btn btn-sm btn-default" href="/corrections/11436348/correct">Manual review</a>
+        </td>
+    </tr>
+    <tr data-correction-id="10864242">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>100010</code>
+
+    <a href="/projects/100010">Introduction to mindsets (Grit and growth mindsets)</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/19623"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Explicit Quiz</strong>
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+      </td>
+      <td>
+          ✓
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/10864242">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="10864242">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="10864242">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/10864242">Show</a>
+            <a class="btn btn-sm btn-default" href="/corrections/10864242/correct">Manual review</a>
+        </td>
+    </tr>
+    <tr data-correction-id="10673632">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>100009</code>
+
+    <a href="/projects/100009">Deep dive into the Intranet</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/19562"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Explicit Quiz</strong>
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/10673632">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="10673632">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="10673632">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/10673632">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="10608444">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>100008</code>
+
+    <a href="/projects/100008">Getting hooked on Slack</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/19555"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Explicit Quiz</strong>
+  </div>
+</div>
+</td>
+      <td>
+          ✓
+      </td>
+      <td>
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/10608444">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="10608444">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="10608444">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/10608444">Show</a>
+        </td>
+    </tr>
+    <tr data-correction-id="10547582">
+      <td><div style="display: flex;">
+
+    <div style="width: 100%;">
+
+
+    <code>100007</code>
+
+    <a href="/projects/100007">Welcome on board</a>
+
+      -
+      <a title="Dates and corrections" href="/batch_planning_items/19533"><i aria-hidden="true" class="fa fa-calendar-check-o "></i></a>
+      -
+      AFR-0223 cohort
+      -
+      Foundations
+
+
+      <br>
+      <span class="bpi-status">Project over </span>
+
+
+      <br>
+      <strong>Explicit Quiz</strong>
+      <br>
+      <strong>Checker in beta</strong>
+  </div>
+</div>
+</td>
+      <td>
+      </td>
+      <td>
+          ✓
+      </td>
+      <td class="percentage_correction">
+        <a href="/corrections/10547582">100.0%</a>
+      </td>
+      <td><a class="btn btn-default btn-xs correction_skip_toggle" data-correction-id="10547582">No</a></td>
+      <td><a class="btn btn-default btn-xs correction_cheating_toggle" data-correction-id="10547582">No</a></td>
+        <td>
+            <a class="btn btn-sm btn-default" href="/corrections/10547582">Show</a>
+            <a class="btn btn-sm btn-default" href="/corrections/10547582/correct">Manual review</a>
+        </td>
+    </tr>
+</table>
+
+        </div>
+
+      <div role="tabpanel" class="tab-pane gap" id="reviews_made">
+        <h3>Manual reviews made</h3>
+<table class="table table-hover table-condensed sm-gap">
+  <tr>
+    <td>Project</td>
+    <td>Corrected User</td>
+    <td>Manual Percentage</td>
+  </tr>
+
+    <tr data-correction-id="10528470">
+      <td class="col-md-8">
+        <div id="bpi_summary" data-bpi-id="19533">
+          <div class="spinner in-list always-displayed">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        </div>
+      </td>
+      <td><a href="/users/370637">Awatif YOUSFI</a></td>
+      <td class="percentage_correction">
+        <a href="/corrections/10528470">100.0%</a>
+      </td>
+    </tr>
+    <tr data-correction-id="10544691">
+      <td class="col-md-8">
+        <div id="bpi_summary" data-bpi-id="19533">
+          <div class="spinner in-list always-displayed">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        </div>
+      </td>
+      <td><a href="/users/377312">Fathi Hiba</a></td>
+      <td class="percentage_correction">
+        <a href="/corrections/10544691">100.0%</a>
+      </td>
+    </tr>
+    <tr data-correction-id="10588583">
+      <td class="col-md-8">
+        <div id="bpi_summary" data-bpi-id="19533">
+          <div class="spinner in-list always-displayed">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        </div>
+      </td>
+      <td><a href="/users/367425">fatima ouali</a></td>
+      <td class="percentage_correction">
+        <a href="/corrections/10588583">100.0%</a>
+      </td>
+    </tr>
+    <tr data-correction-id="10860724">
+      <td class="col-md-8">
+        <div id="bpi_summary" data-bpi-id="19623">
+          <div class="spinner in-list always-displayed">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        </div>
+      </td>
+      <td><a href="/users/379215">FATIMA EZZAHRA CHOURAK</a></td>
+      <td class="percentage_correction">
+        <a href="/corrections/10860724">100.0%</a>
+      </td>
+    </tr>
+    <tr data-correction-id="10861532">
+      <td class="col-md-8">
+        <div id="bpi_summary" data-bpi-id="19623">
+          <div class="spinner in-list always-displayed">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        </div>
+      </td>
+      <td><a href="/users/377312">Fathi Hiba</a></td>
+      <td class="percentage_correction">
+        <a href="/corrections/10861532">100.0%</a>
+      </td>
+    </tr>
+    <tr data-correction-id="10874917">
+      <td class="col-md-8">
+        <div id="bpi_summary" data-bpi-id="19623">
+          <div class="spinner in-list always-displayed">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        </div>
+      </td>
+      <td><a href="/users/375496">MOHAMED (@) MORAD</a></td>
+      <td class="percentage_correction">
+        <a href="/corrections/10874917">100.0%</a>
+      </td>
+    </tr>
+    <tr data-correction-id="11390719">
+      <td class="col-md-8">
+        <div id="bpi_summary" data-bpi-id="19728">
+          <div class="spinner in-list always-displayed">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        </div>
+      </td>
+      <td><a href="/users/378436">Rain ( Asma) Ezzarouali</a></td>
+      <td class="percentage_correction">
+        <a href="/corrections/11390719">100.0%</a>
+      </td>
+    </tr>
+    <tr data-correction-id="11429700">
+      <td class="col-md-8">
+        <div id="bpi_summary" data-bpi-id="19728">
+          <div class="spinner in-list always-displayed">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        </div>
+      </td>
+      <td><a href="/users/370637">Awatif YOUSFI</a></td>
+      <td class="percentage_correction">
+        <a href="/corrections/11429700">100.0%</a>
+      </td>
+    </tr>
+    <tr data-correction-id="11644333">
+      <td class="col-md-8">
+        <div id="bpi_summary" data-bpi-id="19781">
+          <div class="spinner in-list always-displayed">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        </div>
+      </td>
+      <td><a href="/users/379215">FATIMA EZZAHRA CHOURAK</a></td>
+      <td class="percentage_correction">
+        <a href="/corrections/11644333">100.0%</a>
+      </td>
+    </tr>
+    <tr data-correction-id="11670253">
+      <td class="col-md-8">
+        <div id="bpi_summary" data-bpi-id="19781">
+          <div class="spinner in-list always-displayed">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        </div>
+      </td>
+      <td><a href="/users/370040">Yahia Tijani</a></td>
+      <td class="percentage_correction">
+        <a href="/corrections/11670253">100.0%</a>
+      </td>
+    </tr>
+    <tr data-correction-id="11764634">
+      <td class="col-md-8">
+        <div id="bpi_summary" data-bpi-id="19828">
+          <div class="spinner in-list always-displayed">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        </div>
+      </td>
+      <td><a href="/users/379215">FATIMA EZZAHRA CHOURAK</a></td>
+      <td class="percentage_correction">
+        <a href="/corrections/11764634">100.0%</a>
+      </td>
+    </tr>
+    <tr data-correction-id="11765065">
+      <td class="col-md-8">
+        <div id="bpi_summary" data-bpi-id="19828">
+          <div class="spinner in-list always-displayed">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        </div>
+      </td>
+      <td><a href="/users/377312">Fathi Hiba</a></td>
+      <td class="percentage_correction">
+        <a href="/corrections/11765065">95.29%</a>
+      </td>
+    </tr>
+</table>
+
+      </div>
+
+      <div role="tabpanel" class="tab-pane gap" id="projects">
+        <p>
+  <strong>Optional unlocks (projects whose optional tasks were unlocked):</strong>
+  <ul>
+      <li>
+        <a href="/projects/1">0x03. Git</a>
+      </li>
+      <li>
+        <a href="/projects/205">0x00. Shell, basics</a>
+      </li>
+      <li>
+        <a href="/projects/207">0x01. Shell, permissions</a>
+      </li>
+      <li>
+        <a href="/projects/208">0x02. Shell, I/O Redirections and filters</a>
+      </li>
+      <li>
+        <a href="/projects/209">0x03. Shell, init files, variables and expansions</a>
+      </li>
+      <li>
+        <a href="/projects/212">0x00. C - Hello, World</a>
+      </li>
+      <li>
+        <a href="/projects/213">0x01. C - Variables, if, else, while</a>
+      </li>
+      <li>
+        <a href="/projects/214">0x02. C - Functions, nested loops</a>
+      </li>
+      <li>
+        <a href="/projects/215">0x04. C - More functions, more nested loops</a>
+      </li>
+      <li>
+        <a href="/projects/216">0x05. C - Pointers, arrays and strings</a>
+      </li>
+      <li>
+        <a href="/projects/217">0x06. C - More pointers, arrays and strings</a>
+      </li>
+      <li>
+        <a href="/projects/218">0x07. C - Even more pointers, arrays and strings</a>
+      </li>
+      <li>
+        <a href="/projects/1106">0x01. Git</a>
+      </li>
+  </ul>
+</p>
+
+<p><strong>Project progress</strong></p>
+<pre>{
+  &quot;100007&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      100002
+    ]
+  },
+  &quot;100008&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      100023
+    ]
+  },
+  &quot;100009&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      100018
+    ]
+  },
+  &quot;100010&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      100003
+    ]
+  },
+  &quot;1103&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      9737,
+      9739,
+      9738,
+      9740,
+      9741,
+      9742,
+      9743
+    ]
+  },
+  &quot;100043&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      100589,
+      100590,
+      100591,
+      100592
+    ]
+  },
+  &quot;100011&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      100004,
+      100005,
+      100006
+    ]
+  },
+  &quot;1104&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      9751,
+      9744,
+      9745,
+      9746,
+      9747,
+      9748,
+      9749,
+      9750
+    ]
+  },
+  &quot;100021&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      100010,
+      100011,
+      100012,
+      100013,
+      100014,
+      100015,
+      100016,
+      100017
+    ]
+  },
+  &quot;100012&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      100007
+    ]
+  },
+  &quot;100019&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      100008
+    ]
+  },
+  &quot;1106&quot;: {
+    &quot;percentage&quot;: 200,
+    &quot;tasks_done&quot;: [
+      9768,
+      9767,
+      9761,
+      9762,
+      9763,
+      9764,
+      9765
+    ]
+  },
+  &quot;100017&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      100019
+    ]
+  },
+  &quot;100020&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      100021
+    ]
+  },
+  &quot;100018&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      100020
+    ]
+  },
+  &quot;1100&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      9713,
+      9714,
+      9715,
+      9716,
+      9717,
+      9718,
+      9719
+    ]
+  },
+  &quot;1101&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      9728,
+      9721,
+      9722,
+      9723,
+      9724,
+      9725,
+      9726,
+      9727
+    ]
+  },
+  &quot;1102&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      9729,
+      9730,
+      9731,
+      9732,
+      9733,
+      9734,
+      9735,
+      9736
+    ]
+  },
+  &quot;1&quot;: {
+    &quot;percentage&quot;: 200,
+    &quot;tasks_done&quot;: [
+      9720,
+      3903,
+      742,
+      743,
+      744,
+      745,
+      746
+    ]
+  },
+  &quot;205&quot;: {
+    &quot;percentage&quot;: 200,
+    &quot;tasks_done&quot;: [
+      3,
+      11,
+      748,
+      17,
+      25,
+      18,
+      20,
+      21,
+      22,
+      23,
+      749,
+      750,
+      751,
+      752,
+      753,
+      754,
+      755,
+      756,
+      37,
+      757
+    ]
+  },
+  &quot;647&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      4888
+    ]
+  },
+  &quot;207&quot;: {
+    &quot;percentage&quot;: 200,
+    &quot;tasks_done&quot;: [
+      758,
+      1,
+      759,
+      760,
+      775,
+      761,
+      762,
+      763,
+      764,
+      765,
+      766,
+      767,
+      768,
+      769,
+      770,
+      771,
+      772,
+      773
+    ]
+  },
+  &quot;210&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      3902,
+      808
+    ]
+  },
+  &quot;208&quot;: {
+    &quot;percentage&quot;: 200,
+    &quot;tasks_done&quot;: [
+      5,
+      776,
+      12,
+      14,
+      15,
+      16,
+      777,
+      778,
+      779,
+      780,
+      40,
+      781,
+      782,
+      26,
+      27,
+      28,
+      29,
+      30,
+      786,
+      783,
+      784,
+      785,
+      788,
+      787,
+      39,
+      38,
+      46
+    ]
+  },
+  &quot;209&quot;: {
+    &quot;percentage&quot;: 200,
+    &quot;tasks_done&quot;: [
+      789,
+      790,
+      791,
+      792,
+      793,
+      795,
+      794,
+      822,
+      797,
+      79,
+      78,
+      77,
+      76,
+      796,
+      80,
+      42,
+      43,
+      81
+    ]
+  },
+  &quot;212&quot;: {
+    &quot;percentage&quot;: 200,
+    &quot;tasks_done&quot;: [
+      824,
+      825,
+      826,
+      827,
+      51,
+      53,
+      54,
+      830,
+      828
+    ]
+  },
+  &quot;213&quot;: {
+    &quot;percentage&quot;: 200,
+    &quot;tasks_done&quot;: [
+      831,
+      832,
+      833,
+      845,
+      835,
+      836,
+      837,
+      838,
+      839,
+      840,
+      842,
+      843,
+      844
+    ]
+  },
+  &quot;214&quot;: {
+    &quot;percentage&quot;: 200,
+    &quot;tasks_done&quot;: [
+      846,
+      847,
+      848,
+      849,
+      850,
+      851,
+      852,
+      853,
+      854,
+      855,
+      856,
+      857,
+      862,
+      861,
+      860,
+      859,
+      858
+    ]
+  },
+  &quot;215&quot;: {
+    &quot;percentage&quot;: 200,
+    &quot;tasks_done&quot;: [
+      863,
+      864,
+      865,
+      866,
+      868,
+      869,
+      874,
+      872,
+      871,
+      870,
+      867,
+      873,
+      875
+    ]
+  },
+  &quot;539&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      3904,
+      3906,
+      3935,
+      3905
+    ]
+  },
+  &quot;216&quot;: {
+    &quot;percentage&quot;: 200,
+    &quot;tasks_done&quot;: [
+      877,
+      878,
+      879,
+      880,
+      881,
+      882,
+      886,
+      885,
+      888,
+      887,
+      883,
+      884
+    ]
+  },
+  &quot;217&quot;: {
+    &quot;percentage&quot;: 200,
+    &quot;tasks_done&quot;: [
+      889,
+      890,
+      891,
+      892,
+      893,
+      894,
+      895,
+      896,
+      897,
+      898,
+      900,
+      901,
+      899
+    ]
+  },
+  &quot;100044&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      100593,
+      100597,
+      100594,
+      100596
+    ]
+  },
+  &quot;429&quot;: {
+    &quot;percentage&quot;: 100,
+    &quot;tasks_done&quot;: [
+      4683
+    ]
+  },
+  &quot;218&quot;: {
+    &quot;percentage&quot;: 200,
+    &quot;tasks_done&quot;: [
+      903,
+      904,
+      905,
+      906,
+      907,
+      908,
+      912,
+      911,
+      913,
+      902
+    ]
+  }
+}</pre>
+
+<p><strong>Correction requests stats</strong></p>
+<pre>{
+  &quot;Test review&quot;: {
+    &quot;100023&quot;: 2,
+    &quot;100018&quot;: 1,
+    &quot;9737&quot;: 4,
+    &quot;9739&quot;: 1,
+    &quot;9738&quot;: 1,
+    &quot;9740&quot;: 1,
+    &quot;9741&quot;: 1,
+    &quot;9742&quot;: 1,
+    &quot;9743&quot;: 1,
+    &quot;100589&quot;: 1,
+    &quot;100590&quot;: 1,
+    &quot;100592&quot;: 1,
+    &quot;9751&quot;: 1,
+    &quot;9744&quot;: 5,
+    &quot;9745&quot;: 2,
+    &quot;9746&quot;: 1,
+    &quot;9747&quot;: 1,
+    &quot;9748&quot;: 1,
+    &quot;9749&quot;: 3,
+    &quot;9750&quot;: 1,
+    &quot;100010&quot;: 1,
+    &quot;100011&quot;: 1,
+    &quot;100012&quot;: 1,
+    &quot;100013&quot;: 1,
+    &quot;100014&quot;: 1,
+    &quot;100015&quot;: 2,
+    &quot;100016&quot;: 1,
+    &quot;100017&quot;: 1,
+    &quot;9768&quot;: 1,
+    &quot;9767&quot;: 3,
+    &quot;9761&quot;: 5,
+    &quot;9762&quot;: 1,
+    &quot;9763&quot;: 2,
+    &quot;9764&quot;: 1,
+    &quot;9765&quot;: 1,
+    &quot;100019&quot;: 1,
+    &quot;100021&quot;: 1
+  },
+  &quot;Auto review&quot;: 39
+}</pre>
+
+      </div>
+
+      <div role="tabpanel" class="tab-pane gap" id="billing">
+        <h3>Billing statuses</h3>
+
+<table class="table table-striped sortable">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td>04/2023</td>
+        <td>Inactive</td>
+      </tr>
+      <tr>
+        <td>03/2023</td>
+        <td>Active in curriculum [1]-foundations</td>
+      </tr>
+      <tr>
+        <td>02/2023</td>
+        <td>Active in curriculum [1]-foundations</td>
+      </tr>
+  </tbody>
+</table>
+
+      </div>
+
+      <div role="tabpanel" class="tab-pane gap" id="user_journey">
+          <div data-react-class="user_journey/Container" data-react-props="{&quot;csrfToken&quot;:&quot;HvxQi5tsJSUJ1mDjtJh3ivLEA2vz85kXedHpnO9NcW4GnHC_csa_TccrjMJQz0KZmJMeacNC4KBAgDhzXcTwtg&quot;,&quot;sessionsURI&quot;:&quot;/users/378297/user_journey/sessions.json&quot;}" data-react-cache-id="user_journey/Container-0"></div>
+
+      </div>
+</div>
+
+<br>
+
+  </div>
+</div>
+
+
+      </article>
+
+      <div class="copyright">Copyright © 2023 ALX, All rights reserved.</div>
+
+    </main>
+
+        <button class="btn btn-primary" id="search-button" data-search-active="false" data-toggle="modal" data-target="#search-modal">
+  <i aria-hidden="true" class="fa fa-search "></i>
+  <i aria-hidden="true" class="fa fa-window-minimize "></i>
+</button>
+
+        <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-labelledby="search-modal-label">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div id="search-bar-container">
+    <input id="search-bar"
+            type="text"
+            name="hbtn-search-bar"
+            placeholder="✨Start search by typing in this field✨">
+</div>
+
+            </div>
+            <div class="modal-body">
+                <div id="modal-spinner" class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div id="search-results-container">
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+          <nav class="navbar navbar-inverse gap navbar-admin">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-admin" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Admin</a>
+    </div>
+    <div id="navbar-admin" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li class="dropup">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">School <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/school_locations">School locations</a></li>
+                    <li><a href="/week_offs">Week off</a></li>
+                    <li><a href="/day_offs">Day off</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="/activity_logs">Activity Logs</a></li>
+                </ul>
+            </li>
+            <li class="dropup">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <li><a href="/users">Users</a></li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-submenu-link" href="#">HR<i aria-hidden="true" class="fa fa-caret-right "></i></a>
+                        <ul class="dropdown-menu sub">
+                            <li><a href="/user_report_types">User report types</a></li>
+                            <li><a href="/user_reports">User reports</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/user_non_pairs">User non pairs</a></li>
+                            <li><a href="/user_school_locations">User school locations</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/user_transfer_requests">Pending user transfer requests</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/user_working_statuses">User working statuses</a></li>
+                            <li><a href="/user_working_status_notes">User working status notes</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/user_payment_statuses">User Payment Statuses</a></li>
+                            <li><a href="/user_payment_status_notes">User Payment Status Notes</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/user_actives">User actives</a></li>
+                            <li><a href="/user_month_activities">User monthly activities</a></li>
+                            <li><a href="/user_month_project_activities">User monthly project activities</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/user_path_choices">User path choices</a></li>
+                        </ul>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-submenu-link" href="#">Curriculum<i aria-hidden="true" class="fa fa-caret-right "></i></a>
+                        <ul class="dropdown-menu sub">
+                            <li><a href="/user_curriculum_statuses">User curriculum statuses</a></li>
+                            <li><a href="/user_track_levels">User level by track</a></li>
+                            <li><a href="/user_track_accesses">User access by track</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/user_completed_nps_quiz_items">User completed NPS quiz items</a></li>
+                            <li><a href="/user_score_reports">User score reports</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/user_tutors">User tutors</a></li>
+                            <li role="separator" class="divider"></li>
+                                <li><a href="/user_tool_coupons">User tool coupons</a></li>
+                        </ul>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-submenu-link" href="#">Permissions<i aria-hidden="true" class="fa fa-caret-right "></i></a>
+                        <ul class="dropdown-menu sub">
+                            <li><a href="/curriculum_extra_permissions">Curriculum extra permissions</a></li>
+                            <li><a href="/concept_extra_permissions">Concept extra permissions</a></li>
+                            <li><a href="/project_extra_permissions">Project extra permissions</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropup">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cohort <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/batches">Cohorts</a></li>
+                    <li><a href="/batch_user_teacher_assistants">Cohort student tutors</a></li>
+                    <li><a href="/batch_curriculums">Cohort curriculums</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="/batch_holidays">Cohort holidays</a></li>
+                    <li><a href="/batch_tracks">Cohort tracks</a></li>
+                    <li><a href="/batch_blocks">Cohort blocks</a></li>
+                    <li><a href="/batch_projects">Cohort projects</a></li>
+                    <li><a href="/batch_peer_learning_days">Cohort peer learning days</a></li>
+                    <li><a href="/batch_reefineries">Cohort mock interviews</a></li>
+                    <li><a href="/batch_evaluation_quizzes">Cohort evaluation quizzes</a></li>
+                    <li><a href="/batch_nps_quizzes">Cohort NPS quizzes</a></li>
+                    <li><a href="/batch_score_milestones">Cohort score milestones</a></li>
+                </ul>
+            </li>
+            <li class="dropup">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Curriculum <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/curriculums">Curriculums</a></li>
+                    <li><a href="/tags">Tags</a></li>
+                    <li><a href="/holidays">Holidays</a></li>
+                    <li><a href="/tracks">Tracks</a></li>
+                    <li><a href="/blocks">Blocks</a></li>
+                    <li><a href="/skills">Skills</a></li>
+                    <li><a href="/score_milestones">Score Milestones</a></li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-submenu-link" href="#">Projects<i aria-hidden="true" class="fa fa-caret-right "></i></a>
+                        <ul class="dropdown-menu sub">
+                            <li><a href="/concepts">Concepts</a></li>
+                            <li><a href="/projects">Projects</a></li>
+                            <li><a href="/project_reminders">Project Reminders</a></li>
+                            <li><a href="/tasks">Tasks</a></li>
+                            <li><a href="/checks">Checks</a></li>
+                            <li><a href="/check_commands">Check commands</a></li>
+                            <li><a href="/quiz_questions">Quiz questions</a></li>
+                        </ul>
+                    </li>
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-submenu-link" href="#">Video on demand<i aria-hidden="true" class="fa fa-caret-right "></i></a>
+                            <ul class="dropdown-menu sub">
+                                <li><a href="/videos">Videos</a></li>
+                                <li><a href="/video_releases">Video releases</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/tool_coupons">Tool coupons</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-submenu-link" href="#">Quizzes<i aria-hidden="true" class="fa fa-caret-right "></i></a>
+                        <ul class="dropdown-menu sub">
+                            <li><a href="/evaluation_quizzes">Evaluation quizzes</a></li>
+                            <li><a href="/evaluation_quiz_questions">Evaluation quiz questions</a></li>
+                            <li><a href="/nps_quizzes">NPS quizzes</a></li>
+                        </ul>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-submenu-link" href="#">Mock interviews<i aria-hidden="true" class="fa fa-caret-right "></i></a>
+                        <ul class="dropdown-menu sub">
+                            <li><a href="/reefineries">Mock interviews</a></li>
+                            <li><a href="/reefinery_topics">Mock interview Topics</a></li>
+                            <li><a href="/reefinery_topics_tasks">Mock interview Topic Tasks</a></li>
+                        </ul>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="/peer_learning_days">Peer learning days</a></li>
+                    <li><a href="/copyright_project_external_links">Copyright project external links</a></li>
+                    <li><a href="/resource_links">Resource links</a></li>
+                </ul>
+            </li>
+            <li class="dropup">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cohort curriculum <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/batch_planning_items">Cohort planning items</a></li>
+                    <li><a href="/batch_peer_learning_day_items">Cohort peer learning day items</a></li>
+                    <li><a href="/project_reminder_planning_items">Project reminder planning items</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="/batch_evaluation_quiz_items">Cohort evaluation quiz items</a></li>
+                    <li><a href="/evaluation_quiz_corrections">Evaluation quiz corrections</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="/batch_nps_quiz_items">Cohort NPS quiz items</a></li>
+                    <li><a href="/nps_quiz_results">NPS quiz results</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="/batch_reefinery_items">Cohort mock interview items</a></li>
+                    <li><a href="/reefinery_corrections">Mock interview corrections</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="/batch_score_milestone_items">Cohort score milestone items</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="/captain_log_sessions">Captain&#39;s log sessions</a></li>
+                    <li><a href="/captain_logs">Captain&#39;s logs</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="/tasks/all_task_urls">Task URLs</a></li>
+                    <li><a href="/quiz_submits">Quiz submits</a></li>
+                    <li><a href="/resource_link_users">Resource link users</a></li>
+                    <li><a href="/link_trackings">Link trackings</a></li>
+                        <li><a href="/user_containers">User containers</a></li>
+                    <li><a href="/correction_requests">Correction requests</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/batch_planning_items/execute_release_planning_items">Script: execute release planning items</a></li>
+                </ul>
+            </li>
+                <li class="dropup">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings">Settings</a></li>
+                        <li><a href="/dashboards/versioning_models">Versioning models</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/check_docker_images">Check - Docker images</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/container_providers">Container providers</a></li>
+                            <li><a href="/container_specs">Container specs</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/servers">Servers</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/surveys">Surveys</a></li>
+                        <li><a href="/batch_surveys">Cohort surveys</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/attachments">Attachments</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/video_rooms">Video rooms</a></li>
+                            <li><a href="/video_room_users">Video room users</a></li>
+                            <li><a href="/video_room_batches">Video room cohorts</a></li>
+                            <li><a href="/video_room_school_locations">Video room school locations</a></li>
+                            <li><a href="/video_room_events">Video room events</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/servers/execute_fetch_missing_ip">Script: fetch missing IP</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/api_tos_versions">APIs Terms of Service</a></li>
+                            <li><a href="/api_credentials">API Credentials</a></li>
+                    </ul>
+                </li>
+        </ul>
+    </div><!--/.nav-collapse -->
+</nav>
+
+
+        <input type="hidden" id="hbtn-upload-images-missing" value='/images/missing/file.png'>
+<div class="modal fade" id="uploaderModal" tabindex="-1" role="dialog" aria-labelledby="uploaderModalLabel" aria-hidden="true" data-can-delete="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Upload</h4>
+        </div>
+        <div class="modal-body">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active" role="presentation">
+                    <a href="#pills-upload" aria-controls="organization" role="tab" data-toggle="tab">Upload</a>
+                </li>
+                <li class="" role="presentation">
+                    <a href="#pills-gallery" aria-controls="organization" role="tab" data-toggle="tab">Gallery</a>
+                </li>
+                <li class="" role="presentation">
+                    <a href="#pills-url" aria-controls="organization" role="tab" data-toggle="tab">URL</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="pills-upload" role="tabpanel" aria-labelledby="pills-upload-tab">
+                    <div class="UppyDashboard" id="uploaderUppyDashboard"></div>
+                    <script>
+                        const uppy = Uppy.Core({
+                            debug: false,
+                            autoProceed: false,
+                            restrictions: {
+                                maxFileSize: 50000000,
+                                maxNumberOfFiles: 50,
+                                minNumberOfFiles: 1
+                                // allowedFileTypes: ['image/*', 'text/*', 'application/*']
+                            }
+                        })
+                        .use(Uppy.Dashboard, {
+                            trigger: '.UppyModalOpenerBtn',
+                            inline: true,
+                            target: '#uploaderUppyDashboard',
+                            replaceTargetContent: true,
+                            showLinkToFileUploadResult: false,
+                            note: 'Upload one file at a time (up to 50 MB)',
+                            maxHeight: 450,
+                            metaFields: [
+                                { id: 'caption', name: 'Caption', placeholder: 'describe what the file is about' }
+                            ]
+                        })
+                        .use(Uppy.XHRUpload, {
+                            endpoint: '/uploads.json',
+                            method: 'put',
+                            formData: true,
+                            bundle: false,
+                            headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') }
+                        })
+                        .run()
+                        .on('upload-success', (file, body) => {
+                            fileId = file.id
+                            liID = "#uppy_"+fileId.replace("/", "\\/")
+                            liImgWrapEl = $(liID + " .uppy-DashboardItem-previewInnerWrap")
+
+                            divClickImg = $('<div class="uppy-new-upload-img-layer">')
+                            divClickImg.append($('<i class="fa fa-plus-circle"></i>'))
+                            divClickImg.data('s3_path', body.s3_path)
+                            divClickImg.data('filetype', body.filetype)
+                            divClickImg.data('filename', body.filename)
+                            liImgWrapEl.append(divClickImg)
+
+                            divClickImg.click(function(e) {
+                                s3Path = $(this).data('s3_path')
+                                filetype = $(this).data('filetype')
+                                filename = $(this).data('filename')
+                                $(document).trigger('addFileToMarkdownEvent', [filename, filetype, s3Path])
+                            });
+
+                            $(document).trigger('refreshGalleryEvent')
+                        })
+
+                        $(document).on('upload-reset-modal', (e) => {
+                            uppy.reset()
+                        })
+                    </script>
+                </div>
+                <div class="tab-pane" id="pills-gallery" role="tabpanel" aria-labelledby="pills-gallery-tab">
+
+                    <div class="well gallery-filters">
+
+                        <span class="gallery-filters-type">
+                            <label for="gallery-filters-type">Type</label>
+                            <select class="custom-select" id="gallery-filters-type">
+                                <option selected value="All">All</option>
+                                    <option value="Images">Images</option>
+                                    <option value="Videos">Videos</option>
+                                    <option value="Text">Text</option>
+                                <option value="Misc">Misc</option>
+                            </select>
+                        </span>
+
+                        |
+
+                        <span class="gallery-filters-nb-elements">
+                            <label for="gallery-filters-size">Show</label>
+                            <select class="custom-select" id="gallery-filters-size">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option selected value="50">50</option>
+                            </select>
+                            <label for="gallery-filters-size">elements</label>
+                        </span>
+
+                        |
+
+                        <button class="pageRefresh btn btn-primary">
+                            Refresh
+                        </button>
+
+                    </div>
+
+                    <div id="image-gallery"></div>
+                    <center>
+                        <p class="errorMessage">Nothing found</p>
+                        <button class="pageNext btn btn-default">Load more</button>
+                    </center>
+                    <div class="spinner gap" id="gallery-spinner">
+                        <div class="bounce1"></div>
+                        <div class="bounce2"></div>
+                        <div class="bounce3"></div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="pills-url" role="tabpanel" aria-labelledby="pills-url-tab">
+                    <div class="well upload-url-container">
+                        <input class="form-control" type="text" name="upload_url_field" id="upload_url_field" placeholder="Enter the URL of media you want to upload (max 50MB)">
+                        <a class="btn btn-primary" id="upload_url_field_btn">Upload</a>
+                    </div>
+
+                    <div class="spinner gap" id="url-upload-spinner">
+                        <div class="bounce1"></div>
+                        <div class="bounce2"></div>
+                        <div class="bounce3"></div>
+                    </div>
+
+                    <div class="resulting-img-container">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+        <div class="modal fade" id="checkCommandDynamicValuesModal" tabindex="-1" role="dialog" aria-labelledby="checkCommandDynamicValuesModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Check command - Dynamic values</h4>
+        </div>
+        <div class="modal-body">
+            <p>Some commands should be linked to the user linked to the correction request - please find here the list of all dynamics values:</p>
+            <ul>
+                <li><strong>User info</strong>:
+                    <ul>
+                        <li><code>#student.id</code>: replaced by the user ID</li>
+                        <li><code>#student.github_username</code>: replaced by the user GitHub username</li>
+                    </ul>
+                </li>
+                <li><strong>Sys admin</strong>:
+                    <ul>
+                        <li><code>#student.website</code>: replaced by the user Website URL</li>
+                        <li><code>#student.ssh_public_key</code>: replaced by the user SSH Public key</li>
+                        <li><code>#student.datadog_api_key</code>: replaced by the user Datadog API Key</li>
+                        <li><code>#student.datadog_application_key</code>: replaced by the user Datadog Application Key</li>
+                        <li><code>#student.web-01</code>: replaced by the Public IP of the web-01 server of the user</li>
+                        <li><code>#student.web-02</code>: replaced by the Public IP of the web-02 server of the user</li>
+                        <li><code>#student.lb-01</code>: replaced by the Public IP of the lb-01 server of the user</li>
+                    </ul>
+                </li>
+                <li><strong>Container (sandbox) linked to this task and the user</strong>: <em>(not supported if the Task has multiple containers linked to it)</em>
+                    <ul>
+                        <li><code>#student.container_host</code>: replaced by the Public IP of the container</li>
+                        <li><code>#student.container_user</code>: replaced by the name of the user of the container</li>
+                        <li><code>#student.container_pwd</code>: replaced by the password to connect to the container</li>
+                    </ul>
+                </li>
+                <li><strong>Project</strong>:
+                    <ul>
+                        <li><code>#project.quiz_passed</code>: replaced by <code>1</code> if the user passed the project quiz - otherwise <code>0</code></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="modal fade" id="markdownGuideModal" tabindex="-1" role="dialog" aria-labelledby="markdownGuideModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Markdown Guide</h4>
+        </div>
+        <div class="modal-body">
+            <h4>Emphasis</h4>
+<pre>**<strong>bold</strong>**
+*<em>italics</em>*
+~~<strike>strikethrough</strike>~~</pre>
+<h4>Headers</h4>
+<pre># Big header
+## Medium header
+### Small header
+#### Tiny header</pre>
+<h4>Lists</h4>
+<pre>* Generic list item
+* Generic list item
+* Generic list item
+
+1. Numbered list item
+2. Numbered list item
+3. Numbered list item</pre>
+<h4>Links</h4>
+<pre>[Text to display](http://www.example.com)</pre>
+<h4>Quotes</h4>
+<pre>> This is a quote.
+> It can span multiple lines!</pre>
+<h4>Images</h4>
+<p>CSS style available: <code>width, height, opacity</code></p>
+<pre>![](http://www.example.com/image.jpg)
+![](http://www.example.com/image.jpg | width: 200px)
+![](http://www.example.com/image.jpg | height: 124px | width: 80px | opacity: 0.6)
+</pre>
+<h4>Tables</h4>
+<pre>| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John     | Doe      | Male     |
+| Mary     | Smith    | Female   |
+
+<em>Or without aligning the columns...</em>
+
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John | Doe | Male |
+| Mary | Smith | Female |
+</pre>
+<h4>Displaying code</h4>
+<pre>`var example = "hello!";`
+
+<em>Or spanning multiple lines...</em>
+
+```
+var example = "hello!";
+alert(example);
+```</pre>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+        
+  </body>
+</html>
