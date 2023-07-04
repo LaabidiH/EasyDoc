@@ -1,0 +1,103 @@
+{% extends 'base_M.html' %}
+{% load static %}
+{% block content_M %}
+<!-- Main content_M -->
+<div class="card card-primary" style="margin-left:200px; width: 700px">
+    <div class="card-header">
+        <h3 class="card-title">Remplissez ce formulaire</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form action="{% url 'generate_pdf' %}" method="POST" onsubmit="return validateForm()" >
+        {% csrf_token %}
+        <div class="card-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">nom et prénom du patient</label>
+                <input type="text" class="form-control" id="NomPrenom" name="NomPrenom" >
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Date d'entrée</label>
+                <input type="date" class="form-control" id="DateEntree" name="DateEntree" >
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Date de sortie</label>
+                <input type="date" class="form-control" id="DateSortie" name="DateSortie" >
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">N°d'Admission</label>
+                <input type="number" class="form-control" id="Admission" name="Admission" >
+            </div>
+            <div class="form-group">
+                <label>Service</label>
+                <select class="form-control select2bs4" style="width: 100%;">
+                  <option selected="selected">sélectionner service</option>
+                  <option>matérnité</option>
+                  <option>chirurgir</option>
+                  <option>pédiatrie</option>
+                  <option>médecine</option>
+                </select>
+              </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Motif d'hospitalisation</label>
+                <textarea  name="Motif" rows="4" cols="50" id="Motif" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Compte rendu d'hospitalisation</label>
+                <textarea  name="CompteRendu" rows="4" cols="50" id="CompteRendu" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Compte rendu Opératoire</label>
+                <textarea  name="CompteOperatoire" rows="4" cols="50" id="CompteOperatoire" class="form-control"></textarea>
+            </div>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Generate PDF</button>
+        </div>
+    </form>
+</div>
+
+<!-- /.card-body -->
+<script>
+    function validateForm() {
+        // Retrieve form data
+        var nomPrenom = document.getElementById("NomPrenom").value;
+        var dateEntree = document.getElementById("DateEntree").value;
+        var dateSortie = document.getElementById("DateSortie").value;
+        var admission = document.getElementById("Admission").value;
+        var service = document.getElementById("Service").value;
+    
+        // Perform validation
+        if (nomPrenom === "") {
+            alert("Please enter the patient's name and surname.");
+            return false;
+        }
+        if (dateEntree === "") {
+            alert("Please enter the date of entry.");
+            return false;
+        }
+        if (dateSortie === "") {
+            alert("Please enter the date of discharge.");
+            return false;
+        }
+        if (admission === "") {
+            alert("Please enter the admission number.");
+            return false;
+        }
+        if (service === "") {
+            alert("Please enter the service.");
+            return false;
+        }
+        if (dateEntree === dateSortie) {
+            alert("The date of entry cannot be the same as the date of discharge.");
+            return false;
+        }
+    
+        // Validation passed
+        return true;
+    }
+    </script>
+    
+
+<!-- /.content -->
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'base_M.html' %}
+{% load static %} 
+
+
+  {% block menus %}
+    {% include '_nav.html' with title1="Archive des dossiers " title2="" %}
+  {% endblock %}
+
+
+{% block content_M %}
+<!-- Main content -->
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Les plis confidentiel en attente de Remplissez</h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <table id="example1" class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Nom Prénom</th>
+          <th>IPP</th>
+          <th>CIN</th>
+          <th>Remplissage</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for dossier in data %}
+        <tr>
+          <td class="">{{ dossier.nom }}</td>
+          <td class="">{{ dossier.ipp }}</td>
+          <td class="">{{ dossier.cin }}</td>
+          <td>
+            <a href="{% url 'home_M' %}?dossier_id={{ dossier.id }}" class="btn btn-primary">Remplir formulaire</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr>
+          <th class="">Nom Prénom</th>
+          <th class="">IPP</th>
+          <th class="">CIN</th>
+          <th>Remplissage</th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <!-- /.card-body -->
+</div>
+<!-- /.content -->
+{% endblock %}
+{% block scripts %}
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+{% endblock %}

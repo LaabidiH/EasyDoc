@@ -1,0 +1,160 @@
+{% load static %}
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <!-- Brand Logo -->
+  <a href="{% url 'home' %}" class="brand-link">
+    <img src="{% static 'img/EasyDocLogo.png' %}" alt="EasyDoc Logo" class="brand-image img-circle elevation-3"
+      style="opacity: .8">
+    <span class="brand-text font-weight-light">EasyDoc</span>
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <img src="{% static 'img/user.png' %}" class="img-circle elevation-2" alt="User Image">
+      </div>
+      <div class="info">
+        <a href="#" class="d-block">{{role}}</a>
+      </div>
+    </div>
+
+    <!-- SidebarSearch Form -->
+    <div class="form-inline">
+      <div class="input-group" data-widget="sidebar-search">
+        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-sidebar">
+            <i class="fas fa-search fa-fw"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
+                 with font-awesome or any other icon font library -->
+        <li class="nav-item menu-open">
+          <a href="#" class="nav-link active">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              Gestion des comptes
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{% url 'home' %}" class="nav-link active">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Les comptes en attente</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'comptes_actives' %}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Les comptes activés </p>
+              </a>
+            </li>
+            
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-chart-pie"></i>
+            <p>
+              Archive des dossiers
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{% url 'archive_dossiers' %}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Archive hospitalisation</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'dossiers_consultation' %}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Archive consultation</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'radio_dossiers' %}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Archive radiologie</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'bio_dossiers' %}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Archive biologie</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+              Les dossiers prets
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{% url 'dossiers_prets_hospitalisation' %}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Hospitalisation</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'dossiers_prets_consultation' %}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Consultation</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'dossiers_prets_radiologie' %}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Radiologie</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'dossiers_prets_biologie' %}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Biologie</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'dossier_accomplir' %}" class="nav-link">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+              Les dossiers à accomplir
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'contact' %}" class="nav-link">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+              Contact
+            </p>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+    <div class="nav-link" style="margin-top:170px ; margin-left: 113px;">
+      <a href="{% url 'logout' %}" class="btn btn-info">Déconnexion</a>
+    </div>
+  </div>
+
+  <!-- /.sidebar -->
+</aside>

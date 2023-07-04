@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+
+  {% block menus %}
+  {% with urlname1="archive_dossiers" urlname2="archive_dossiers" %}
+  {% include '_nav.html' with title1="Archive des dossiers " title2="" %}
+  {% endwith %}
+  {% include '_sidebar.html' with role=request.session.user_service %}
+  {% endblock %}
+
+
+{% block content %}
+<!-- Main content -->
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Les dossiers d'acte biologie</h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <table id="example1" class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>cin assuré</th>
+          <th>IPP</th>
+          <th>Date</th>
+          <th>Service</th>
+          <th>Afficher plus</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% csrf_token %}
+        {% for user in data %}
+        <tr>
+          <td class="">{{user.cin_assurant}}</td>
+          <td class="">{{user.ipp}}</td>
+          <td class="">{{user.date}}</td>
+          <td class="">{{user.service}}</td>
+          <td>
+            <a href="#" class="btn btn-danger">voir plus</a>
+          </td>
+        </tr>
+      </tr>
+      {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>cin assuré</th>
+          <th>IPP</th>
+          <th>Date</th>
+          <th>Service</th>
+          <th>Afficher plus</th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <!-- /.card-body -->
+</div>
+<!-- /.content -->
+{% endblock %}
+{% block scripts %}
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+{% endblock %}

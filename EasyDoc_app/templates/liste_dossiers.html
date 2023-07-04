@@ -1,0 +1,200 @@
+{% extends 's_base.html' %}
+{% load static %}
+
+{% block menus %}
+  {% with urlname1="saa" urlname2="saa2" %}
+    {% include '_nav.html' with title1="Ajouter une action" title2="Ajouter nouveau dossier" %}
+  {% endwith %}
+  
+  {% include 'saa_sidebar.html' with role=request.session.user_service %}
+{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Les dossiers médicaux</h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    {% if error_message %}
+    <div class="error_message" style="background-color: rgb(243, 242, 225); height: 28px;">
+        <h3 class="card-title" style="margin-top: 3px; margin-left: 8px; font-weight: bold; color:rgb(250, 3, 3);">{{ error_message }}</h3>
+    </div>
+    {% endif %}
+    <table id="example1" class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>cin assuré</th>
+          <th>IPP</th>
+          <th>CNSS</th>
+          <th>Photo de CIN</th>
+          <th>Photo de CNSS</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% csrf_token %}
+        {% for row in data %}
+        <tr>
+          <td class="cinAssure">{{ row.cinAssure }}</td>
+          <td class="ipp">{{ row.ipp }}</td>
+          <td class="cnss">{{ row.cnss }}</td>
+          <td>
+            <a href="{{ row.phCIN.url }}" target="_blank" class="phCIN">{{ row.phCIN.name }}</a>
+          </td>
+          <td>
+            <a href="{{ row.phCNSS.url }}" target="_blank" class="phCNSS">{{ row.phCNSS.name }}</a>
+          </td>
+          <td>
+            <a href="#" class="btn btn-info btn-modifier" data-toggle="modal" data-target="#modifierModal">Modifier</a>
+            <a href="#" class="btn btn-danger btn-delete">Supprimer</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>cin assuré</th>
+          <th>IPP</th>
+          <th>CNSS</th>
+          <th>Photo de CIN</th>
+          <th>Photo de CNSS</th>
+          <th>Action</th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <!-- /.card-body -->
+</div>
+
+<!-- Fenêtre modale de modification -->
+<div class="modal fade" id="modifierModal" tabindex="-1" role="dialog" aria-labelledby="modifierModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modifierModalLabel">Modifier le dossier</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" enctype="multipart/form-data" name="modifierForm" id="modifierForm" action="{% url 'modifier_dossier' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="inputCinAssure">CIN Assuré</label>
+            <input type="text" class="form-control" id="inputCinAssure" name="cinAssure" value="" readonly>
+          </div>
+          <div class="form-group">
+            <label for="inputIPP">IPP</label>
+            <input type="text" class="form-control" id="inputIPP" name="ipp" value="" readonly>
+          </div>
+          <div class="form-group">
+            <label for="inputCNSS">CNSS</label>
+            <input type="text" class="form-control" id="inputCNSS" name="cnss" value="">
+          </div>
+          <div class="form-group">
+            <label for="inputphCIN">Photo de CIN</label>
+            <a href="#" id="phCINLink" target="_blank"></a>
+            <p>ajouter Nouveau</p>
+            <input type="file" class="form-control" name="NewphCIN" id="NewphCIN">
+          </div>
+          <div class="form-group">
+            <label for="inputphCNSS">Photo de CNSS</label>
+            <a href="#" id="phCNSSLink" target="_blank"></a><br>
+            <p>ajouter Nouveau</p>
+            <input type="file" class="form-control" name="NewphCNSS" id="NewphCNSS">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <button type="submit" id="modifierBtn" name="modifierBtn" class="btn btn-danger">Modifier</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  $(function () {
+    bsCustomFileInput.init();
+  });
+
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+
+  $(document).ready(function () {
+    // Gestionnaire d'événements pour les boutons "Modifier"
+    $('.btn-modifier').click(function () {
+      // Obtenez la ligne parente du bouton cliqué
+      var row = $(this).closest('tr');
+
+      // Obtenez les valeurs des champs de la ligne
+      var cinAssure = row.find('.cinAssure').text();
+      var ipp = row.find('.ipp').text();
+      var cnss = row.find('.cnss').text();
+      var phCINUrl = row.find('.phCIN').attr('href');
+      var phCNSSUrl = row.find('.phCNSS').attr('href');
+
+      // Remplissez les valeurs des champs de la fenêtre modale
+      $('#inputCinAssure').val(cinAssure);
+      $('#inputIPP').val(ipp);
+      $('#inputCNSS').val(cnss);
+      $('#phCINLink').attr('href', phCINUrl).text('fichier actuel');
+      $('#phCNSSLink').attr('href', phCNSSUrl).text('fichier actuel');
+    });
+
+    $('#modifierBtn').click(function() {
+      // Soumettre le formulaire via JavaScript
+      $('#modifierForm').submit();
+    });
+
+
+
+    $('.btn-delete').click(function () {
+      var row = $(this).closest('tr');
+
+      var cinAssure = row.find('.cinAssure').text();
+      var ipp = row.find('.ipp').text();
+
+      var confirmDelete = confirm("Êtes-vous sûr de vouloir supprimer ce dossier ?");
+
+      // Soumettre le formulaire de suppression si la confirmation est acceptée
+      if (confirmDelete) {
+        var form = $('<form>', {
+          'method': 'POST',
+          'action': '/supprimer-dossier/'
+        }).append($('<input>', {
+          'type': 'hidden',
+          'name': 'cinAssure',
+          'value': cinAssure
+        })).append($('<input>', {
+          'type': 'hidden',
+          'name': 'ipp',
+          'value': ipp
+        })).append('{% csrf_token %}');
+        
+        form.appendTo('body').submit();
+      }
+    });
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,327 @@
+{% extends 'base_M.html' %}
+{% load static %}
+{% block content_M  %}
+<!-- Main content_M -->
+<div >
+  <div class="card card-primary" style="margin-left:200px; width: 700px">
+    <div class="card-header">
+      <h3 class="card-title">Remplir le dossier de pris en charge</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form onsubmit="return validateForm()" method="POST" action="{% url 'generate_pdf_pris' %}" id="myForm">
+      <!-- assuré-->
+            <div class="card card-default">
+              <div class="card-header">
+                <h3 class="card-title">Assuré</h3>
+
+
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>N° d'immatriculation</label>
+                      <input type="number" class="form-control select2bs4" style="width: 100%;" name="immatriculation">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Nom et Prénom</label>
+                      <input type="text" class="form-control select2bs4" style="width: 100%;" name="nomPrenomAssure">
+                    </div>
+                    <div class="form-group">
+                      <label>N° CIN</label>
+                      <input type="text" class="form-control select2bs4" style="width: 100%;" name="cinAssure">
+                    </div>
+
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Adresse</label>
+                      <input type="text" class="form-control select2bs4" style="width: 100%;" name="adresseAssure">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>tele</label>
+                      <input type="number" class="form-control select2bs4" style="width: 100%;" telephoneAssure>
+                    </div>
+
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.card-body -->
+
+            </div>
+        <!-- bénéficiaire-->
+            <div class="card card-default">
+              <div class="card-header">
+                <h3 class="card-title">bénéficiaire</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Nom et Prénom</label>
+                      <input type="text" class="form-control select2bs4" style="width: 100%;" name="nomPrenomBeneficiaire">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>N° CIN</label>
+                      <input type="text" class="form-control select2bs4" style="width: 100%;" name="cinBeneficiaire">
+                    </div>
+                    <div class="form-group">
+                      <label>Date de naissance</label>
+                      <input type="date" class="form-control select2bs4" style="width: 100%;" name="dateNaissanceBeneficiaire">
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-md-6">
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>lien de parent</label>
+                      <input type="text" class="form-control select2bs4" style="width: 100%;" name="lienParente">
+                    </div>
+                    <div class="form-group">
+                      <label>Sexe</label>
+                          <!-- radio -->
+                          <div class="form-group clearfix">
+                            <div class="icheck-primary d-inline">
+                              <input type="radio" id="radioPrimary1"  name="sexeBeneficiaire">
+                              <label for="radioPrimary1">Féminin
+                              </label>
+                            </div>
+                            <div class="icheck-primary d-inline">
+                              <input type="radio" id="radioPrimary2" name="sexeBeneficiaire">
+                              <label for="radioPrimary2">Masculin
+                              </label>
+                            </div>
+                          </div>
+                    </div>
+
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.card-body -->
+
+            </div>
+        <!-- hospitalisation-->
+            <div class="card card-default">
+              <div class="card-header">
+                <h3 class="card-title">hospitalisation</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>INPE</label>
+                      <input type="number" class="form-control select2bs4" style="width: 100%;" name="inpe">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Service d'hospitalisation</label>
+                      <input type="text" class="form-control select2bs4" style="width: 100%;" name="serviceHospitalisation">
+                    </div>
+                    <div class="form-group">
+                      <div class="form-group">
+                        <label>cas d'accident</label>
+                            <!-- radio -->
+                            <div class="form-group clearfix">
+                              <div class="icheck-primary d-inline">
+                                <input type="radio" id="radioPrimary1" name="casAccident" >
+                                <label for="radioPrimary1">oui
+                                </label>
+                              </div>
+                              <div class="icheck-primary d-inline">
+                                <input type="radio" id="radioPrimary2" name="casAccident">
+                                <label for="radioPrimary2">no
+                                </label>
+                              </div>
+                            </div>
+                      </div>       
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Motif D'hospitalisation</label>
+                      <input type="text" class="form-control select2bs4" style="width: 100%;" name="motifHospitalisation">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label>Date prévisible d'hospitalisation</label>
+                      <input type="date" class="form-control select2bs4" style="width: 100%;" name="datePrevisibleHospitalisation">
+                    </div>
+                    <div class="form-group">
+                      <label>en urgence le</label>
+                      <input type="date" class="form-control select2bs4" style="width: 100%;" name="dateUrgenceHospitalisation">
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.card-body -->
+
+            </div>
+        <!-- Estimation du cout de l'hospitalisation par l'établissement-->
+            <div class="card card-default">
+              <div class="card-header">
+                <h3 class="card-title">Estimation du cout de l'hospitalisation par l'établissement</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Nbre jours</label>
+                      <input type="number" class="form-control select2bs4" style="width: 100%;" name="nbreJours">
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                      <label> Tarif Unitaire</label>
+                      <input type="number" class="form-control select2bs4" style="width: 100%;" name="tarifUnitaire">
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Totale</label>
+                      <input type="number" class="form-control select2bs4" style="width: 100%;" name="total">
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.card-body -->
+
+            </div>
+
+            <div class="card-footer">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-primary">Generate PDF</button>
+          </div>
+      </form>
+    </div>
+</div>
+
+
+<script>
+  function validateForm() {
+    var immatriculation = document.forms[0]["immatriculation"].value;
+    var nomPrenomAssure = document.forms[0]["nomPrenomAssure"].value;
+    var cinAssure = document.forms[0]["cinAssure"].value;
+    var adresseAssure = document.forms[0]["adresseAssure"].value;
+    var telephoneAssure = document.forms[0]["telephoneAssure"].value;
+    var nomPrenomBeneficiaire = document.forms[0]["nomPrenomBeneficiaire"].value;
+    var cinBeneficiaire = document.forms[0]["cinBeneficiaire"].value;
+    var dateNaissanceBeneficiaire = document.forms[0]["dateNaissanceBeneficiaire"].value;
+    var lienParente = document.forms[0]["lienParente"].value;
+    var sexeBeneficiaire = document.forms[0]["sexeBeneficiaire"].value;
+    var inpe = document.forms[0]["inpe"].value;
+    var serviceHospitalisation = document.forms[0]["serviceHospitalisation"].value;
+    var casAccident = document.forms[0]["casAccident"].value;
+    var motifHospitalisation = document.forms[0]["motifHospitalisation"].value;
+    var datePrevisibleHospitalisation = document.forms[0]["datePrevisibleHospitalisation"].value;
+    var dateUrgenceHospitalisation = document.forms[0]["dateUrgenceHospitalisation"].value;
+    var nbreJours = document.forms[0]["nbreJours"].value;
+    var tarifUnitaire = document.forms[0]["tarifUnitaire"].value;
+    var total = document.forms[0]["total"].value;
+
+    if (immatriculation === "") {
+      alert("N° d'immatriculation must be filled out");
+      return false;
+    }
+
+    if (nomPrenomAssure === "") {
+      alert("Nom et Prénom must be filled out");
+      return false;
+    }
+
+    if (cinAssure === "") {
+      alert("N° CIN must be filled out");
+      return false;
+    }
+
+    if (adresseAssure === "") {
+      alert("Adresse must be filled out");
+      return false;
+    }
+
+    if (telephoneAssure === "") {
+      alert("Tele must be filled out");
+      return false;
+    }
+
+    if (nomPrenomBeneficiaire === "") {
+      alert("Nom et Prénom must be filled out");
+      return false;
+    }
+
+    if (cinBeneficiaire === "") {
+      alert("N° CIN must be filled out");
+      return false;
+    }
+
+    if (dateNaissanceBeneficiaire === "") {
+      alert("Date de naissance must be filled out");
+      return false;
+    }
+
+    if (inpe === "") {
+      alert("INPE must be filled out");
+      return false;
+    }
+
+    if (serviceHospitalisation === "") {
+      alert("Service d'hospitalisation must be filled out");
+      return false;
+    }
+
+    if (motifHospitalisation === "") {
+      alert("Motif D'hospitalisation must be filled out");
+      return false;
+    }
+
+    if (datePrevisibleHospitalisation === "") {
+      alert("Date prévisible d'hospitalisation must be filled out");
+      return false;
+    }
+
+    if (nbreJours === "") {
+      alert("Nbre jours must be filled out");
+      return false;
+    }
+
+    if (tarifUnitaire === "") {
+      alert("Tarif unitaire must be filled out");
+      return false;
+    }
+
+    if (total === "") {
+      alert("Total must be filled out");
+      return false;
+    }
+
+    return true;
+  }
+</script>
+ 
+
+{% endblock %}

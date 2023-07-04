@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+
+  {% block menus %}
+  {% with urlname1="archive_dossiers" urlname2="archive_dossiers" %}
+  {% include '_nav.html' with title1="Archive des dossiers " title2="" %}
+  {% endwith %}
+  {% include '_sidebar.html' with role=request.session.user_service %}
+  {% endblock %}
+
+
+{% block content %}
+<!-- Main content -->
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Les dossiers prets à imprimer</h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <table id="example1" class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>cin assuré</th>
+          <th>IPP</th>
+          <th>Date</th>
+          <th>Action</th>
+          <th>Service</th>
+          <th>déjà imprimé?</th>
+          <th>Imprimer</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% csrf_token %}
+        {% for row in data %}
+        <tr>
+            <td class="">{{ row.cin_assurant }}</td>
+            <td class="">{{ row.ipp }}</td>
+            <td class="">{{ row.date }}</td>
+            <td class="">{{ row.action }}</td>
+            <td class="">{{ row.service }}</td>
+            {% if row.imprime %}
+            <td class="" style="color: rgb(221, 1, 1); font-weight: bold;">Oui</td>
+            {% else %}
+            <td class="" style="color: rgb(221, 1, 1); font-weight: bold;">Non</td>
+            {% endif %}
+            <td>
+              <a href="{% url 'imprimer_dossier_hospitalisation' ipp=row.ipp cin=row.cin_assurant date=row.date   %}" class="btn btn-danger">Imprimer</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+      <tfoot>
+        <tr>
+          <th>cin assuré</th>
+          <th>IPP</th>
+          <th>Date</th>
+          <th>Action</th>
+          <th>Service</th>
+          <th>déjà imprimé?</th>
+          <th>Imprimer</th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <!-- /.card-body -->
+</div>
+<!-- /.content -->
+{% endblock %}
+{% block scripts %}
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+
+
+</script>
+
+{% endblock %}

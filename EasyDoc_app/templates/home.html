@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+  {% block menus %}
+
+  {% with urlname1="home" urlname2="home2" %}
+    {% include '_nav.html' with title2="Techniciens" title1="Médecins" %}
+  {% endwith %}
+  
+  {% include '_sidebar.html' with role=request.session.user_service %}
+
+  {% endblock %}
+
+{% block content %}
+<!-- Main content -->
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Les comptes en attente d'activation <span>"Médecins"</span></h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <table id="example1" class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Téléphone(s)</th>
+          <th>Adresse</th>
+          <th>Service</th>
+          <th>Poste</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% csrf_token %}
+        {% for user in data %}
+        <tr>
+          <td class="">{{user.nom_complet}}</td>
+          <td class="">{{user.id}}</td>
+          <td class="">{{user.tele}}</td>
+          <td class="">{{user.adresse}}</td>
+          <td class="">
+            {% if user.service_medecin %} 
+            {{user.service_medecin}}
+            <td class="">Medecin</td>
+            {% else %} 
+            {{user.service_role}}
+            <td class="">Technicien</td>
+            {% endif %}
+          </td>
+          <td>
+            <button class="btn-activer btn btn-info" data-user-id="{{ user.id }}">Activer</button>
+            <a href="#" class="btn btn-danger btn-delete" data-user-id="{{ user.id }}">delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Téléphone(s)</th>
+          <th>Adresse</th>
+          <th>Service</th>
+          <th>Poste</th>
+          <th>Action</th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <!-- /.card-body -->
+</div>
+<!-- /.content -->
+{% endblock %}
+{% block scripts %}
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+
+  $(document).ready(function() {
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    $('.btn-activer').click(function() {
+        var medecinId = $(this).data('user-id');
+        var btn = $(this); // Référence au bouton actuel pour accès ultérieur
+
+        $.ajax({
+            url: '/activer-medecin/',
+            type: 'POST',
+            data: {
+                'medecin_id': medecinId,
+                'csrfmiddlewaretoken': getCookie('csrftoken')
+            },
+            success: function(response) {
+                if (response.success) {
+                    // Mettre à jour l'interface utilisateur ou effectuer d'autres actions nécessaires
+                    btn.closest('tr').remove();  // Supprimer la ligne du tableau
+                }
+            },
+            error: function(xhr, status, error) {
+                // Gérer les erreurs de requête AJAX
+            }
+        });
+    });
+
+    $('.btn-delete').click(function() {
+    var medecinId = $(this).data('user-id');
+
+    var btn = $(this); // Référence au bouton actuel pour accès ultérieur
+
+    $.ajax({
+        url: '/delete-medecin/',
+        type: 'POST',
+        data: {
+            'medecin_id': medecinId,
+            'csrfmiddlewaretoken': getCookie('csrftoken')
+        },
+        success: function(response) {
+            if (response.success) {
+                // Mettre à jour l'interface utilisateur ou effectuer d'autres actions nécessaires
+                btn.closest('tr').remove();  // Supprimer la ligne du tableau
+            }
+        },
+        error: function(xhr, status, error) {
+            print("erreur lors l'envoi");
+        }
+    });
+});
+
+});
+
+
+
+
+</script>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base_M.html' %}
+{% load static %}
+{% block content_M  %}
+<div class="card card-primary" style="margin-left:200px; width: 700px">
+    <div class="card-header">
+      <h3 class="card-title">Ajouter scan</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form onsubmit="return validateForm()" method="POST">
+      <div class="card-body">
+        <div class="form-group">
+          <label for="cin">CIN Assuré</label>
+          <input type="text" class="form-control" id="cin" >
+        </div>
+        <div class="form-group">
+          <label for="ipp">IPP</label>
+          <input type="number" class="form-control" id="ipp" >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputFile">File input</label>
+          <div class="input-group">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="exampleInputFile" required>
+              <label class="custom-file-label" for="exampleInputFile">Choisir un fichier</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.card-body -->
+
+      <div class="card-footer">
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+      </div>
+
+    </form>
+  </div>
+  <script>
+    function validateForm() {
+      var cinInput = document.getElementById("cin");
+      var ippInput = document.getElementById("ipp");
+    
+      if (cinInput.value.trim() === "") {
+        alert("Veuillez entrer le CIN Assuré");
+        cinInput.focus();
+        return false;
+      }
+    
+      if (ippInput.value.trim() === "") {
+        alert("Veuillez entrer le IPP");
+        ippInput.focus();
+        return false;
+      }
+    
+      return true;
+    }
+    </script>
+
+{% endblock %}

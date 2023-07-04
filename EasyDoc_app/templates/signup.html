@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block navside %}
+{% endblock %}
+{% block content %}
+<div class="container" style="margin-bottom: 300px; margin-left: 370px;">
+    <div class="login-container mt-4 mb-8" style="width: 600px;">
+        <!-- Horizontal Form -->
+        <div class="card card-info" style="width: 700px">
+            <div class="card-header">
+                <h3 class="card-title"><i class="bi bi-door-open"></i>Inscription</h3>
+            </div>
+            <!-- /.card-header -->
+            {% if error_message %}
+            <div class="alert alert-danger text-center">
+                {{error_message}}
+            </div>
+            {% endif %}
+            <!-- form start -->
+            <form class="form-horizontal" method="post" onsubmit="return validateForm()">
+                {% csrf_token %}
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Nom complet</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom complet">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">email</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="email" name="email" placeholder="email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">adresse</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Adresse">
+                        </div>
+                    </div>
+                    <!-- ajouter le role (si un medecin ajouter autre textfieled inpe) -->
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Téléphone</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="tele" name="tele"
+                                placeholder="Numéro de téléphone">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Poste</label>
+                        <div class="col-sm-10">
+                            <select name="poste" id="poste" class="form-control">
+                                {% for p in poste %}
+                                <option value="{{ p.0 }}">{{ p.1 }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div id="inpe-group" class="form-group row" style="display: none;">
+                        <label for="inpe" class="col-sm-2 col-form-label">INPE</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inpe" name="inpe" style="margin-left: 112px;"
+                                placeholder="INPE">
+                        </div>
+                    </div>
+                    <div class="form-group row" style="display: none;" id="respo_grp">
+                        <div class="offset-sm-2 col-sm-10">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" name="respo" id="respo">
+                                <label class="form-check-label" for="respo">Je suis le responsable de cette service</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row" id = "servicestt" style="display: block;">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Service1</label>
+                        <div class="col-sm-10">
+                            <select name="roles" id="roles" class="form-control" style="margin-left: 112px;">
+                                {% for role in roles %}
+                                <option value="{{ role.0 }}">{{ role.1 }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row"  id="service_grp" style="display: none;">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Service2</label>
+                        <div class="col-sm-10">
+                            <select name="roles1" id="roles1" class="form-control" style="margin-left: 112px;">
+                                {% for serv in serviceMedecin %}
+                                <option value="{{ serv.0 }}">{{ serv.1 }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="password" name="password" minlength="8"
+                                pattern="^(?=.*[a-zA-Z])(?=.*\d).{8,}$" placeholder="Mot de passe">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Password Confirmation</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="passwordC" oninput="validatePassword(this)"
+                                name="passwordC" placeholder="confirmation de mot de passe ">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-sm-2 col-sm-10">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                                <label class="form-check-label" for="exampleCheck2">Je vais attendre l'activation de mon
+                                    compte</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <p id="error" class="error-message"
+                            style="margin-left: 120px;  font-weight: bold; color: tomato;"></p>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <a href="{% url 'login' %}" class="btn btn-default">Quitter</a>
+                    <button type="submit" class="btn btn-info float-right">S'inscrire</button>
+                </div>
+                <!-- /.card-footer -->
+            </form>
+
+        </div>
+        <!-- /.card -->
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+    // Fonction pour afficher ou masquer le champ "INPE" en fonction du choix de rôle
+    function toggleINPEField() {
+        var selectedRole = document.getElementById('poste').value;
+        var inpeGroup = document.getElementById('inpe-group');
+        var serviceGrp = document.getElementById('service_grp');
+        var servicestt =  document.getElementById('servicestt');
+        var respo =  document.getElementById('respo');
+        if (selectedRole === 'medecin') {
+            inpeGroup.style.display = 'block';
+            serviceGrp.style.display = 'block';
+            respo_grp.style.display = 'block';
+            servicestt.style.display = 'none';
+        } else {
+            inpeGroup.style.display = 'none';
+            serviceGrp.style.display = 'none';
+            servicestt.style.display = 'block';
+            respo_grp.style.display = 'none';
+        }
+    }
+
+    // Écouteur d'événement pour appeler la fonction lorsqu'il y a un changement dans le champ "poste"
+    document.getElementById('poste').addEventListener('change', toggleINPEField);
+
+    // Appel initial de la fonction pour vérifier l'état initial du champ "poste"
+    toggleINPEField();
+
+    function validateForm() {
+        var nom = document.getElementById('nom').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var adresse = document.getElementById('adresse').value.trim();
+        var tele = document.getElementById('tele').value.trim();
+        var password = document.getElementById('password').value.trim();
+        var passwordC = document.getElementById('passwordC').value.trim();
+        var checkbox = document.getElementById('exampleCheck2').checked;
+        var errorNom = document.getElementById('error');
+        errorNom.textContent = "";
+
+        if (nom === "" || email === "" || adresse === "" || tele === "" || password === "" || passwordC === "") {
+            errorNom.textContent = "Veuillez remplir tous les champs.";
+            return false;
+        }
+
+        var emailRegex = /^[\w.-]+@[\w.-]+\.\w{2,}$/;
+        if (!email.match(emailRegex)) {
+            errorNom.textContent = "Veuillez entrer une adresse e-mail valide.";
+            return false;
+        }
+
+        var phoneFormat = /^(\+212|00212|0)(6|7)[0-9]{8}$/;
+        if (!tele.match(phoneFormat)) {
+            errorNom.textContent = "Veuillez entrer un numéro de téléphone valide.";
+            return false;
+        }
+
+        if (password !== passwordC) {
+            errorNom.textContent = "Les champs de mot de passe ne correspondent pas.";
+            return false;
+        }
+
+        if (!checkbox) {
+            errorNom.textContent = "Veuillez cocher la case d'acceptation.";
+            return false;
+        }
+        return true;
+    }
+</script>
+{% endblock %}

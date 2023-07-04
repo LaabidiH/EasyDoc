@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block navside %}
+{% endblock %}
+{% block content %}
+<div class="container" style="margin-bottom: 300px; margin-left: 370px;">
+    <div class="login-container mt-4 mb-8" style="width: 600px;">
+        <!-- Horizontal Form -->
+        <div class="card card-info">
+            <div class="card-header">
+                <h3 class="card-title"><i class="bi bi-door-open"></i>Connexion</h3>
+            </div>
+            {% if messages %}
+            <div class="error_message" style="background-color: rgb(223, 42, 10); height: 28px;">
+                {% for message in messages %}
+                <h3 class="card-title" style="margin-top: 3px; margin-left: 8px; font-weight: bold; color: beige;">{{ message }}</h3>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <!-- /.card-header -->
+            {% if error_message %}
+            <div class="alert alert-danger text-center">
+                {{error_message}}
+            </div>
+            {% endif %}
+            <!-- form start -->
+            <form class="form-horizontal" action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-sm-2 col-sm-10">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                                <label class="form-check-label" for="exampleCheck2">Remember me</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <a href="#" class="forgot-password-link">Mot de passe oublié ?</a>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <a href="{% url 'signup' %}" class="btn btn-default">S'inscrire</a>
+                    <button type="submit" class="btn btn-info float-right">Se connecter</button>
+                </div>
+                <!-- /.card-footer -->
+            </form>
+
+        </div>
+        <!-- /.card -->
+    </div>
+</div>
+{% endblock %}
