@@ -44,15 +44,16 @@ class Personne(models.Model):
     class Meta:
         abstract = True
 
+
 class Medecin(Personne):
     # user = models.OneToOneField(User, on_delete=models.CASCADE)
     service_medecin = models.CharField(
         max_length=20,
         choices=[
-            ("medecine", "Medecine"),
-            ("chirurgie", "Chirurgie"),
-            ("pediaterie", "Pediaterie"),
-            ("maternite", "Maternite")
+            ("medecine", "medecine"),
+            ("chirurgie", "chirurgie"),
+            ("pediaterie", "pediaterie"),
+            ("maternite", "maternite")
         ]
     )
     inpe = models.CharField(max_length=10)
@@ -108,6 +109,7 @@ class Hospitalisation(Consultation):
     facture = models.FileField(upload_to='facture/')
     dpc = models.FileField(upload_to='facture/', null=True)
     pli_confidentiel = models.FileField(upload_to='facture/', null =True)
+    medecin = models.CharField(max_length=100, default="0000000")
 
 class Radiologie(Consultation):
     bonRadio = models.FileField(upload_to='bonRadio/')

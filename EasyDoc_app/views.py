@@ -400,7 +400,7 @@ def dossier_accomplir(request):
     if user_id is not None and user_service == "admin":
         user = Authentification.objects.get(id=user_id)
         dossiers = DossierMedical.objects.filter()
-
+        # medecin = Medecin.objects.filter()
         data4 = Hospitalisation.objects.filter(
             dpc="",
             pli_confidentiel=""
@@ -476,6 +476,7 @@ def enregistrer_action(request):
         date_sortie = request.POST.get('date_sortie')
         facture_hosp=request.FILES.get('facture_hosp')
         billet_hospitalisation = request.FILES.get('billet_hospitalisation')
+        medecin = request.POST.get('medecin_list')
         #radiologie       
         facture_radio=request.FILES.get('facture_radio')
         bon_radio = request.FILES.get('bon_radio')
@@ -509,7 +510,8 @@ def enregistrer_action(request):
                         dateSortie=date_sortie,
                         facture=facture_hosp,
                         billetHospitalisation=billet_hospitalisation,
-                        action=action
+                        action=action,
+                        medecin=medecin
                     )
                     hospitalisation.save()
                     error_message = "L'hospitalisation a été ajoutée avec succès."
@@ -611,6 +613,11 @@ def supprimer_dossier(request):
             return render(request, 'liste_dossiers.html',{'error_message': error_message, 'data': data})
     else:
         return redirect('liste_dossiers')
+
+
+def get_medecins(request, service):
+    medecins = Medecin.objects.filter(service_medecin=service).values('nom_complet', 'inpe')
+    return JsonResponse({'medecins': list(medecins)})
 
 ############## vues du connexion
 def validate_email(email):
@@ -764,7 +771,7 @@ def login(request):
                     request.session['user_id'] = user.id
                     request.session['user_service'] = user.service
                     return redirect('home')
-                elif user.service == "Pediaterie":
+                elif user.service == "pediaterie":
                     request.session['user_id'] = user.id
                     request.session['user_service'] = user.service
                     return redirect('pediaterie')

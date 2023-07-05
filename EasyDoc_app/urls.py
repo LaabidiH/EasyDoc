@@ -46,7 +46,7 @@ urlpatterns = [
     path('imprimer-dossier-biologie/<str:ipp>/<str:cin>/<str:date>/', views.imprimer_dossier_biologie, name='imprimer_dossier_biologie'),
     path('imprimer-dossier-radiologie/<str:ipp>/<str:cin>/<str:date>/', views.imprimer_dossier_radiologie, name='imprimer_dossier_radiologie'),
     path('imprimer-dossier-consultation/<str:ipp>/<str:cin>/<str:date>/', views.imprimer_dossier_consultation, name='imprimer_dossier_consultation'),
-
+    path('get_medecins/<str:service>/', views.get_medecins, name='get_medecins'),
     path('reset_password/', views.reset_password, name='reset_password'),
 
     # path('home_M/', views.home_M, name="home_M"),
