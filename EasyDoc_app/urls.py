@@ -48,6 +48,8 @@ urlpatterns = [
     path('imprimer-dossier-consultation/<str:ipp>/<str:cin>/<str:date>/', views.imprimer_dossier_consultation, name='imprimer_dossier_consultation'),
     path('get_medecins/<str:service>/', views.get_medecins, name='get_medecins'),
     path('reset_password/', views.reset_password, name='reset_password'),
+    path('contact/', views.contact, name='contact'),
+    path('send_email/', views.send_email, name='send_email'),
 
     # path('home_M/', views.home_M, name="home_M"),
     # path('generate-pdf/', generate_pdf, name='generate_pdf'),

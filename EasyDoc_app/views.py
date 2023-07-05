@@ -36,8 +36,23 @@ from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 
 
 from EasyDoc_app.models import *
+from django.views.decorators.csrf import csrf_exempt
 
 ############# vues du admin
+
+@csrf_exempt
+def send_email(request):
+    if request.method == 'POST':
+        to = request.POST.get('to')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+
+        if send_mail(subject, message, 'hopital.provincial.berrechd@gmail.com', [to]):
+            print('envoyé')
+
+        return JsonResponse({'message': 'Email sent successfully'})
+    else:
+        return JsonResponse({'error': 'Invalid request method'})
 
 def imprimer_dossier_hospitalisation(request, ipp, cin, date):
     # Filtrer les objets Hospitalisation en fonction de l'IPP et du CIN du patient
@@ -265,12 +280,17 @@ def comptes_actives2(request):
 def contact(request):
     user_id = request.session.get('user_id')
     user_service = request.session.get('user_service')
-    
+    inpe = request.GET.get('medecin')
     if user_id is not None and user_service == "admin":
         user = Authentification.objects.get(id=user_id)
-        return render(request, 'contact.html', {'user': user})
+        try:
+            medecin = Medecin.objects.get(inpe=inpe)
+            return render(request, 'contact.html', {'user': user, 'medecin': medecin})
+        except Medecin.DoesNotExist:
+            return HttpResponse("Médecin non trouvé")
     else:
         return render(request, 'login.html')
+
     
 
 def archive_dossiers(request):

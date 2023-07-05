@@ -39,7 +39,9 @@
             <td class="">{{ row.date }}</td>
             <td class="">{{ row.table_name }}</td>
             <td class="">{{ row.service }}</td>
-            <td>{{ row.medecin }}</td>
+            <td>
+              <a href="/contact/?medecin={{ row.medecin }}" data-medecin="{{ row.medecin }}" class="medecin-link">{{ row.medecin }}</a>
+            </td>
         </tr>
         {% endfor %}
       </tbody>
@@ -76,5 +78,16 @@
       "responsive": true,
     });
   });
+  $(document).ready(function() {
+  $('.medecin-link').click(function(e) {
+    e.preventDefault(); // Empêche le comportement par défaut du lien
+    
+    var medecin = $(this).data('medecin'); // Récupère la valeur du médecin
+    
+    // Redirige vers la page contact.html avec le paramètre medecin
+    window.location.href = '/contact?medecin=' + encodeURIComponent(medecin);
+  });
+});
+
 </script>
 {% endblock %}
