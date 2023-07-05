@@ -348,7 +348,7 @@ def dossiers_prets_hospitalisation(request):
         data = Hospitalisation.objects.exclude(dpc="", pli_confidentiel="").annotate(table_name=Value('Hospitalisation', output_field=CharField()))
         return render(request, 'dossiers_prets_hospitalisation.html', {'data': data, 'user': user})
     else:
-        return render(request, 'dossiers_prets_hospitalisation.html')
+        return render(request, 'login.html')
 
 
 def dossiers_prets_consultation(request):
@@ -362,7 +362,7 @@ def dossiers_prets_consultation(request):
         data = Consultation.objects.filter(action="Consultation").annotate(table_name=Value('Consultation', output_field=CharField()))
         return render(request, 'dossiers_prets_consultation.html', {'data': data, 'user': user})
     else:
-        return render(request, 'dossiers_prets_consultation.html')
+        return render(request, 'login.html')
 
 
 def dossiers_prets_radiologie(request):
@@ -376,7 +376,7 @@ def dossiers_prets_radiologie(request):
         data = Radiologie.objects.filter().annotate(table_name=Value('Radiologie', output_field=CharField()))
         return render(request, 'dossiers_prets_radiologie.html', {'data': data, 'user': user})
     else:
-        return render(request, 'dossiers_prets_radiologie.html')
+        return render(request, 'login.html')
 
 
 def dossiers_prets_biologie(request):
@@ -390,7 +390,7 @@ def dossiers_prets_biologie(request):
         data = Biologie.objects.filter().annotate(table_name=Value('Biologie', output_field=CharField()))
         return render(request, 'dossiers_prets_biologie.html', {'data': data, 'user': user})
     else:
-        return render(request, 'dossiers_prets_biologie.html')
+        return render(request, 'login.html')
 
 
 def dossier_accomplir(request):
@@ -400,14 +400,13 @@ def dossier_accomplir(request):
     if user_id is not None and user_service == "admin":
         user = Authentification.objects.get(id=user_id)
         dossiers = DossierMedical.objects.filter()
-        # medecin = Medecin.objects.filter()
         data4 = Hospitalisation.objects.filter(
             dpc="",
             pli_confidentiel=""
-        ).values('cin_assurant', 'ipp', 'date', 'service').annotate(table_name=Value('Hospitalisation', output_field=CharField()))
+        ).values('cin_assurant', 'ipp', 'date', 'service', 'medecin').annotate(table_name=Value('Hospitalisation', output_field=CharField()))
         return render(request, 'dossier_accomplir.html', {'data': data4, 'user': user})
     else:
-        return render(request, 'dossier_accomplir.html')
+        return render(request, 'login.html')
 
 ############# vues du SAA
 
