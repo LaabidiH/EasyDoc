@@ -16,6 +16,7 @@ from django.views.decorators.http import require_POST
 import random
 import string
 from django.core.mail import send_mail
+from django.db.models import Q
 
 
 """
@@ -301,9 +302,7 @@ def archive_dossiers(request):
         current_date = timezone.now().date()
         user = Authentification.objects.get(id=user_id)
         data = Hospitalisation.objects.filter(
-            dpc__isnull=False,  # DPC non nul
-            pli_confidentiel__isnull=False,  # Pli confidentiel non nul
-            date__lt=current_date 
+            Q(dpc="") | Q(pli_confidentiel=""), date__lt=current_date
         )
         return render(request, 'archive_dossiers.html', {'data': data, 'user': user})
     else:
@@ -423,7 +422,7 @@ def dossier_accomplir(request):
         data4 = Hospitalisation.objects.filter(
             dpc="",
             pli_confidentiel=""
-        ).values('cin_assurant', 'ipp', 'date', 'service', 'medecin').annotate(table_name=Value('Hospitalisation', output_field=CharField()))
+        ).values('cin_assurant', 'ipp', 'date', 'service','dateSortie', 'medecin').annotate(table_name=Value('Hospitalisation', output_field=CharField()))
         return render(request, 'dossier_accomplir.html', {'data': data4, 'user': user})
     else:
         return render(request, 'login.html')
@@ -673,15 +672,15 @@ def reset_password(request):
         
         # Envoi de l'e-mail avec le nouveau mot de passe
         try:
-            send_mail(
+            if send_mail(
                 'Réinitialisation du mot de passe',
                 f'Bonjour, votre nouveau mot de passe est : {new_password}',
                 'noreply@example.com',
                 [email],
                 fail_silently=False,
-            )
-            error_message = "Un e-mail contenant le nouveau mot de passe a été envoyé à votre adresse."
-            return render(request, 'login.html', {'error_message': error_message})
+            ):
+                error_message = "Un e-mail contenant le nouveau mot de passe a été envoyé à votre adresse."
+                return render(request, 'login.html', {'error_message': error_message})
         except BadHeaderError:
             error_message = "Erreur lors de l'envoi de l'e-mail."
             return render(request, 'login.html', {'error_message': error_message})

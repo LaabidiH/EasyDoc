@@ -38,10 +38,12 @@
           <td class="">{{user.ipp}}</td>
           <td class="">{{user.date}}</td>
           <td class="">{{user.dateSortie}}</td>
-          <td class="">{{user.service}}</td>
+          <td class="">{{user.dpc}}</td>
           <td>
-            <a href="#" class="btn btn-danger">voir plus</a>
+            <a href="#" >Voir plus</a>
           </td>
+          
+          
         </tr>
         {% endfor %}
       </tbody>
@@ -60,6 +62,28 @@
   <!-- /.card-body -->
 </div>
 <!-- /.content -->
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Contenu supplémentaire</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Lecteurs de fichiers DPC, billetHospitalisation, pli_confidentiel et facture -->
+        <!-- Ajoutez les éléments nécessaires pour afficher les fichiers ici -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
 {% block scripts %}
 <script>
@@ -78,5 +102,30 @@
       "responsive": true,
     });
   });
+
+  $('#myModal').on('show.bs.modal', function (event) {
+  // var button = $(event.relatedTarget); // Bouton qui a déclenché l'ouverture de la fenêtre modale
+  // var dpcUrl = button.data('dpc'); // Récupérer l'URL du fichier DPC
+  // var billetUrl = button.data('billet'); // Récupérer l'URL du fichier billetHospitalisation
+  // var pliUrl = button.data('pli'); // Récupérer l'URL du fichier pli_confidentiel
+  // var factureUrl = button.data('facture'); // Récupérer l'URL du fichier facture
+
+  // var modal = $(this);
+
+  // // Effectuer une requête AJAX pour récupérer les données des fichiers
+  // $.ajax({
+  //   url: dpcUrl, // URL du fichier DPC
+  //   method: 'GET',
+  //   dataType: 'text',
+  //   success: function (dpcData) {
+  //     // Mettre à jour le contenu de la fenêtre modale avec les données du fichier DPC
+  //     modal.find('.modal-body').append('<p>DPC:</p><pre>' + dpcData + '</pre>');
+  //   }
+  // });
+
+  // Répéter les étapes ci-dessus pour les autres fichiers (billetHospitalisation, pli_confidentiel, facture)
+
+});
+
 </script>
 {% endblock %}
