@@ -24,6 +24,7 @@
         <tr>
           <th>cin assuré</th>
           <th>IPP</th>
+          <th>CNSS</th>
           <th>Date d'entrée</th>
           <th>Service</th>
           <th>Afficher plus</th>
@@ -32,21 +33,32 @@
       <tbody>
         {% csrf_token %}
         {% for user in data %}
+        {% for dossier in dossiers %}
+        {% if user.ipp == dossier.ipp %}
         <tr>
           <td class="">{{user.cin_assurant}}</td>
           <td class="">{{user.ipp}}</td>
+          <td class="">{{ dossier.cnss }}</td>
           <td class="">{{user.date}}</td>
           <td class="">{{user.service}}</td>
           <td>
-            <a href="#" class="btn btn-danger">voir plus</a>
+            <a href="#" data-toggle="modal" data-target="#myModal" 
+            data-ordonnance="{{ user.ordonnance.url }}"
+            data-bonBio="{{ user.bonRadio.url }}"
+            data-facture="{{ user.facture.url }}" 
+            data-phcin="{{ dossier.phCIN.url }}" 
+            data-phcnss="{{ dossier.phCNSS.url }}"  class="btn-showmore btn btn-secondary">Voir plus</a>
           </td>
         </tr>
+        {% endif %}
+        {% endfor %}
         {% endfor %}
       </tbody>
       <tfoot>
         <tr>
           <th>cin assuré</th>
           <th>IPP</th>
+          <th>CNSS</th>
           <th>Date d'entrée</th>
           <th>Service</th>
           <th>Afficher plus</th>
@@ -57,6 +69,44 @@
   <!-- /.card-body -->
 </div>
 <!-- /.content -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Contenu supplémentaire</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="ordonnanceLink">Ordonnace</label>          
+          <a href="#" id="ordonnanceLink" target="_blank" class="file-link"></a>
+        </div>
+        <div class="form-group">
+          <label for="bonRadioLink">Bon radiologie</label>          
+          <a href="#" id="bonRadioLink" target="_blank" class="file-link"></a>
+        </div>
+        <div class="form-group">
+          <label for="factureLink">Facture</label>          
+          <a href="#" id="factureLink" target="_blank" class="file-link"></a>
+        </div>
+        <div class="form-group">
+          <label for="phCINLink">Photo de CIN</label>          
+          <a href="#" id="phCINLink" target="_blank" class="file-link"></a>
+        </div>
+        <div class="form-group">
+          <label for="phCNSSLink">Photo de CNSS</label>          
+          <a href="#" id="phCNSSLink" target="_blank" class="file-link"></a>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
 {% block scripts %}
 <script>
@@ -75,5 +125,21 @@
       "responsive": true,
     });
   });
+
+  $(document).ready(function () {
+  $('.btn-showmore').click(function () {
+    var factureUrl = $(this).data('facture');
+    var phCINUrl = $(this).data('phcin');
+    var phCNSSUrl = $(this).data('phcnss');
+    var bonRadioURL = $(this).data('bonRadio');
+    var ordonnanceUrl = $(this).data('ordonnance');
+
+    $('#ordonnanceLink').attr('href', ordonnanceUrl).text('Ordonnance');
+    $('#factureLink').attr('href', factureUrl).text('Facture');
+    $('#phCINLink').attr('href', phCINUrl).text('Photo de CIN');
+    $('#phCNSSLink').attr('href', phCNSSUrl).text('Photo de CNSS');
+    $('#bonRadioLink').attr('href', bonRadioURL).text('Bon radiologie');
+  });
+});
 </script>
 {% endblock %}

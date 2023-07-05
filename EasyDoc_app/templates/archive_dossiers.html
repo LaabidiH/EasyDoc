@@ -1,29 +1,27 @@
 {% extends 'base.html' %}
 {% load static %} 
 
-
-  {% block menus %}
+{% block menus %}
   {% with urlname1="archive_dossiers" urlname2="archive_dossiers" %}
-  {% include '_nav.html' with title1="Archive des dossiers " title2="" %}
+    {% include '_nav.html' with title1="Archive des dossiers " title2="" %}
   {% endwith %}
   {% include '_sidebar.html' with role=request.session.user_service %}
-  {% endblock %}
-
+{% endblock %}
 
 {% block content %}
-<!-- Main content -->
-
 <div class="card">
   <div class="card-header">
     <h3 class="card-title">Les dossiers des patients hospitalisés</h3>
   </div>
-  <!-- /.card-header -->
+  <form method="POST" enctype="multipart/form-data" name="voirPlus" id="voirPlus" >
+    {% csrf_token %}
   <div class="card-body">
     <table id="example1" class="table table-bordered table-striped">
       <thead>
         <tr>
           <th>cin assuré</th>
           <th>IPP</th>
+          <th>CNSS</th>
           <th>Date d'entrée</th>
           <th>Date sortie</th>
           <th>Service</th>
@@ -33,24 +31,35 @@
       <tbody>
         {% csrf_token %}
         {% for user in data %}
-        <tr>
-          <td class="">{{user.cin_assurant}}</td>
-          <td class="">{{user.ipp}}</td>
-          <td class="">{{user.date}}</td>
-          <td class="">{{user.dateSortie}}</td>
-          <td class="">{{user.dpc}}</td>
-          <td>
-            <a href="#" >Voir plus</a>
-          </td>
-          
-          
-        </tr>
+        {% for dossier in dossiers %}
+        {% if user.ipp == dossier.ipp %}
+          <tr>
+            <td class="cinAssure">{{ user.cin_assurant }}</td>
+            <td class="ipp">{{ user.ipp }}</td>
+            <td class="">{{ dossier.cnss }}</td>
+            <td>{{ user.date }}</td>
+            <td>{{ user.dateSortie }}</td>          
+            <td>{{ user.service }}</td>
+            <td>
+              <a href="#" data-toggle="modal" data-target="#myModal" 
+                data-ordonnance="{{ user.ordonnance.url }}"
+                data-dpc="{{ user.dpc.url }}"
+                data-billet="{{ user.billetHospitalisation.url }}"
+                data-pli="{{ user.pli_confidentiel.url }}"
+                data-facture="{{ user.facture.url }}" 
+                data-phcin="{{ dossier.phCIN.url }}" 
+                data-phcnss="{{ dossier.phCNSS.url }}"  class="btn-showmore btn btn-secondary">Voir plus</a>
+            </td>
+          </tr>
+          {% endif %}
+        {% endfor %}
         {% endfor %}
       </tbody>
       <tfoot>
         <tr>
           <th>cin assuré</th>
           <th>IPP</th>
+          <th>CNSS</th>
           <th>Date d'entrée</th>
           <th>Date sortie</th>
           <th>Service</th>
@@ -59,10 +68,8 @@
       </tfoot>
     </table>
   </div>
-  <!-- /.card-body -->
+  </form>
 </div>
-<!-- /.content -->
-
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -74,8 +81,34 @@
         </button>
       </div>
       <div class="modal-body">
-        <!-- Lecteurs de fichiers DPC, billetHospitalisation, pli_confidentiel et facture -->
-        <!-- Ajoutez les éléments nécessaires pour afficher les fichiers ici -->
+        <div class="form-group">
+          <label for="dpcLink">Demande de pris en charge</label>          
+          <a href="#" id="dpcLink" target="_blank" class="file-link"></a>
+        </div>
+        <div class="form-group">
+          <label for="billetLink">Billet d'hospitalisation</label>          
+          <a href="#" id="billetLink" target="_blank" class="file-link"></a>
+        </div>
+        <div class="form-group">
+          <label for="pliLink">Pli confidentiel</label>          
+          <a href="#" id="pliLink" target="_blank" class="file-link"></a>
+        </div>
+        <div class="form-group">
+          <label for="ordonnanceLink">Ordonnace</label>          
+          <a href="#" id="ordonnanceLink" target="_blank" class="file-link"></a>
+        </div>
+        <div class="form-group">
+          <label for="factureLink">Facture</label>          
+          <a href="#" id="factureLink" target="_blank" class="file-link"></a>
+        </div>
+        <div class="form-group">
+          <label for="phCINLink">Photo de CIN</label>          
+          <a href="#" id="phCINLink" target="_blank" class="file-link"></a>
+        </div>
+        <div class="form-group">
+          <label for="phCNSSLink">Photo de CNSS</label>          
+          <a href="#" id="phCNSSLink" target="_blank" class="file-link"></a>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -83,49 +116,40 @@
     </div>
   </div>
 </div>
-
 {% endblock %}
+
 {% block scripts %}
 <script>
   $(function () {
     $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
+
   });
 
-  $('#myModal').on('show.bs.modal', function (event) {
-  // var button = $(event.relatedTarget); // Bouton qui a déclenché l'ouverture de la fenêtre modale
-  // var dpcUrl = button.data('dpc'); // Récupérer l'URL du fichier DPC
-  // var billetUrl = button.data('billet'); // Récupérer l'URL du fichier billetHospitalisation
-  // var pliUrl = button.data('pli'); // Récupérer l'URL du fichier pli_confidentiel
-  // var factureUrl = button.data('facture'); // Récupérer l'URL du fichier facture
+  $(document).ready(function () {
+  $('.btn-showmore').click(function () {
+    var dpcUrl = $(this).data('dpc');
+    var billetUrl = $(this).data('billet');
+    var pliUrl = $(this).data('pli');
+    var factureUrl = $(this).data('facture');
+    var phCINUrl = $(this).data('phcin');
+    var phCNSSUrl = $(this).data('phcnss');
+    var ordonnanceUrl = $(this).data('ordonnance');
 
-  // var modal = $(this);
+    $('#ordonnanceLink').attr('href', ordonnanceUrl).text('Ordonnance');
+    $('#dpcLink').attr('href', dpcUrl).text('DPC');
+    $('#billetLink').attr('href', billetUrl).text('Billet d\'hospitalisation');
+    $('#pliLink').attr('href', pliUrl).text('Pli confidentiel');
+    $('#factureLink').attr('href', factureUrl).text('Facture');
+    $('#phCINLink').attr('href', phCINUrl).text('Photo de CIN');
+    $('#phCNSSLink').attr('href', phCNSSUrl).text('Photo de CNSS');
 
-  // // Effectuer une requête AJAX pour récupérer les données des fichiers
-  // $.ajax({
-  //   url: dpcUrl, // URL du fichier DPC
-  //   method: 'GET',
-  //   dataType: 'text',
-  //   success: function (dpcData) {
-  //     // Mettre à jour le contenu de la fenêtre modale avec les données du fichier DPC
-  //     modal.find('.modal-body').append('<p>DPC:</p><pre>' + dpcData + '</pre>');
-  //   }
-  // });
-
-  // Répéter les étapes ci-dessus pour les autres fichiers (billetHospitalisation, pli_confidentiel, facture)
-
+    
+  });
 });
-
 </script>
 {% endblock %}

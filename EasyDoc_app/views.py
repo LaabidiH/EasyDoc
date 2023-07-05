@@ -301,12 +301,19 @@ def archive_dossiers(request):
     if user_id is not None and user_service == "admin":
         current_date = timezone.now().date()
         user = Authentification.objects.get(id=user_id)
-        data = Hospitalisation.objects.filter(
-            Q(dpc="") | Q(pli_confidentiel=""), date__lt=current_date
-        )
-        return render(request, 'archive_dossiers.html', {'data': data, 'user': user})
+        hospitalisations1 = Hospitalisation.objects.filter(date__lt=current_date, imprime=True)
+        hospitalisations2 = Hospitalisation.objects.exclude(dpc="", pli_confidentiel="")
+        data = hospitalisations1.intersection(hospitalisations2)
+        
+        ipp_values = data.values_list('ipp', flat=True)
+        cin_assure_values = data.values_list('cin_assurant', flat=True)
+        
+        dossiers = DossierMedical.objects.filter(ipp__in=ipp_values, cinAssure__in=cin_assure_values)
+        return render(request, 'archive_dossiers.html', {'data': data, 'dossiers': dossiers, 'user': user})
     else:
         return render(request, 'login.html')
+
+
 
 
 def dossiers_consultation(request):
@@ -317,7 +324,12 @@ def dossiers_consultation(request):
         user = Authentification.objects.get(id=user_id)
         current_date = timezone.now().date()
         data = Consultation.objects.filter(date__lt=current_date, action="Consultation")
-        return render(request, 'dossiers_consultation.html', {'data': data, 'user': user})
+
+        ipp_values = data.values_list('ipp', flat=True)
+        cin_assure_values = data.values_list('cin_assurant', flat=True)
+
+        dossiers = DossierMedical.objects.filter(ipp__in=ipp_values, cinAssure__in=cin_assure_values)
+        return render(request, 'dossiers_consultation.html', {'data': data, 'user': user, 'dossiers':dossiers})
     else:
         return render(request, 'login.html')
 
@@ -330,7 +342,12 @@ def radio_dossiers(request):
         user = Authentification.objects.get(id=user_id)
         current_date = timezone.now().date()
         data = Radiologie.objects.filter(date__lt=current_date)
-        return render(request, 'radio_dossiers.html', {'data': data, 'user': user})
+        
+        ipp_values = data.values_list('ipp', flat=True)
+        cin_assure_values = data.values_list('cin_assurant', flat=True)
+        
+        dossiers = DossierMedical.objects.filter(ipp__in=ipp_values, cinAssure__in=cin_assure_values)
+        return render(request, 'radio_dossiers.html', {'data': data, 'user': user, 'dossiers':dossiers})
     else:
         return render(request, 'login.html')
 
@@ -343,7 +360,12 @@ def bio_dossiers(request):
         user = Authentification.objects.get(id=user_id)
         current_date = timezone.now().date()
         data = Biologie.objects.filter(date__lt=current_date)
-        return render(request, 'bio_dossiers.html', {'data': data, 'user': user})
+                
+        ipp_values = data.values_list('ipp', flat=True)
+        cin_assure_values = data.values_list('cin_assurant', flat=True)
+        
+        dossiers = DossierMedical.objects.filter(ipp__in=ipp_values, cinAssure__in=cin_assure_values)
+        return render(request, 'bio_dossiers.html', {'data': data, 'user': user, 'dossiers':dossiers})
     else:
         return render(request, 'login.html')
 
