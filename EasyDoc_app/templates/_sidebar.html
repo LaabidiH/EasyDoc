@@ -39,7 +39,7 @@
                  with font-awesome or any other icon font library -->
         <li class="nav-item menu-open">
           <a href="#" class="nav-link active">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <i class="nav-icon fas fa-cogs"></i>
             <p>
               Gestion des comptes
               <i class="right fas fa-angle-left"></i>
@@ -47,14 +47,14 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{% url 'home' %}" class="nav-link active">
-                <i class="far fa-circle nav-icon"></i>
+              <a href="{% url 'home' %}" class="nav-link ">
+                <i class="fas fa-hourglass-start nav-icon"></i>
                 <p>Les comptes en attente</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="{% url 'comptes_actives' %}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-check-circle nav-icon"></i>
                 <p>Les comptes activés </p>
               </a>
             </li>
@@ -62,8 +62,8 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-chart-pie"></i>
+          <a href="#" class="nav-link active">
+            <i class="nav-icon fas fa-archive"></i>
             <p>
               Archive des dossiers
               <i class="right fas fa-angle-left"></i>
@@ -72,76 +72,76 @@
           <ul class="nav nav-treeview">
             <li class="nav-item">
               <a href="{% url 'archive_dossiers' %}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-file-archive nav-icon"></i>
                 <p>Archive hospitalisation</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="{% url 'dossiers_consultation' %}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-file-archive nav-icon"></i>
                 <p>Archive consultation</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="{% url 'radio_dossiers' %}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-file-archive nav-icon"></i>
                 <p>Archive radiologie</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="{% url 'bio_dossiers' %}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-file-archive nav-icon"></i>
                 <p>Archive biologie</p>
               </a>
             </li>
           </ul>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-copy"></i>
+          <a href="#" class="nav-link active">
+            <i class="nav-icon fas fa-folder-open"></i>
             <p>
-              Les dossiers prets
+              Les dossiers prêts 
               <i class="fas fa-angle-left right"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
               <a href="{% url 'dossiers_prets_hospitalisation' %}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-clipboard-check nav-icon"></i>
                 <p>Hospitalisation</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="{% url 'dossiers_prets_consultation' %}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-clipboard-check nav-icon"></i>
                 <p>Consultation</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="{% url 'dossiers_prets_radiologie' %}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-clipboard-check nav-icon"></i>
                 <p>Radiologie</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="{% url 'dossiers_prets_biologie' %}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-clipboard-check nav-icon"></i>
                 <p>Biologie</p>
               </a>
             </li>
           </ul>
         </li>
         <li class="nav-item">
-          <a href="{% url 'dossier_accomplir' %}" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
+          <a href="{% url 'dossier_accomplir'  %}" class="nav-link ">
+            <i class="nav-icon far fa-folder"></i>
             <p>
               Les dossiers à accomplir
             </p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="{% url 'contact' %}" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
+          <a href="{% url 'contact' %}" class="nav-link ">
+            <i class="nav-icon fas fa-address-book"></i>
             <p>
               Contact
             </p>
@@ -151,7 +151,7 @@
       </ul>
     </nav>
     <!-- /.sidebar-menu -->
-    <div class="nav-link" style="margin-top:170px ; margin-left: 113px;">
+    <div class="nav-link fixed-bottom" style="margin-left: 113px;">
       <a href="{% url 'logout' %}" class="btn btn-info">Déconnexion</a>
     </div>
   </div>

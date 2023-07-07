@@ -44,7 +44,7 @@
           <td>
             <a href="#" data-toggle="modal" data-target="#myModal" 
             data-ordonnance="{{ user.ordonnance.url }}"
-            data-bonBio="{{ user.bonRadio.url }}"
+            data-bonradio="{{ user.bonRadio.url }}"
             data-facture="{{ user.facture.url }}" 
             data-phcin="{{ dossier.phCIN.url }}" 
             data-phcnss="{{ dossier.phCNSS.url }}"  class="btn-showmore btn btn-secondary">Voir plus</a>
@@ -131,7 +131,7 @@
     var factureUrl = $(this).data('facture');
     var phCINUrl = $(this).data('phcin');
     var phCNSSUrl = $(this).data('phcnss');
-    var bonRadioURL = $(this).data('bonRadio');
+    var bonRadioURL = $(this).data('bonradio');
     var ordonnanceUrl = $(this).data('ordonnance');
 
     $('#ordonnanceLink').attr('href', ordonnanceUrl).text('Ordonnance');

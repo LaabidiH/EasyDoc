@@ -602,6 +602,248 @@ def enregistrer_action(request):
         return render(request, 'saa.html',{'error_message': error_message})
 
 
+def liste_hospitalisations(request):
+    user_id = request.session.get('user_id')
+    user_service = request.session.get('user_service')
+    if user_id is not None and user_service == "SAA":
+        user = Authentification.objects.get(id=user_id)
+        data = Hospitalisation.objects.filter(imprime=False)
+        return render(request, 'liste_hospitalisations.html', {'data': data, 'user': user})
+    else:
+        return render(request, 'login.html')
+    
+def modifier_hospitalisation(request):
+    if request.method == 'POST':
+        cin_assure = request.POST.get('inputCinAssurehosp')
+        ipp = request.POST.get('inputIPhosp')
+        date_entree = request.POST.get('inputDatehosp')
+        service = request.POST.get('inputServicehosp')
+        data=Hospitalisation.objects.filter(imprime=False)
+        try:
+            hospitalisation = Hospitalisation.objects.get(cin_assurant=cin_assure, ipp=ipp, date=date_entree, service=service)
+            hospitalisation.dateSortie = request.POST.get('inputDateSortie')
+            newOrdonnance = request.FILES.get('inputOrdonnancehosp')
+            newBillet = request.FILES.get('inputbillet')
+            newFacture = request.FILES.get('inputFacturehosp')
+            hospitalisation.service = request.POST.get('inputServicehosp')
+
+            if newBillet:
+                hospitalisation.billetHospitalisation = newBillet
+            
+            if newOrdonnance:
+                hospitalisation.ordonnance = newOrdonnance
+
+            if newFacture:
+                hospitalisation.facture = newFacture
+
+            if hospitalisation.save() is None:
+                error_message = "Modifié avec succès"
+            else:
+                error_message = "Erreur lors de la modification"
+
+            return render(request, 'liste_hospitalisations.html', {'error_message': error_message, 'data': data})
+        
+        except Hospitalisation.DoesNotExist:
+            pass
+
+    return render(request, 'liste_hospitalisations.html')
+
+def supprimer_hospitalisation(request):
+    if request.method == 'POST':
+        cin_assure = request.POST.get('cinAssure')
+        ipp = request.POST.get('ipp')
+        date= request.POST.get('date')
+        service =request.POST.get('service')
+        data = Hospitalisation.objects.filter()
+        if Hospitalisation.objects.filter(cin_assurant=cin_assure, ipp=ipp, date=date, service=service).delete():
+            error_message="Supprimé avec succées"         
+        else:
+            error_message="non supprimé"
+
+        return render(request, 'liste_hospitalisations.html',{'error_message': error_message, 'data': data})
+    else:
+        return redirect('liste_hospitalisations')
+
+
+def liste_radiologies(request):
+    user_id = request.session.get('user_id')
+    user_service = request.session.get('user_service')
+    if user_id is not None and user_service == "SAA":
+        user = Authentification.objects.get(id=user_id)
+        data = Radiologie.objects.filter(imprime=False)
+        return render(request, 'liste_radiologies.html', {'data': data, 'user': user})
+    else:
+        return render(request, 'login.html')
+
+
+def modifier_radiologie(request):
+    if request.method == 'POST':
+        cin_assure = request.POST.get('inputCinAssure')
+        ipp = request.POST.get('inputIPP')
+        date_entree = request.POST.get('inputDate')
+        service = request.POST.get('inputService')
+        try:
+            radiologie = Radiologie.objects.get(cin_assurant=cin_assure, ipp=ipp, date=date_entree, service=service)
+            newOrdonnance = request.FILES.get('inputOrdonnance')
+            newFacture = request.FILES.get('inputBon')
+            newBon = request.FILES.get('inputFacture')
+            radiologie.service = request.POST.get('inputService')
+            data = Radiologie.objects.filter(imprime=False)
+
+            if newOrdonnance:
+                radiologie.ordonnance = newOrdonnance
+            if newFacture:
+                radiologie.facture = newFacture
+            if newBon:
+                radiologie.bonRadio = newBon
+
+            if radiologie.save() is None:
+                error_message = "Modifié avec succès"
+            else:
+                error_message = "Erreur lors de la modification"
+
+            return render(request, 'liste_radiologies.html', {'error_message': error_message, 'data': data})
+
+        except Radiologie.DoesNotExist:
+            pass
+
+    return redirect('liste_radiologies')
+
+
+def supprimer_radiologie(request):
+    if request.method == 'POST':
+        cin_assure = request.POST.get('cinAssure')
+        ipp = request.POST.get('ipp')
+        date= request.POST.get('date')
+        service =request.POST.get('service')
+        data = Radiologie.objects.filter(imprime=False)
+        if Radiologie.objects.filter(cin_assurant=cin_assure, ipp=ipp, date=date, service=service).delete():
+            error_message="Supprimé avec succées"         
+        else:
+            error_message="non supprimé"
+
+        return render(request, 'liste_radiologies.html',{'error_message': error_message, 'data': data})
+    else:
+        return redirect('liste_radiologies')
+
+
+def liste_biologies(request):
+    user_id = request.session.get('user_id')
+    user_service = request.session.get('user_service')
+    if user_id is not None and user_service == "SAA":
+        user = Authentification.objects.get(id=user_id)
+        data = Biologie.objects.filter(imprime=False)
+        return render(request, 'liste_biologies.html', {'data': data, 'user': user})
+    else:
+        return render(request, 'login.html')
+    
+
+def modifier_biologie(request):
+    if request.method == 'POST':
+        cin_assure = request.POST.get('inputCinAssure')
+        ipp = request.POST.get('inputIPP')
+        date_entree = request.POST.get('inputDate')
+        service = request.POST.get('inputService')
+        try:
+            biologie = Biologie.objects.get(cin_assurant=cin_assure, ipp=ipp, date=date_entree, service=service)
+            newOrdonnance = request.FILES.get('inputOrdonnance')
+            newFacture = request.FILES.get('inputBon')
+            newBon = request.FILES.get('inputFacture')
+            biologie.service = request.POST.get('inputService')
+            data = Biologie.objects.filter(imprime=False)
+
+            if newOrdonnance:
+                biologie.ordonnance = newOrdonnance
+            if newFacture:
+                biologie.facture = newFacture
+            if newBon:
+                biologie.bonBio = newBon
+
+            if biologie.save() is None:
+                error_message = "Modifié avec succès"
+            else:
+                error_message = "Erreur lors de la modification"
+
+            return render(request, 'liste_biologies.html', {'error_message': error_message, 'data': data})
+
+        except Biologie.DoesNotExist:
+            pass
+
+    return redirect('liste_biologies')
+
+def supprimer_biologie(request):
+    if request.method == 'POST':
+        cin_assure = request.POST.get('cinAssure')
+        ipp = request.POST.get('ipp')
+        date= request.POST.get('date')
+        service =request.POST.get('service')
+        data = Biologie.objects.filter(imprime=False)
+        if Biologie.objects.filter(cin_assurant=cin_assure, ipp=ipp, date=date, service=service).delete():
+            error_message="Supprimé avec succées"         
+        else:
+            error_message="non supprimé"
+
+        return render(request, 'liste_biologies.html',{'error_message': error_message, 'data': data})
+    else:
+        return redirect('liste_biologies')
+
+
+
+
+def liste_consultations(request):
+    user_id = request.session.get('user_id')
+    user_service = request.session.get('user_service')
+    if user_id is not None and user_service == "SAA":
+        user = Authentification.objects.get(id=user_id)
+        data = Consultation.objects.filter(action="Consultation",imprime=False)
+        return render(request, 'liste_consultations.html', {'data': data, 'user': user})
+    else:
+        return render(request, 'login.html')
+
+
+def modifier_consultation(request):
+    if request.method == 'POST':
+        cin_assure = request.POST.get('inputCinAssurehosp')
+        ipp = request.POST.get('inputIPhosp')
+        date_entree = request.POST.get('inputDatehosp')
+        service = request.POST.get('inputServicehosp')
+        try:
+            consultation = Consultation.objects.get(cin_assurant=cin_assure, ipp=ipp, date=date_entree, service=service, action="Consultation")
+            newOrdonnance = request.FILES.get('inputOrdonnancehosp')
+            consultation.service = request.POST.get('inputServicehosp')
+            data=Consultation.objects.filter(action="Consultation",imprime=False)
+
+            if newOrdonnance:
+                consultation.ordonnance = newOrdonnance
+
+            if consultation.save() is None:
+                error_message="Modifié avec succés"
+            else:
+                error_message= "Erreur lors la modification"
+
+            return render(request, 'liste_consultations.html',{'error_message': error_message, 'data': data})
+
+        except Consultation.DoesNotExist:
+            pass
+
+    return redirect('liste_consultations')
+
+def supprimer_consultation(request):
+    if request.method == 'POST':
+        cin_assure = request.POST.get('cinAssure')
+        ipp = request.POST.get('ipp')
+        date= request.POST.get('date')
+        service =request.POST.get('service')
+        data = Consultation.objects.filter(action="consultation",imprime=False)
+        if Consultation.objects.filter(cin_assurant=cin_assure, ipp=ipp, date=date, service=service, action="Consultation").delete():
+            error_message="Supprimé avec succées"         
+        else:
+            error_message="non supprimé"
+
+        return render(request, 'liste_consultations.html',{'error_message': error_message, 'data': data})
+    else:
+        return redirect('liste_consultations')
+
 def liste_dossiers(request):
     user_id = request.session.get('user_id')
     user_service = request.session.get('user_service')
@@ -610,7 +852,7 @@ def liste_dossiers(request):
         data = DossierMedical.objects.filter()
         return render(request, 'liste_dossiers.html', {'data': data, 'user': user})
     else:
-        return render(request, 'liste_dossiers.html')
+        return render(request, 'login.html')
     
 
 def modifier_dossier(request):

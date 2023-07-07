@@ -144,7 +144,6 @@
   $(document).ready(function () {
     // Gestionnaire d'événements pour les boutons "Modifier"
     $('.btn-modifier').click(function () {
-      // Obtenez la ligne parente du bouton cliqué
       var row = $(this).closest('tr');
 
       // Obtenez les valeurs des champs de la ligne
@@ -163,7 +162,6 @@
     });
 
     $('#modifierBtn').click(function() {
-      // Soumettre le formulaire via JavaScript
       $('#modifierForm').submit();
     });
 

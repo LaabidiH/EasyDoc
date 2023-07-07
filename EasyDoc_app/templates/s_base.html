@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EasyDoc</title>
 
+  <script src="https://kit.fontawesome.com/a7ebe9020f.js" crossorigin="anonymous"></script>
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href=" {% static 'plugins/fontawesome-free/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
   <!-- DataTables -->
   <link rel="stylesheet" href="{% static 'plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
   <link rel="stylesheet" href="{% static 'plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
@@ -24,7 +24,6 @@
   <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
   <!-- JQVMap -->
   <link rel="stylesheet" href="{% static 'plugins/jqvmap/jqvmap.min.css' %}">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <!-- Bootstrap Color Picker -->
   <link rel="stylesheet" href="{% static 'plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css' %}">
   <!-- Select2 -->
@@ -45,8 +44,7 @@
   <!-- summernote -->
   <link rel="stylesheet" href="{% static 'plugins/summernote/summernote-bs4.min.css' %}">
   <!-- Inclure les fichiers CSS de Bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
 
 </head>
@@ -64,22 +62,7 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-      <!-- Content Header (Page header) -->
-      <div class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1 class="m-0">--</h1>
-            </div><!-- /.col -->
-            <div class="col-sm-6">
-              <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">--</li>
-              </ol>
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </div>
+
       <!-- /.content-header -->
       {% endblock %}
       {% block content %}
@@ -97,12 +80,10 @@
   <!-- ./wrapper -->
 
   <!-- Inclure jQuery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
 
   <!-- Inclure les fichiers JavaScript de Bootstrap -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <!-- jQuery -->
-  <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <!-- jQuery UI 1.11.4 -->
   <script src="{% static 'plugins/jquery-ui/jquery-ui.min.js' %}"></script>
   <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -116,7 +97,6 @@
   <!-- Sparkline -->
   <script src="{% static 'plugins/sparklines/sparkline.js' %}"></script>
   <!-- JQVMap -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="{% static 'plugins/jqvmap/jquery.vmap.min.js' %}"></script>
   <script src="{% static 'plugins/jqvmap/maps/jquery.vmap.usa.js' %}"></script>
   <!-- jQuery Knob Chart -->
@@ -141,8 +121,6 @@
   <script src="{% static 'plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
   <!-- AdminLTE App -->
   <script src="{% static 'js/adminlte.js' %}"></script>
-  <!-- AdminLTE App -->
-  <script src="{% static 'js/adminlte.min.js' %}"></script>
   <!-- DataTables  & Plugins -->
   <script src="{% static 'plugins/datatables/jquery.dataTables.min.js' %}"></script>
   <script src="{% static 'plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
@@ -161,77 +139,6 @@
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
-  <!-- Bootstrap4 Duallistbox -->
-  <script src="{% static 'plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js' %}"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="{% static 'js/demo.js' %}"></script>
-  <!-- Select2 -->
-  <script src="{% static 'plugins/select2/js/select2.full.min.js' %} "></script>
-  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="{% static 'js/pages/dashboard.js' %}"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
-  <script>
-
-
-    // BS-Stepper Init
-    document.addEventListener('DOMContentLoaded', function () {
-      window.stepper = new Stepper(document.querySelector('.bs-stepper'))
-    })
-
-    // DropzoneJS Demo Code Start
-    Dropzone.autoDiscover = false
-
-    // Get the template HTML and remove it from the doumenthe template HTML and remove it from the doument
-    var previewNode = document.querySelector("#template")
-    previewNode.id = ""
-    var previewTemplate = previewNode.parentNode.innerHTML
-    previewNode.parentNode.removeChild(previewNode)
-
-    var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
-      url: "/target-url", // Set the url
-      thumbnailWidth: 80,
-      thumbnailHeight: 80,
-      parallelUploads: 20,
-      previewTemplate: previewTemplate,
-      autoQueue: false, // Make sure the files aren't queued until manually added
-      previewsContainer: "#previews", // Define the container to display the previews
-      clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
-    })
-
-    myDropzone.on("addedfile", function (file) {
-      // Hookup the start button
-      file.previewElement.querySelector(".start").onclick = function () { myDropzone.enqueueFile(file) }
-    })
-
-    // Update the total progress bar
-    myDropzone.on("totaluploadprogress", function (progress) {
-      document.querySelector("#total-progress .progress-bar").style.width = progress + "%"
-    })
-
-    myDropzone.on("sending", function (file) {
-      // Show the total progress bar when upload starts
-      document.querySelector("#total-progress").style.opacity = "1"
-      // And disable the start button
-      file.previewElement.querySelector(".start").setAttribute("disabled", "disabled")
-    })
-
-    // Hide the total progress bar when nothing's uploading anymore
-    myDropzone.on("queuecomplete", function (progress) {
-      document.querySelector("#total-progress").style.opacity = "0"
-    })
-
-    // Setup the buttons for all transfers
-    // The "add files" button doesn't need to be setup because the config
-    // `clickable` has already been specified.
-    document.querySelector("#actions .start").onclick = function () {
-      myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED))
-    }
-    document.querySelector("#actions .cancel").onclick = function () {
-      myDropzone.removeAllFiles(true)
-    }
-    // DropzoneJS Demo Code End
-  </script>
   {% block scripts %}
   {% endblock %}
 </body>

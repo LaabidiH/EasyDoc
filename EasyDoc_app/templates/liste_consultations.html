@@ -1,0 +1,224 @@
+{% extends 's_base.html' %}
+{% load static %}
+
+{% block menus %}
+{% with urlname1="saa" urlname2="saa2" %}
+{% include '_nav.html' with title1="Ajouter une action" title2="Ajouter nouveau dossier" %}
+{% endwith %}
+{% include 'saa_sidebar.html' with role=request.session.user_service %}
+{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Liste des consultations pas encore imprimés</h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    {% if error_message %}
+    <div class="error_message" style="background-color: rgb(243, 242, 225); height: 28px;">
+      <h3 class="card-title" style="margin-top: 3px; margin-left: 8px; font-weight: bold; color:rgb(250, 3, 3);">{{ error_message }}</h3>
+    </div>
+    {% endif %}
+    <table id="example1" class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>cin assuré</th>
+          <th>IPP</th>
+          <th>date </th>
+          <th>ordonnance</th>
+          <th>service</th>
+          <th>Type d'action</th>
+          <th>Opération</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% csrf_token %}
+        {% for row in data %}
+        <tr>
+          <td class="cinAssure">{{ row.cin_assurant }}</td>
+          <td class="ipp">{{ row.ipp }}</td>
+          <td class="date">{{ row.date }}</td>
+          <td>
+            <a href="{{ row.ordonnance.url }}" target="_blank" class="ordonnance">{{ row.ipp }}</a>
+          </td>
+          <td class="service">{{ row.service }}</td>
+          <td class="action">{{ row.action }}</td>
+          <td>
+            <a href="#" class="btn btn-info btn-modifier" data-toggle="modal" data-target="#modifierModal">Modifier</a>
+            <a href="#" class="btn btn-danger btn-delete">Supprimer</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>cin assuré</th>
+          <th>IPP</th>
+          <th>date</th>
+          <th>ordonnance</th>
+          <th>service</th>
+          <th>Type d'action</th>
+          <th>Opération</th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <!-- /.card-body -->
+</div>
+
+<!-- Fenêtre modale de consultation -->
+<div class="modal fade" id="modifierModal" tabindex="-1" role="dialog" aria-labelledby="modifierModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content hospClass">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modifierModalLabel">Modifier le dossier de consultations</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" enctype="multipart/form-data" name="modifierForm" id="modifierForm" action="{% url 'modifier_consultation' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="inputCinAssurehosp">CIN Assuré</label>
+            <input type="text" class="form-control" id="inputCinAssurehosp" name="inputCinAssurehosp" readonly>
+          </div>
+          <div class="form-group">
+            <label for="inputIPhosp">IPP</label>
+            <input type="text" class="form-control" id="inputIPhosp" name="inputIPhosp" readonly>
+          </div>
+          <div class="form-group">
+            <label for="inputDatehosp">Date</label>
+            <input type="date" class="form-control" id="inputDatehosp" name="inputDatehosp" readonly> 
+          </div>
+          <div class="form-group">
+            <label for="inputOrdonnancehosp">Ordonnance</label>
+            <a href="#" id="outputOrdonnancehosp" target="_blank"></a><br>
+            <p>Ajouter Nouveau</p>
+            <input type="file" class="form-control" id="inputOrdonnancehosp" name="inputOrdonnancehosp">
+          </div>
+          <div class="form-group">
+            <label for="inputServicehosp">Service</label>
+            <select class="form-control" id="inputServicehosp" name="inputServicehosp">
+              <option value="Medecine">Médecine</option>
+              <option value="chirurgie">Chirurgie</option>
+              <option value="pediaterie">Pédiatrie</option>
+              <option value="maternite">Maternité</option>
+              <option value="centreDC">Centre de soins</option>
+              <option value="Biologie">Biologie</option>
+              <option value="Radiologie">Radiologie</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="inputTypeActionhosp">Type d'action</label>
+            <select class="form-control" id="inputTypeActionhosp" name="inputTypeActionhosp">
+              <option value="Consultation">Consultation</option>
+              <option value="Hospitalisation">Hospitalisation</option>
+              <option value="Biologie">Biologie</option>
+              <option value="Radiologie">Radiologie</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            <button type="submit" id="modifierBtn" name="modifierBtn" class="btn btn-danger">Modifier</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  $(function () {
+    bsCustomFileInput.init();
+  });
+
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+
+  $(document).ready(function () {
+    $('.btn-modifier').click(function () {
+      var row = $(this).closest('tr');
+      var action = row.find('.action').text();
+      var cinAssure = row.find('.cinAssure').text();
+      var ipp = row.find('.ipp').text();
+      var date = row.find('.date').text();
+      var service = row.find('.service').text();
+      var ordonnanceUrl = row.find('.ordonnance').attr('href');
+
+      $('#inputCinAssurehosp').val(cinAssure);
+      $('#inputIPhosp').val(ipp);
+      $('#inputDatehosp').val(date);
+      $('#inputServicehosp').val(service);
+      $('#inputTypeActionhosp').val(action);
+      $('#outputOrdonnancehosp').attr('href', ordonnanceUrl).text('Ordonnance');
+
+      $('.hospClass').show();
+      $('#modifierModal').modal('show');
+    });
+  
+    $('#modifierBtn').click(function() {
+      $('#modifierForm').submit();
+    });
+
+
+    $('.btn-delete').click(function () {
+      var row = $(this).closest('tr');
+
+      var cinAssure = row.find('.cinAssure').text();
+      var ipp = row.find('.ipp').text();
+      var service = row.find('.service').text();
+      var date = row.find('.date').text();
+      var confirmDelete = confirm("Êtes-vous sûr de vouloir supprimer cette action ?");
+
+      // Soumettre le formulaire de suppression si la confirmation est acceptée
+      if (confirmDelete) {
+        var form = $('<form>', {
+          'method': 'POST',
+          'action': '/supprimer-consultation/'
+        }).append($('<input>', {
+          'type': 'hidden',
+          'name': 'cinAssure',
+          'value': cinAssure
+        })).append($('<input>', {
+          'type': 'hidden',
+          'name': 'ipp',
+          'value': ipp
+        })).append($('<input>', {
+          'type': 'hidden',
+          'name': 'service',
+          'value': service
+        })).append($('<input>', {
+          'type': 'hidden',
+          'name': 'date',
+          'value': date
+        })).append('{% csrf_token %}');
+        
+        form.appendTo('body').submit();
+      }
+    });
+  
+  });
+</script>
+{% endblock %}
