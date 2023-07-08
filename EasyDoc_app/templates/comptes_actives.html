@@ -28,6 +28,7 @@
           <th>Adresse</th>
           <th>Service</th>
           <th>Poste</th>
+          <th>responsable ?</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -42,10 +43,17 @@
           <td class="">
             {% if user.service_medecin %} 
             {{user.service_medecin}}
-            <td class="">Medecin</td>
+          <td class="">Medecin</td>
             {% else %} 
             {{user.service_role}}
-            <td class="">Technicien</td>
+          <td class="">Technicien</td>
+            {% endif %}
+          </td>
+          <td>         
+            {% if user.responsable %}
+            Oui
+            {% else %} 
+            Non
             {% endif %}
           </td>
           <td>
@@ -63,6 +71,7 @@
           <th>Téléphone(s)</th>
           <th>Adresse</th>
           <th>Service</th>
+          <th>responsable ?</th>
           <th>Action</th>
         </tr>
       </tfoot>

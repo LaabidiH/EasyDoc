@@ -29,6 +29,7 @@
           <th>Adresse</th>
           <th>Service</th>
           <th>Poste</th>
+          <th>responsable ?</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -37,7 +38,7 @@
         {% for user in data %}
         <tr>
           <td class="">{{user.nom_complet}}</td>
-          <td class="">{{user.id}}</td>
+          <td class="">{{user.email}}</td>
           <td class="">{{user.tele}}</td>
           <td class="">{{user.adresse}}</td>
           <td class="">
@@ -47,6 +48,13 @@
             {% else %} 
             {{user.service_role}}
             <td class="">Technicien</td>
+            {% endif %}
+          </td>
+          <td>         
+            {% if user.responsable %}
+            Oui
+            {% else %} 
+            Non
             {% endif %}
           </td>
           <td>
@@ -64,6 +72,7 @@
           <th>Adresse</th>
           <th>Service</th>
           <th>Poste</th>
+          <th>responsable ?</th>
           <th>Action</th>
         </tr>
       </tfoot>

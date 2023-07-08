@@ -386,7 +386,7 @@ def dossiers_prets_hospitalisation(request):
         user = Authentification.objects.get(id=user_id)
         dossiers = DossierMedical.objects.filter()
 
-        data = Hospitalisation.objects.exclude(dpc="", pli_confidentiel="").annotate(table_name=Value('Hospitalisation', output_field=CharField()))
+        data = Hospitalisation.objects.exclude(dpc="", pli_confidentiel="",imprime=True).annotate(table_name=Value('Hospitalisation', output_field=CharField()))
         return render(request, 'dossiers_prets_hospitalisation.html', {'data': data, 'user': user})
     else:
         return render(request, 'login.html')
@@ -400,7 +400,7 @@ def dossiers_prets_consultation(request):
         user = Authentification.objects.get(id=user_id)
         dossiers = DossierMedical.objects.filter()
 
-        data = Consultation.objects.filter(action="Consultation").annotate(table_name=Value('Consultation', output_field=CharField()))
+        data = Consultation.objects.filter(action="Consultation",imprime=False).annotate(table_name=Value('Consultation', output_field=CharField()))
         return render(request, 'dossiers_prets_consultation.html', {'data': data, 'user': user})
     else:
         return render(request, 'login.html')
@@ -414,7 +414,7 @@ def dossiers_prets_radiologie(request):
         user = Authentification.objects.get(id=user_id)
         dossiers = DossierMedical.objects.filter()
 
-        data = Radiologie.objects.filter().annotate(table_name=Value('Radiologie', output_field=CharField()))
+        data = Radiologie.objects.filter(imprime=False).annotate(table_name=Value('Radiologie', output_field=CharField()))
         return render(request, 'dossiers_prets_radiologie.html', {'data': data, 'user': user})
     else:
         return render(request, 'login.html')
@@ -428,7 +428,7 @@ def dossiers_prets_biologie(request):
         user = Authentification.objects.get(id=user_id)
         dossiers = DossierMedical.objects.filter()
 
-        data = Biologie.objects.filter().annotate(table_name=Value('Biologie', output_field=CharField()))
+        data = Biologie.objects.filter(imprime=False).annotate(table_name=Value('Biologie', output_field=CharField()))
         return render(request, 'dossiers_prets_biologie.html', {'data': data, 'user': user})
     else:
         return render(request, 'login.html')
@@ -898,7 +898,7 @@ def supprimer_dossier(request):
 
 
 def get_medecins(request, service):
-    medecins = Medecin.objects.filter(service_medecin=service).values('nom_complet', 'inpe')
+    medecins = Medecin.objects.filter(service_medecin=service, active =True).values('nom_complet', 'inpe')
     return JsonResponse({'medecins': list(medecins)})
 
 ############## vues du connexion
@@ -966,6 +966,7 @@ def signup(request):
         service1 = request.POST['roles1'] 
         inpe= request.POST['inpe']
         poste = request.POST['poste']
+        
 
 
         if not validate_email(email):
@@ -979,7 +980,7 @@ def signup(request):
         
         if poste =="medecin":
             if nom and password and adresse and email and tele and service1:
-                respo = request.POST['respo']
+                respo = request.POST.get('respo')
                 if respo == "on":
                     respo = True
                 else :
