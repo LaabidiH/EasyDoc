@@ -386,7 +386,7 @@ def dossiers_prets_hospitalisation(request):
         user = Authentification.objects.get(id=user_id)
         dossiers = DossierMedical.objects.filter()
 
-        data = Hospitalisation.objects.exclude(dpc="", pli_confidentiel="",imprime=True).annotate(table_name=Value('Hospitalisation', output_field=CharField()))
+        data = Hospitalisation.objects.exclude(dpc="", pli_confidentiel="").annotate(table_name=Value('Hospitalisation', output_field=CharField()))
         return render(request, 'dossiers_prets_hospitalisation.html', {'data': data, 'user': user})
     else:
         return render(request, 'login.html')
