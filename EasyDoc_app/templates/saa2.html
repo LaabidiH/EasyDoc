@@ -17,11 +17,19 @@
       <h3 class="card-title">Ajouter un nouveau dossier médical</h3>
     </div>
     <div class="card-body">
-      {% if error_message %}
-          <div class="error_message" style="background-color: rgb(243, 242, 225); height: 28px;">
-              <h3 class="card-title" style="margin-top: 3px; margin-left: 8px; font-weight: bold; color: rgb(250, 3, 3);">{{ error_message }}</h3>
+      {% if messages %}
+      {% for message in messages %}
+        {% if message.tags == 'success' %}
+          <div class="alert alert-success text-center">
+            {{ message }}
           </div>
-      {% endif %}
+        {% else %}
+          <div class="alert alert-danger text-center">
+            {{ message }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
       <form class="form-horizontal" enctype="multipart/form-data"  action="{% url 'enregistrer_dossier' %}" method="post">
         {% csrf_token %}
         <div class="card-body">
@@ -33,7 +41,7 @@
             </div>
           </div>
           <div class="form-group row">
-            <label for="cin" class="col-sm-2 col-form-label">CIN d'assurant :</label>
+            <label for="cin" class="col-sm-2 col-form-label">CIN d'assuré :</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="cin_assurant" name="cin_assurant" placeholder="Carte d'identité nationale" required>
             </div>
@@ -45,7 +53,7 @@
             </div>
           </div>
           <div class="form-group row">
-            <label for="photo_cin" class="col-sm-2 col-form-label">Photo CIN d'assurant :</label>
+            <label for="photo_cin" class="col-sm-2 col-form-label">Photo CIN d'assuré :</label>
             <div class="col-sm-10">
               <div class="input-group" style="width: 700px;">
                 <div class="custom-file">

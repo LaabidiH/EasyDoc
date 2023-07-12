@@ -131,6 +131,11 @@
                 if (response.success) {
                     // Mettre à jour l'interface utilisateur ou effectuer d'autres actions nécessaires
                     btn.closest('tr').remove();  // Supprimer la ligne du tableau
+                    Swal.fire({
+                    icon: 'success',
+                    title: 'Succès !',
+                    text: 'Médecin désactivé avec succès.'
+                });
                 }
             },
             error: function(xhr, status, error) {
@@ -141,24 +146,45 @@
 
     $('.btn-delete').click(function() {
     var medecinId = $(this).data('user-id');
-
     var btn = $(this); // Référence au bouton actuel pour accès ultérieur
 
-    $.ajax({
-        url: '/delete-medecin/',
-        type: 'POST',
-        data: {
-            'medecin_id': medecinId,
-            'csrfmiddlewaretoken': getCookie('csrftoken')
-        },
-        success: function(response) {
-            if (response.success) {
-                // Mettre à jour l'interface utilisateur ou effectuer d'autres actions nécessaires
-                btn.closest('tr').remove();  // Supprimer la ligne du tableau
-            }
-        },
-        error: function(xhr, status, error) {
-            print("erreur lors l'envoi");
+    // Utiliser SweetAlert2 pour afficher la boîte de dialogue de confirmation
+    Swal.fire({
+        title: 'Êtes-vous sûr(e) ?',
+        text: "La suppression sera irréversible !",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Oui, supprimer',
+        cancelButtonText: 'Annuler',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Effectuer la suppression si l'utilisateur a confirmé
+            $.ajax({
+                url: '/delete-medecin/',
+                type: 'POST',
+                data: {
+                    'medecin_id': medecinId,
+                    'csrfmiddlewaretoken': getCookie('csrftoken')
+                },
+                success: function(response) {
+                    if (response.success) {
+                        // Mettre à jour l'interface utilisateur
+                        btn.closest('tr').remove();  // Supprimer la ligne du tableau
+
+                        // Afficher une alerte de succès avec SweetAlert2
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Succès !',
+                            text: 'Médecin supprimé avec succès.'
+                        });
+                    }
+                },
+                error: function(xhr, status, error) {
+                    // Gérer les erreurs de requête AJAX
+                    console.error(error);
+                }
+            });
         }
     });
 });

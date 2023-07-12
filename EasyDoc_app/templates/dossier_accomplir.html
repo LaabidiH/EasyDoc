@@ -1,22 +1,37 @@
 {% extends 'base.html' %}
-{% load static %} 
+{% load static %}
 
 
-  {% block menus %}
-  {% with urlname1="archive_dossiers" urlname2="archive_dossiers" %}
-  {% include '_nav.html' with title1="Archive des dossiers " title2="" %}
-  {% endwith %}
-  {% include '_sidebar.html' with role=request.session.user_service %}
-  {% endblock %}
+{% block menus %}
+{% with urlname1="archive_dossiers" urlname2="archive_dossiers" %}
+{% include '_nav.html' with title1="Archive des dossiers " title2="" %}
+{% endwith %}
+{% include '_sidebar.html' with role=request.session.user_service %}
+{% endblock %}
 
 
 {% block content %}
 <!-- Main content -->
 
 <div class="card">
-  <div class="card-header">
-    <h3 class="card-title">Les dossiers d'hospitalisation en attente de données de pris en charge et pli confidentiel</h3>
+  {% if messages %}
+  {% for message in messages %}
+  {% if message.tags == 'success' %}
+  <div class="alert alert-success text-center">
+    {{ message }}
   </div>
+  {% else %}
+  <div class="alert alert-danger text-center">
+    {{ message }}
+  </div>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+  <div class="card-header">
+    <h3 class="card-title">Les dossiers d'hospitalisation en attente de données de pris en charge et pli confidentiel
+    </h3>
+  </div>
+
   <!-- /.card-header -->
   <div class="card-body">
     <table id="example1" class="table table-bordered table-striped">
@@ -35,15 +50,15 @@
         {% csrf_token %}
         {% for row in data %}
         <tr>
-            <td class="">{{ row.cin_assurant }}</td>
-            <td class="">{{ row.ipp }}</td>
-            <td class="">{{ row.date }}</td>
-            <td class="">{{ row.dateSortie }}</td> 
-            <td class="">{{ row.table_name }}</td>
-            <td class="">{{ row.service }}</td>
-            <td>
-              <a href="/contact/?medecin={{ row.medecin }}" data-medecin="{{ row.medecin }}" class="medecin-link">{{ row.medecin }}</a>
-            </td>
+          <td class="">{{ row.cin_assurant }}</td>
+          <td class="">{{ row.ipp }}</td>
+          <td class="">{{ row.date }}</td>
+          <td class="">{{ row.dateSortie }}</td>
+          <td class="">{{ row.table_name }}</td>
+          <td class="">{{ row.service }}</td>
+          <td>
+            <a href="/contact/?medecin={{ row.medecin }}" data-medecin="{{ row.medecin }}" class="medecin-link">{{ row.medecin }}</a>
+          </td>
         </tr>
         {% endfor %}
       </tbody>
@@ -81,16 +96,16 @@
       "responsive": true,
     });
   });
-  $(document).ready(function() {
-  $('.medecin-link').click(function(e) {
-    e.preventDefault(); // Empêche le comportement par défaut du lien
-    
-    var medecin = $(this).data('medecin'); // Récupère la valeur du médecin
-    
-    // Redirige vers la page contact.html avec le paramètre medecin
-    window.location.href = '/contact?medecin=' + encodeURIComponent(medecin);
+  $(document).ready(function () {
+    $('.medecin-link').click(function (e) {
+      e.preventDefault(); // Empêche le comportement par défaut du lien
+
+      var medecin = $(this).data('medecin'); // Récupère la valeur du médecin
+
+      // Redirige vers la page contact.html avec le paramètre medecin
+      window.location.href = '/contact?medecin=' + encodeURIComponent(medecin);
+    });
   });
-});
 
 </script>
 {% endblock %}

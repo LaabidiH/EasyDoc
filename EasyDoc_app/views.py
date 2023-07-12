@@ -288,7 +288,8 @@ def contact(request):
             medecin = Medecin.objects.get(inpe=inpe)
             return render(request, 'contact.html', {'user': user, 'medecin': medecin})
         except Medecin.DoesNotExist:
-            return HttpResponse("Médecin non trouvé")
+            messages.error(request, "Médecin non trouvé")
+            return redirect('dossier_accomplir')
     else:
         return render(request, 'login.html')
 
@@ -400,7 +401,7 @@ def dossiers_prets_consultation(request):
         user = Authentification.objects.get(id=user_id)
         dossiers = DossierMedical.objects.filter()
 
-        data = Consultation.objects.filter(action="Consultation",imprime=False).annotate(table_name=Value('Consultation', output_field=CharField()))
+        data = Consultation.objects.filter(action="Consultation").annotate(table_name=Value('Consultation', output_field=CharField()))
         return render(request, 'dossiers_prets_consultation.html', {'data': data, 'user': user})
     else:
         return render(request, 'login.html')
@@ -414,7 +415,7 @@ def dossiers_prets_radiologie(request):
         user = Authentification.objects.get(id=user_id)
         dossiers = DossierMedical.objects.filter()
 
-        data = Radiologie.objects.filter(imprime=False).annotate(table_name=Value('Radiologie', output_field=CharField()))
+        data = Radiologie.objects.filter().annotate(table_name=Value('Radiologie', output_field=CharField()))
         return render(request, 'dossiers_prets_radiologie.html', {'data': data, 'user': user})
     else:
         return render(request, 'login.html')
@@ -428,7 +429,7 @@ def dossiers_prets_biologie(request):
         user = Authentification.objects.get(id=user_id)
         dossiers = DossierMedical.objects.filter()
 
-        data = Biologie.objects.filter(imprime=False).annotate(table_name=Value('Biologie', output_field=CharField()))
+        data = Biologie.objects.filter().annotate(table_name=Value('Biologie', output_field=CharField()))
         return render(request, 'dossiers_prets_biologie.html', {'data': data, 'user': user})
     else:
         return render(request, 'login.html')
@@ -485,20 +486,19 @@ def enregistrer_dossier(request):
                 if phCIN and phCNSS:
                     dossier_medical = DossierMedical(ipp=ipp, cinAssure=cin_assure, cnss=cnss, phCIN=phCIN, phCNSS=phCNSS)
                     dossier_medical.save()
-                    error_message = "Le dossier médical a été ajouté avec succès."
-                    return render(request, 'saa2.html', {'error_message': error_message})
+                    messages.success(request, "Le dossier médical a été ajouté avec succès.")
+                    return redirect('saa2')
                 else:
-                    error_message = "Veuillez remplir tous les champs obligatoires."
-                    return render(request, 'saa2.html', {'error_message': error_message})
+                    messages.error(request, "Veuillez remplir tous les champs obligatoires.")
+                    return redirect('saa2')
             else:
-                error_message = "Le numéro IPP doit être unique, c'est-à-dire qu'il ne doit pas être répété."
-                return render(request, 'saa2.html', {'error_message': error_message})
+                messages.error(request, "Le numéro IPP doit être unique, c'est-à-dire qu'il ne doit pas être répété." )
+                return redirect('saa2')
         else:
-            error_message = "Ce dossier existe déjà."
-            return render(request, 'saa2.html', {'error_message': error_message})
-
-        
-    return render(request, 'saa2.html')
+            messages.error(request,  "Ce dossier existe déjà.")
+            return redirect('saa2')
+           
+    return render(request, 'saa2')
 
 
 def enregistrer_action(request):
@@ -536,8 +536,8 @@ def enregistrer_action(request):
                     action="Consultation"
                 )
                 consultation.save()
-                error_message = "La consultation a été ajoutée avec succès."
-                return render(request, 'saa.html', {'error_message': error_message})
+                messages.success(request, "La consultation a été ajoutée avec succès.")
+                return redirect('saa')
 
             elif action == "Hospitalisation":
                 if date_sortie >= date:
@@ -554,11 +554,11 @@ def enregistrer_action(request):
                         medecin=medecin
                     )
                     hospitalisation.save()
-                    error_message = "L'hospitalisation a été ajoutée avec succès."
-                    return render(request, 'saa.html', {'error_message': error_message})
+                    messages.success(request,"L'hospitalisation a été ajoutée avec succès.")
+                    return redirect('saa')
                 else:
-                    error_message = "La date de sortie doit être supérieure à la date d'entrée."
-                    return render(request, 'saa.html', {'error_message': error_message})
+                    messages.error(request, "La date de sortie doit être supérieure à la date d'entrée.")
+                    return redirect('saa')
 
             elif action == "Radiologie":
                 radiologie = Radiologie(
@@ -572,8 +572,8 @@ def enregistrer_action(request):
                     action=action
                 )
                 radiologie.save()
-                error_message = "L'acte de radiologie a été ajouté avec succès."
-                return render(request, 'saa.html', {'error_message': error_message})
+                messages.success(request,  "L'acte de radiologie a été ajouté avec succès.")
+                return redirect('saa')
 
             elif action == "Biologie":
                 biologie = Biologie(
@@ -587,19 +587,19 @@ def enregistrer_action(request):
                     action=action
                 )
                 biologie.save()
-                error_message = "L'acte de biologie a été ajouté avec succès."
-                return render(request, 'saa.html', {'error_message': error_message})
+                messages.success(request, "L'acte de biologie a été ajouté avec succès." )
+                return redirect('saa')
 
             else:
-                error_message = "Vérifiez les champs."
-                return render(request, 'saa.html', {'error_message': error_message})
+                messages.error(request,"Vérifiez les champs.")
+                return redirect('saa')
 
         else:
-            error_message = "Vérifiez le CIN ou l'IPP du patient, ou essayez d'ajouter un dossier pour ce patient."
-            return render(request, 'saa.html', {'error_message': error_message})
+            messages.error(request, "Vérifiez le CIN ou l'IPP du patient, ou essayez d'ajouter un dossier pour ce patient.")
+            return redirect('saa')
     else:
-        error_message = "Erreur lors la soumission"
-        return render(request, 'saa.html',{'error_message': error_message})
+        messages.error("Erreur lors la soumission")
+        return redirect('saa')
 
 
 def liste_hospitalisations(request):
@@ -637,11 +637,11 @@ def modifier_hospitalisation(request):
                 hospitalisation.facture = newFacture
 
             if hospitalisation.save() is None:
-                error_message = "Modifié avec succès"
+                messages.success(request, 'Modifié avec succès')
+                return redirect('liste_hospitalisations')
             else:
-                error_message = "Erreur lors de la modification"
-
-            return render(request, 'liste_hospitalisations.html', {'error_message': error_message, 'data': data})
+                messages.error(request, "Erreur lors de la modification")                
+                return redirect('liste_hospitalisations')
         
         except Hospitalisation.DoesNotExist:
             pass
@@ -656,11 +656,11 @@ def supprimer_hospitalisation(request):
         service =request.POST.get('service')
         data = Hospitalisation.objects.filter()
         if Hospitalisation.objects.filter(cin_assurant=cin_assure, ipp=ipp, date=date, service=service).delete():
-            error_message="Supprimé avec succées"         
+            messages.success(request,"Supprimé avec succées")
+            return redirect('liste_hospitalisations')
         else:
-            error_message="non supprimé"
-
-        return render(request, 'liste_hospitalisations.html',{'error_message': error_message, 'data': data})
+            messages.error(request,'Erreur lors la suppression')
+            return redirect('liste_hospitalisations')
     else:
         return redirect('liste_hospitalisations')
 
@@ -698,11 +698,11 @@ def modifier_radiologie(request):
                 radiologie.bonRadio = newBon
 
             if radiologie.save() is None:
-                error_message = "Modifié avec succès"
+                messages.success(request, "Modifié avec succès" )
+                return redirect('liste_radiologies')
             else:
-                error_message = "Erreur lors de la modification"
-
-            return render(request, 'liste_radiologies.html', {'error_message': error_message, 'data': data})
+                messages.error(request,"Erreur lors de la modification" )
+                return redirect('liste_radiologies')
 
         except Radiologie.DoesNotExist:
             pass
@@ -718,11 +718,11 @@ def supprimer_radiologie(request):
         service =request.POST.get('service')
         data = Radiologie.objects.filter(imprime=False)
         if Radiologie.objects.filter(cin_assurant=cin_assure, ipp=ipp, date=date, service=service).delete():
-            error_message="Supprimé avec succées"         
+            messages.success(request,"Supprimé avec succées")
+            return redirect('liste_radiologies')
         else:
-            error_message="non supprimé"
-
-        return render(request, 'liste_radiologies.html',{'error_message': error_message, 'data': data})
+            messages.error(request,'Erreur lors la suppression')
+            return redirect('liste_radiologies')
     else:
         return redirect('liste_radiologies')
 
@@ -760,11 +760,11 @@ def modifier_biologie(request):
                 biologie.bonBio = newBon
 
             if biologie.save() is None:
-                error_message = "Modifié avec succès"
+                messages.success(request,"Modifié avec succès" )
+                return redirect('liste_biologies')
             else:
-                error_message = "Erreur lors de la modification"
-
-            return render(request, 'liste_biologies.html', {'error_message': error_message, 'data': data})
+                messages.error(request,"Erreur lors de la modification" )
+                return redirect('liste_biologies')
 
         except Biologie.DoesNotExist:
             pass
@@ -779,11 +779,11 @@ def supprimer_biologie(request):
         service =request.POST.get('service')
         data = Biologie.objects.filter(imprime=False)
         if Biologie.objects.filter(cin_assurant=cin_assure, ipp=ipp, date=date, service=service).delete():
-            error_message="Supprimé avec succées"         
+            messages.success(request,"Supprimé avec succées")
+            return redirect('liste_biologies')
         else:
-            error_message="non supprimé"
-
-        return render(request, 'liste_biologies.html',{'error_message': error_message, 'data': data})
+            messages.error(request,'Erreur lors la suppression')
+            return redirect('liste_biologies')
     else:
         return redirect('liste_biologies')
 
@@ -817,11 +817,11 @@ def modifier_consultation(request):
                 consultation.ordonnance = newOrdonnance
 
             if consultation.save() is None:
-                error_message="Modifié avec succés"
+                messages.success(request,"Modifié avec succés" )
+                return redirect('liste_consultations')
             else:
-                error_message= "Erreur lors la modification"
-
-            return render(request, 'liste_consultations.html',{'error_message': error_message, 'data': data})
+                messages.error(request, "Erreur lors la modification")
+                return redirect('liste_consultations')
 
         except Consultation.DoesNotExist:
             pass
@@ -836,11 +836,11 @@ def supprimer_consultation(request):
         service =request.POST.get('service')
         data = Consultation.objects.filter(action="consultation",imprime=False)
         if Consultation.objects.filter(cin_assurant=cin_assure, ipp=ipp, date=date, service=service, action="Consultation").delete():
-            error_message="Supprimé avec succées"         
+            messages.success(request,"Supprimé avec succées")
+            return redirect('liste_consultations')
         else:
-            error_message="non supprimé"
-
-        return render(request, 'liste_consultations.html',{'error_message': error_message, 'data': data})
+            messages.error(request,'Erreur lors la suppression')
+            return redirect('liste_consultations')
     else:
         return redirect('liste_consultations')
 
@@ -871,8 +871,12 @@ def modifier_dossier(request):
             dossier.phCIN = new_ph_cin
         if new_ph_cnss:
             dossier.phCNSS = new_ph_cnss
-        dossier.save()
-        return redirect('liste_dossiers')
+        if dossier.save() is None :
+            messages.success(request, 'Modifié avec succès')
+            return redirect('liste_dossiers')
+        else:
+            messages.error(request, 'Erreur la modification')
+            return redirect('liste_dossiers')
     else:
         return render(request, 'liste_dossiers.html', {'data': data})
 
@@ -886,13 +890,16 @@ def supprimer_dossier(request):
             if not Consultation.objects.filter(cin_assurant=cin_assure, ipp=ipp).exists():
                 dossier = get_object_or_404(DossierMedical, cinAssure=cin_assure, ipp=ipp)
                 dossier.delete()
+                messages.success(request, "Dossier supprimer avec succès")
                 return redirect('liste_dossiers')
             else :
                 error_message="Vous ne pouvez pas supprimer le dossier qui a "+ipp+" comme ipp car il a des actions enregistrés"
-                return render(request, 'liste_dossiers.html',{'error_message': error_message, 'data': data})
+                messages.error(request,error_message)
+                return redirect('liste_dossiers')
         else:
             error_message = "Erreur lors la suppression"
-            return render(request, 'liste_dossiers.html',{'error_message': error_message, 'data': data})
+            messages.error(request,error_message)
+            return redirect('liste_dossiers')
     else:
         return redirect('liste_dossiers')
 
@@ -926,8 +933,8 @@ def reset_password(request):
         try:
             auth = Authentification.objects.get(email=email)
         except Authentification.DoesNotExist:
-            error_message = "Cet e-mail n'est associé à aucun compte."
-            return render(request, 'login.html', {'error_message': error_message})
+            messages.error(request, "Cet e-mail n'est associé à aucun compte.")
+            return redirect('login')
         
         # Génération d'un nouveau mot de passe aléatoire
         new_password = generate_random_password()
@@ -943,11 +950,11 @@ def reset_password(request):
                 [email],
                 fail_silently=False,
             ):
-                error_message = "Un e-mail contenant le nouveau mot de passe a été envoyé à votre adresse."
-                return render(request, 'login.html', {'error_message': error_message})
+                    messages.success(request, "Un e-mail contenant le nouveau mot de passe a été envoyé à votre adresse.")
+                    return redirect('login')
         except BadHeaderError:
-            error_message = "Erreur lors de l'envoi de l'e-mail."
-            return render(request, 'login.html', {'error_message': error_message})
+            messages.error(request, "Erreur lors de l'envoi de l'e-mail.")
+            return redirect('login')
     
     return render(request, 'login.html')
 
@@ -966,8 +973,6 @@ def signup(request):
         service1 = request.POST['roles1'] 
         inpe= request.POST['inpe']
         poste = request.POST['poste']
-        
-
 
         if not validate_email(email):
             error_message = "Format d'email non valide"
@@ -1006,7 +1011,8 @@ def signup(request):
                     service = service1
                 )
                 authentification.save()
-         
+                success_message= 'ajouté avec succés'
+                messages.success(request,success_message)
                 return redirect('login')
             else:
                 error_message = "Tous les champs doivent être remplis"
@@ -1032,7 +1038,7 @@ def signup(request):
                     service = service
                 )
                 authentification.save()
-
+                messages.success(request,'ajouté avec succès')
                 return redirect('login')
             else:
                 error_message = "Tous les champs doivent être remplis"

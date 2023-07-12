@@ -27,19 +27,21 @@
                             <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom complet">
                         </div>
                     </div>
+
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">email</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="email" name="email" placeholder="email">
                         </div>
                     </div>
+
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">adresse</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Adresse">
                         </div>
                     </div>
-                    <!-- ajouter le role (si un medecin ajouter autre textfieled inpe) -->
+
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Téléphone</label>
                         <div class="col-sm-10">
@@ -47,6 +49,7 @@
                                 placeholder="Numéro de téléphone">
                         </div>
                     </div>
+
                     <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-2 col-form-label">Poste</label>
                         <div class="col-sm-10">
@@ -57,41 +60,44 @@
                             </select>
                         </div>
                     </div>
-                    <div id="inpe-group" class="form-group row" style="display: none;">
-                        <label for="inpe" class="col-sm-2 col-form-label">INPE</label>
+
+                    <div name="medecin_form" id="medecin_form">
+                    <div id="inpe-group" class="form-group row">
+                        <label for="inpe" class="col-sm-2 col-form-label" id="inpelabel" >INPE</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inpe" name="inpe" style="margin-left: 112px;"
-                                placeholder="INPE">
+                            <input type="text" class="form-control" id="inpef" name="inpe" placeholder="INPE">
                         </div>
                     </div>
-                    <div class="form-group row" style="display: none;" id="respo_grp">
-                        <div class="offset-sm-2 col-sm-10">
+
+                    <div class="form-group row" id="respo_grp" name="respo_grp">
+                        <div class="offset-sm-2 col-sm-10" >
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" name="respo" id="respo">
-                                <label class="form-check-label" for="respo">Je suis le responsable de cette service</label>
+                                <label class="form-check-label" for="respo">Je suis le responsable de ce service</label>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row" id = "servicestt" style="display: block;">
-                        <label for="inputPassword3" class="col-sm-2 col-form-label">Service1</label>
-                        <div class="col-sm-10">
-                            <select name="roles" id="roles" class="form-control" style="margin-left: 112px;">
+                    </div>
+
+
+                    <div class="form-group row" >
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Service</label>
+                        <div class="col-sm-10"  id="service_grp">
+                            <select name="roles1" id="roles1" class="form-control">
+                                {% for serv in serviceMedecin %}
+                                <option value="{{ serv.0 }}">{{ serv.1 }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-sm-10" id = "servicestt">
+                            <select name="roles" id="roles" class="form-control">
                                 {% for role in roles %}
                                 <option value="{{ role.0 }}">{{ role.1 }}</option>
                                 {% endfor %}
                             </select>
                         </div>
                     </div>
-                    <div class="form-group row"  id="service_grp" style="display: none;">
-                        <label for="inputPassword3" class="col-sm-2 col-form-label">Service2</label>
-                        <div class="col-sm-10">
-                            <select name="roles1" id="roles1" class="form-control" style="margin-left: 112px;">
-                                {% for serv in serviceMedecin %}
-                                <option value="{{ serv.0 }}">{{ serv.1 }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                    </div>
+
                     <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
@@ -99,6 +105,7 @@
                                 pattern="^(?=.*[a-zA-Z])(?=.*\d).{8,}$" placeholder="Mot de passe">
                         </div>
                     </div>
+
                     <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-2 col-form-label">Password Confirmation</label>
                         <div class="col-sm-10">
@@ -106,6 +113,7 @@
                                 name="passwordC" placeholder="confirmation de mot de passe ">
                         </div>
                     </div>
+
                     <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
                             <div class="form-check">
@@ -115,10 +123,12 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="form-group row">
                         <p id="error" class="error-message"
                             style="margin-left: 120px;  font-weight: bold; color: tomato;"></p>
                     </div>
+
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
@@ -136,30 +146,30 @@
 {% block scripts %}
 <script>
     // Fonction pour afficher ou masquer le champ "INPE" en fonction du choix de rôle
-    function toggleINPEField() {
-        var selectedRole = document.getElementById('poste').value;
-        var inpeGroup = document.getElementById('inpe-group');
-        var serviceGrp = document.getElementById('service_grp');
-        var servicestt =  document.getElementById('servicestt');
-        var respo =  document.getElementById('respo');
-        if (selectedRole === 'medecin') {
-            inpeGroup.style.display = 'block';
-            serviceGrp.style.display = 'block';
-            respo_grp.style.display = 'block';
-            servicestt.style.display = 'none';
-        } else {
-            inpeGroup.style.display = 'none';
-            serviceGrp.style.display = 'none';
-            servicestt.style.display = 'block';
-            respo_grp.style.display = 'none';
-        }
-    }
+function toggleINPEField() {
+    var selectedRole = document.getElementById('poste').value;
+    var inpe = document.getElementById('inpef');
+    var inpelabel = document.getElementById('inpelabel');
+    var serviceGrp = document.getElementById('service_grp');
+    var servicestt =  document.getElementById('servicestt');
+    var respo_grp =  document.getElementById('respo_grp');
+    var medecin_form = document.getElementById('medecin_form')
+if (selectedRole === 'medecin') {
+    serviceGrp.style.display = 'block';
+    servicestt.style.display = 'none';
+    medecin_form.style.display='block'
+ } else {
+    serviceGrp.style.display = 'none';
+    servicestt.style.display = 'block';
+    medecin_form.style.display = 'none'
+ }
+ }
 
-    // Écouteur d'événement pour appeler la fonction lorsqu'il y a un changement dans le champ "poste"
+ // Écouteur d'événement pour appeler la fonction lorsqu'il y a un changement dans le champ "poste"
     document.getElementById('poste').addEventListener('change', toggleINPEField);
 
-    // Appel initial de la fonction pour vérifier l'état initial du champ "poste"
-    toggleINPEField();
+// Appel initial de la fonction pour vérifier l'état initial du champ "poste"
+     toggleINPEField();
 
     function validateForm() {
         var nom = document.getElementById('nom').value.trim();

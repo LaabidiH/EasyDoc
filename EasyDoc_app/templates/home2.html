@@ -106,34 +106,11 @@
     }
 
     $('.btn-activer').click(function() {
-        var userId = $(this).data('user-id');
-        var btn = $(this); // Référence au bouton actuel pour accès ultérieur
-
-        $.ajax({
-            url: '/activer-technicien/',
-            type: 'POST',
-            data: {
-                'user_id': userId,
-                'csrfmiddlewaretoken': getCookie('csrftoken')
-            },
-            success: function(response) {
-                if (response.success) {
-                    // Mettre à jour l'interface utilisateur ou effectuer d'autres actions nécessaires
-                    btn.closest('tr').remove();  // Supprimer la ligne du tableau
-                }
-            },
-            error: function(xhr, status, error) {
-                // Gérer les erreurs de requête AJAX
-            }
-        });
-    });
-
-    $('.btn-delete').click(function() {
     var userId = $(this).data('user-id');
     var btn = $(this); // Référence au bouton actuel pour accès ultérieur
 
     $.ajax({
-        url: '/delete-technicien/',
+        url: '/activer-technicien/',
         type: 'POST',
         data: {
             'user_id': userId,
@@ -141,12 +118,65 @@
         },
         success: function(response) {
             if (response.success) {
-                // Mettre à jour l'interface utilisateur ou effectuer d'autres actions nécessaires
+                // Mettre à jour l'interface utilisateur
                 btn.closest('tr').remove();  // Supprimer la ligne du tableau
+
+                // Afficher une alerte de succès avec SweetAlert2
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Succès !',
+                    text: 'Technicien activé avec succès.'
+                });
             }
         },
         error: function(xhr, status, error) {
-            print("erreur lors l'envoi");
+            // Gérer les erreurs de requête AJAX
+            console.error(error);
+        }
+    });
+});
+
+$('.btn-delete').click(function() {
+    var userId = $(this).data('user-id');
+    var btn = $(this); // Référence au bouton actuel pour accès ultérieur
+
+    // Utiliser SweetAlert2 pour afficher la boîte de dialogue de confirmation
+    Swal.fire({
+        title: 'Êtes-vous sûr(e) ?',
+        text: "La suppression sera irréversible !",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Oui, supprimer',
+        cancelButtonText: 'Annuler',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Effectuer la suppression si l'utilisateur a confirmé
+            $.ajax({
+                url: '/delete-technicien/',
+                type: 'POST',
+                data: {
+                    'user_id': userId,
+                    'csrfmiddlewaretoken': getCookie('csrftoken')
+                },
+                success: function(response) {
+                    if (response.success) {
+                        // Mettre à jour l'interface utilisateur
+                        btn.closest('tr').remove();  // Supprimer la ligne du tableau
+
+                        // Afficher une alerte de succès avec SweetAlert2
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Succès !',
+                            text: 'Technicien supprimé avec succès.'
+                        });
+                    }
+                },
+                error: function(xhr, status, error) {
+                    // Gérer les erreurs de requête AJAX
+                    console.error(error);
+                }
+            });
         }
     });
 });

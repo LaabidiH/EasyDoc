@@ -12,16 +12,27 @@
                 <h3 class="card-title"><i class="bi bi-door-open"></i>Connexion</h3>
             </div>
             {% if messages %}
-            <div class="alert alert-danger text-center">
-                {% for message in messages %}
-                {{ message }}
-                {% endfor %}
-            </div>
-            {% endif %}
+            {% for message in messages %}
+              {% if message.tags == 'success' %}
+                <div class="alert alert-success text-center">
+                  {{ message }}
+                </div>
+              {% else %}
+                <div class="alert alert-danger text-center">
+                  {{ message }}
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
             <!-- /.card-header -->
             {% if error_message %}
             <div class="alert alert-danger text-center">
                 {{error_message}}
+            </div>
+            {% endif %}
+            {% if success_message %}
+            <div class="alert alert-success text-center">
+                {{success_message}}
             </div>
             {% endif %}
             <!-- form start -->

@@ -41,7 +41,7 @@
             <td class="">{{ row.table_name }}</td>
             <td class="">{{ row.service }}</td>
             {% if row.imprime %}
-            <td class="" style="color: rgb(221, 1, 1); font-weight: bold;">Oui</td>
+            <td class="" style="color: rgb(53, 247, 5); font-weight: bold;">Oui</td>
             {% else %}
             <td class="" style="color: rgb(221, 1, 1); font-weight: bold;">Non</td>
             {% endif %}
@@ -85,6 +85,26 @@
       "responsive": true,
     });
   });
+  $(document).ready(function() {
+  $('.btn-danger').click(function(e) {
+    e.preventDefault();
+    var url = $(this).attr('href');
+
+    Swal.fire({
+      title: 'Impression',
+      text: 'Voulez-vous vraiment imprimer ce document ?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Oui, imprimer',
+      cancelButtonText: 'Annuler'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = url;
+      }
+    });
+  });
+});
+
 
 
 </script>

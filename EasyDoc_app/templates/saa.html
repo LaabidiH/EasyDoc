@@ -19,6 +19,19 @@
       <h3 class="card-title">Ajouter une nouvelle action</h3>
     </div>
     <div class="card-body">
+      {% if messages %}
+      {% for message in messages %}
+        {% if message.tags == 'success' %}
+          <div class="alert alert-success text-center">
+            {{ message }}
+          </div>
+        {% else %}
+          <div class="alert alert-danger text-center">
+            {{ message }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
       {% if error_message %}
       <div class="error_message" style="background-color: rgb(243, 242, 225); height: 28px;">
         <h3 class="card-title" style="margin-top: 3px; margin-left: 8px; font-weight: bold; color:rgb(250, 3, 3);">{{ error_message }}</h3>
@@ -31,11 +44,11 @@
             <div class="form-group row">
               <label for="inputEmail3" class="col-sm-2 col-form-label">IPP</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="ipp" name="ipp" placeholder="Identifiant du patient">
+                <input type="text" class="form-control" id="ipp" name="ipp" placeholder="Identifiant du patient" required>
               </div>
             </div>
             <div class="form-group row">
-              <label for="inputEmail3" class="col-sm-2 col-form-label">CIN d'assurant :</label>
+              <label for="inputEmail3" class="col-sm-2 col-form-label">CIN assuré :</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="cin_assurant" name="cin_assurant" readonly>
               </div>
@@ -52,14 +65,14 @@
               <label for="exampleInputFile" style="margin-right: 62px;">Ordonnance :</label>
               <div class="input-group" style="width: 700px;">
                 <div class="custom-file">
-                  <input type="file" class="form-control custom-file-input" name="ordonnance" id="ordonnance">
+                  <input type="file" class="form-control custom-file-input" name="ordonnance" id="ordonnance" required>
                   <label class="custom-file-label" for="exampleInputFile">Choisir fichier</label>
                 </div>
               </div>
             </div>
             <div class="form-group row">
               <label style="margin-right: 102px;">Action :</label>
-              <select class="form-control select2 select2-danger" name="actionMed" id="actionMed"
+              <select class="form-control select2 select2-danger" name="actionMed" id="actionMed" required
                 data-dropdown-css-class="select2-danger" style=" width: 700px;">
                 <option selected="selected">Consultation</option>
                 <option value="Hospitalisation">Hospitalisation</option>
@@ -73,7 +86,7 @@
               <div class="form-group row services">
                 <label style="margin-right: 102px;">Service :</label>
                 <select class="form-control select2 select2-danger" name="service1" id="service1"
-                  data-dropdown-css-class="select2-danger" style=" width: 700px;">
+                  data-dropdown-css-class="select2-danger" style=" width: 700px;" >
                   <option selected="selected">medecine</option>
                   <option value="chirurgie">chirurgie</option>
                   <option value="pediaterie">pediaterie</option>
@@ -91,14 +104,14 @@
               <div class="form-group row">
                 <label style="margin-right: 76px;">Date de sortie:</label>
                 <div class="input-group date" id="reservationdate" style="width: 700px;" data-target-input="nearest">
-                  <input type="date" id="date_sortie" name="date_sortie" class="form-control" required />
+                  <input type="date" id="date_sortie" name="date_sortie" class="form-control"  />
                 </div>
               </div>
               <div class="form-group row">
                 <label for="exampleInputFile" style="margin-right: 118px;">Facture :</label>
                 <div class="input-group" style="width: 700px;">
                   <div class="custom-file">
-                    <input type="file" id="facture_hosp" class="form-control custom-file-input" name="facture_hosp">
+                    <input type="file" id="facture_hosp" class="form-control custom-file-input" name="facture_hosp" >
                     <label class="custom-file-label" for="exampleInputFile">Choisir fichier</label>
                   </div>
                 </div>
@@ -108,7 +121,7 @@
                 <div class="input-group" style="width: 700px;">
                   <div class="custom-file">
                     <input type="file" id="billet_hospitalisation" class="form-control custom-file-input"
-                      name="billet_hospitalisation">
+                      name="billet_hospitalisation" >
                     <label class="custom-file-label" for="exampleInputFile">Choisir fichier</label>
                   </div>
                 </div>
@@ -118,7 +131,7 @@
             <div class="form-group row servicesC">
               <label style="margin-right: 102px;">Service :</label>
               <select class="form-control select2 select2-danger" name="service" id="service"
-                data-dropdown-css-class="select2-danger" style=" width: 700px;">
+                data-dropdown-css-class="select2-danger" style=" width: 700px;" >
                 <option selected="selected">Medecine</option>
                 <option value="chirurgie">Chirurgie</option>
                 <option value="pediaterie">Pediaterie</option>
@@ -132,7 +145,7 @@
                 <label for="exampleInputFile" style="margin-right: 118px;">Facture :</label>
                 <div class="input-group" style="width: 700px;">
                   <div class="custom-file">
-                    <input type="file" class="form-control custom-file-input" name="facture_radio" id="facture_radio">
+                    <input type="file" class="form-control custom-file-input" name="facture_radio" id="facture_radio" >
                     <label class="custom-file-label" for="exampleInputFile">Choisir fichier</label>
                   </div>
                 </div>
@@ -141,7 +154,7 @@
                 <label for="exampleInputFile" style="margin-right: 48px;">Bon de radiologie :</label>
                 <div class="input-group" style="width: 700px;">
                   <div class="custom-file">
-                    <input type="file" class="form-control custom-file-input" id="bon_radio" name="bon_radio">
+                    <input type="file" class="form-control custom-file-input" id="bon_radio" name="bon_radio" >
                     <label class="custom-file-label" for="exampleInputFile">Choisir fichier</label>
                   </div>
                 </div>

@@ -6,7 +6,38 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EasyDoc</title>
+  <style>
+    .medecin-link {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #333;
+}
 
+.medecin-link:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.medecin-link:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.link-text {
+  position: relative;
+  z-index: 1;
+}
+
+  </style>
   <script src="https://kit.fontawesome.com/a7ebe9020f.js" crossorigin="anonymous"></script>
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -14,6 +45,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-e4K9s/5Oew7/yAfX4ew3yGo7Q+fj/Opdd4qqtmPK3qKdDNo9J3C6uz+SkkA3QOq9" crossorigin="anonymous">
 
   <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- Inclure les fichiers CSS et JavaScript de SweetAlert2 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="{% static 'plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
   <link rel="stylesheet" href="{% static 'plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
@@ -42,6 +75,7 @@
     $.widget.bridge('uibutton', $.ui.button);
   </script>
   <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
   <script src="{% static 'plugins/chart.js/Chart.min.js' %}"></script>
   <script src="{% static 'plugins/sparklines/sparkline.js' %}"></script>
   <script src="{% static 'plugins/jqvmap/jquery.vmap.min.js' %}"></script>
